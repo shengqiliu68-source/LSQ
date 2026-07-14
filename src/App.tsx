@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const customizationItems = [
   {
     label: "外包装",
-    title: "外包装系统",
+    title: "外包装工艺",
     description: "磁吸礼盒、抽屉盒、环保纸盒、运输外箱一体设计，兼顾开箱质感和跨境保护。",
   },
   {
@@ -25,7 +25,7 @@ const customizationItems = [
 
 const cases = [
   {
-    title: "年度客户答谢礼盒",
+    title: "商务高端礼盒",
     tag: "礼盒定制",
     image:
       "https://images.unsplash.com/photo-1607083206968-13611e3d76db?auto=format&fit=crop&w=1200&q=80",
@@ -37,7 +37,7 @@ const cases = [
       "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    title: "海外会议随行套装",
+    title: "仿金纪念币",
     tag: "会议套装",
     image:
       "https://images.unsplash.com/photo-1517502166878-35c93a0072f0?auto=format&fit=crop&w=1200&q=80",
@@ -198,8 +198,8 @@ function App() {
       <section className="section casesSection" id="cases">
         <div className="contentShell sectionHeader">
           <p className="eyebrow">精选案例</p>
-          <h2>定制案例展示</h2>
-          <p>用大画面呈现项目气质，后续可替换为你的真实工厂、产品和交付案例图片。</p>
+          <h2>以往百万入金产品展示</h2>
+          <p>拿真实数据说话！</p>
         </div>
         <div className="contentShell caseGrid">
           {cases.map((item) => (
