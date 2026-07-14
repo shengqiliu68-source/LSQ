@@ -70,6 +70,18 @@ const logistics = [
   },
 ];
 
+const borderGlowTheme = {
+  edgeSensitivity: 26,
+  glowColor: "12 100 62",
+  backgroundColor: "#0d0f14",
+  borderRadius: 4,
+  glowRadius: 30,
+  glowIntensity: 0.82,
+  coneSpread: 24,
+  fillOpacity: 0.34,
+  colors: ["#ff2c1f", "#ff5a18", "#ff9d2a"],
+};
+
 function App() {
   const [isNavFloating, setIsNavFloating] = useState(false);
 
@@ -211,17 +223,9 @@ function App() {
         <div className="contentShell customGrid">
           {customizationItems.map((item) => (
             <BorderGlow
+              {...borderGlowTheme}
               className="featureCard"
               key={item.title}
-              edgeSensitivity={26}
-              glowColor="12 100 62"
-              backgroundColor="#0d0f14"
-              borderRadius={4}
-              glowRadius={30}
-              glowIntensity={0.82}
-              coneSpread={24}
-              fillOpacity={0.34}
-              colors={["#ff2c1f", "#ff5a18", "#ff9d2a"]}
             >
               <article className="featureCardContent">
                 <span>{item.label}</span>
@@ -241,13 +245,15 @@ function App() {
         </div>
         <div className="contentShell caseGrid">
           {cases.map((item) => (
-            <article className="caseCard" key={item.title}>
-              <img src={item.image} alt={item.title} />
-              <div>
-                <span>{item.tag}</span>
-                <h3>{item.title}</h3>
-              </div>
-            </article>
+            <BorderGlow {...borderGlowTheme} className="caseCard" key={item.title}>
+              <article className="caseCardContent">
+                <img src={item.image} alt={item.title} />
+                <div>
+                  <span>{item.tag}</span>
+                  <h3>{item.title}</h3>
+                </div>
+              </article>
+            </BorderGlow>
           ))}
         </div>
         </section>
@@ -263,10 +269,12 @@ function App() {
           </div>
           <div className="strengthGrid">
             {strengths.map((item, index) => (
-              <article className="numberCard" key={item}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <p>{item}</p>
-              </article>
+              <BorderGlow {...borderGlowTheme} className="numberCard" key={item}>
+                <article className="numberCardContent">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <p>{item}</p>
+                </article>
+              </BorderGlow>
             ))}
           </div>
         </div>
@@ -282,10 +290,12 @@ function App() {
         </div>
         <div className="contentShell logisticsGrid">
           {logistics.map((item) => (
-            <article className="logisticsCard" key={item.title}>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </article>
+            <BorderGlow {...borderGlowTheme} className="logisticsCard" key={item.title}>
+              <article className="logisticsCardContent">
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            </BorderGlow>
           ))}
         </div>
         </section>
@@ -297,11 +307,13 @@ function App() {
           <p>
             我们可以先给出产品组合建议、包装方向、LOGO 工艺和全球配送路径，再进入打样与报价。
           </p>
-          <div className="contactPanel">
-            <a href="mailto:hello@example.com">hello@example.com</a>
-            <span>WhatsApp / WeChat: +86 000 0000 0000</span>
-            <span>多盘后勤定制、仓储与全球快递交付</span>
-          </div>
+          <BorderGlow {...borderGlowTheme} className="contactGlow">
+            <div className="contactPanel">
+              <a href="mailto:hello@example.com">hello@example.com</a>
+              <span>WhatsApp / WeChat: +86 000 0000 0000</span>
+              <span>多盘后勤定制、仓储与全球快递交付</span>
+            </div>
+          </BorderGlow>
         </div>
         </section>
       </div>

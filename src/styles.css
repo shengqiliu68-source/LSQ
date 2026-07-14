@@ -587,20 +587,13 @@ p {
   gap: 18px;
 }
 
-.numberCard,
-.logisticsCard {
-  min-height: 270px;
-  border: 1px solid var(--line);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.035));
-  padding: 34px;
-  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.28);
-}
-
 .featureCard {
   min-height: 270px;
 }
 
-.featureCardContent {
+.featureCardContent,
+.numberCardContent,
+.logisticsCardContent {
   height: 100%;
   padding: 34px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 62%);
@@ -640,9 +633,15 @@ p {
 .caseCard {
   position: relative;
   min-height: 560px;
+  overflow: visible;
+}
+
+.caseCardContent {
+  position: relative;
+  height: 100%;
+  min-height: 560px;
   overflow: hidden;
-  border: 1px solid var(--line);
-  background: #111822;
+  border-radius: inherit;
 }
 
 .caseCard img {
@@ -653,14 +652,14 @@ p {
   transition: transform 500ms ease;
 }
 
-.caseCard::after {
+.caseCardContent::after {
   position: absolute;
   inset: 0;
   content: "";
   background: linear-gradient(180deg, transparent 35%, rgba(4, 6, 10, 0.92));
 }
 
-.caseCard div {
+.caseCardContent > div {
   position: absolute;
   z-index: 1;
   left: 32px;
@@ -713,6 +712,10 @@ p {
   min-height: 250px;
 }
 
+.contactGlow {
+  margin-top: 56px;
+}
+
 .contact {
   display: flex;
   min-height: 100vh;
@@ -735,9 +738,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 18px;
-  margin-top: 56px;
-  padding-top: 30px;
-  border-top: 1px solid var(--line);
+  padding: 30px;
 }
 
 .contactPanel a,
@@ -787,6 +788,10 @@ p {
   }
 
   .caseCard {
+    min-height: 420px;
+  }
+
+  .caseCardContent {
     min-height: 420px;
   }
 
@@ -916,12 +921,13 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .numberCard,
-  .logisticsCard {
+  .featureCardContent,
+  .numberCardContent,
+  .logisticsCardContent {
     padding: 26px;
   }
 
-  .featureCardContent {
-    padding: 26px;
+  .contactPanel {
+    padding: 22px;
   }
 }
