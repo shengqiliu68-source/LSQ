@@ -1,33 +1,36 @@
 # LSQ Website
 
-这是你的网页开发项目。环境已经配置为使用 VS Code + GitHub + Codex 开发。
+企业产品周边定制与全球物流仓储业务网站。
 
 ## 常用命令
 
 ```bash
 npm run dev
+npm run lint
+npm run typecheck
+npm run build
 ```
 
-打开本地页面：
+本地预览默认地址：
 
 ```text
-http://localhost:3000
+http://localhost:5173/
 ```
 
 ## 项目技术
 
-- Next.js
+- React
+- Vite
 - TypeScript
 - Tailwind CSS
 - ESLint
 - Prettier
 
-## AI 开发方式
+## 当前页面
 
-以后你只需要告诉 Codex 你要做什么网页或修改什么内容，Codex 会按 `AGENTS.md` 中的规则自动开发、测试、提交和同步。
-
-## 检查项目
-
-```bash
-npm run check
-```
+- 全屏视频背景首页 Hero
+- 周边定制能力模块
+- 定制案例大卡片模块
+- 业务优势模块
+- 全球物流与仓储优势模块
+- 整屏联系方式收尾页

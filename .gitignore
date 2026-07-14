@@ -19,10 +19,13 @@
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store
 *.pem
+*.log
+tsconfig.tsbuildinfo
 
 # debug
 npm-debug.log*
