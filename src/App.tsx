@@ -78,12 +78,8 @@ function App() {
           muted
           loop
           playsInline
-          poster="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80"
         >
-          <source
-            src="https://videos.pexels.com/video-files/3184291/3184291-uhd_2560_1440_25fps.mp4"
-            type="video/mp4"
-          />
+          <source src="/hero-background.mp4" type="video/mp4" />
         </video>
         <div className="heroShade" />
 
