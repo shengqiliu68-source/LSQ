@@ -93,29 +93,58 @@ function App() {
             <small>Corporate Gifts & Logistics</small>
           </a>
           <div className="navLinks">
-            <a href="#custom">周边定制</a>
-            <a href="#cases">定制案例</a>
-            <a href="#logistics">全球物流</a>
+            <a href="#custom">[ CUSTOM ]</a>
+            <a href="#cases">[ CASES ]</a>
+            <a href="#logistics">[ LOGISTICS ]</a>
           </div>
-          <a className="navButton" href="#contact">
-            联系方案顾问
-          </a>
+          <div className="navRight">
+            <a className="navButton" href="#contact">
+              联系方案顾问
+            </a>
+            <span className="menuMark" aria-hidden="true" />
+          </div>
         </nav>
 
-        <div className="heroContent contentShell">
-          <p className="eyebrow">ENTERPRISE CUSTOM MERCHANDISE</p>
-          <h1>企业周边定制，从礼盒质感到全球交付一次到位。</h1>
-          <p className="heroLead">
-            为企业客户、活动会议、员工关怀和海外市场准备高质感定制伴手礼。我们整合产品、包装、
-            LOGO 工艺、仓储和精准快递，让复杂交付变得可靠、克制、可控。
+        <div className="heroFrame contentShell">
+          <div className="heroKicker">
+            <span>ENTERPRISE CUSTOM MERCHANDISE</span>
+            <span>GLOBAL WAREHOUSE / EXPRESS DELIVERY</span>
+          </div>
+
+          <div className="heroTitleBlock" aria-label="企业周边定制">
+            <span>BRAND</span>
+            <span>GIFTS</span>
+          </div>
+
+          <p className="heroMicrocopy">
+            Corporate gift boxes, branded coffee kits, logo finishing and secure worldwide delivery
+            for teams, clients and events.
           </p>
-          <div className="heroActions">
-            <a className="primaryButton" href="#custom">
-              查看定制能力
+
+          <div className="heroBottomGrid">
+            <div className="heroMetric">
+              <span className="slashes" aria-hidden="true" />
+              <strong>87+</strong>
+              <p>countries can be routed through matched warehouse and express plans</p>
+            </div>
+
+            <a className="heroProjectButton" href="#contact">
+              START A PROJECT
             </a>
-            <a className="secondaryButton" href="#contact">
-              获取项目报价
-            </a>
+
+            <div className="heroStatement">
+              <span>LSQ</span>
+              <p>
+                <strong>DESIGN</strong> IS NOT DECORATION
+              </p>
+            </div>
+          </div>
+
+          <div className="heroCaption">
+            <h1>企业周边定制，从礼盒质感到全球交付一次到位。</h1>
+            <p>
+              整合产品、包装、LOGO 工艺、仓储和精准快递，让复杂交付变得可靠、保密、可控。
+            </p>
           </div>
         </div>
       </section>
