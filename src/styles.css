@@ -12,8 +12,10 @@
   --line: rgba(255, 255, 255, 0.14);
   --muted: #a7afbd;
   --soft: rgba(255, 255, 255, 0.08);
-  --accent: #ff331f;
-  --accent-strong: #ff3b26;
+  --accent: #ff2c1f;
+  --accent-strong: #ff5a18;
+  --accent-warm: #ff9d2a;
+  --accent-gradient: linear-gradient(90deg, #ff2c1f 0%, #ff5a18 52%, #ff9d2a 100%);
 }
 
 * {
@@ -209,7 +211,9 @@ video {
   transition:
     transform 180ms ease,
     border-color 180ms ease,
-    background 180ms ease;
+    background 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .navButton,
@@ -219,16 +223,29 @@ video {
 }
 
 .primaryButton {
-  border-color: rgba(255, 59, 38, 0.5);
-  background: var(--accent);
-  color: #071014;
+  border-color: rgba(255, 90, 24, 0.72);
+  background: var(--accent-gradient);
+  color: #ffffff;
 }
 
 .navButton:hover,
-.primaryButton:hover,
-.secondaryButton:hover {
+.navButton:focus-visible,
+.secondaryButton:hover,
+.secondaryButton:focus-visible {
   transform: translateY(-2px);
-  border-color: rgba(255, 59, 38, 0.78);
+  border-color: var(--accent-strong);
+  background: var(--accent-gradient);
+  color: #ffffff;
+  box-shadow: 0 14px 34px rgba(255, 51, 31, 0.24);
+}
+
+.primaryButton:hover,
+.primaryButton:focus-visible {
+  transform: translateY(-2px);
+  border-color: #ffffff;
+  background: #ffffff;
+  color: var(--accent);
+  box-shadow: 0 14px 34px rgba(255, 51, 31, 0.26);
 }
 
 .heroFrame {
@@ -294,7 +311,7 @@ p {
   position: relative;
   display: inline-block;
   margin-left: 0.04em;
-  background: linear-gradient(90deg, #ff2c1f 0%, #ff5a18 48%, #ff9d2a 100%);
+  background: var(--accent-gradient);
   background-clip: text;
   color: transparent;
   font-family: Impact, "Arial Black", "Microsoft YaHei", sans-serif;
@@ -430,17 +447,25 @@ p {
 }
 
 .heroProjectButton.isPrimary {
-  border-color: rgba(255, 255, 255, 0.82);
-  background: #f5f7fb;
-  color: #07090d;
+  border-color: rgba(255, 90, 24, 0.82);
+  background: var(--accent-gradient);
+  color: #ffffff;
 }
 
 .heroProjectButton:hover,
 .heroProjectButton:focus-visible {
-  background: var(--accent);
-  border-color: rgba(255, 59, 38, 0.82);
-  color: #07090d;
+  background: var(--accent-gradient);
+  border-color: var(--accent-strong);
+  color: #ffffff;
   transform: translateY(-3px);
+  box-shadow: 0 16px 38px rgba(255, 51, 31, 0.28);
+}
+
+.heroProjectButton.isPrimary:hover,
+.heroProjectButton.isPrimary:focus-visible {
+  border-color: #ffffff;
+  background: #ffffff;
+  color: var(--accent);
 }
 
 .section {
@@ -452,7 +477,7 @@ p {
 .logisticsSection {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 42%),
-    linear-gradient(90deg, rgba(105, 210, 231, 0.07), transparent 46%), #07090d;
+    linear-gradient(90deg, rgba(255, 44, 31, 0.09), transparent 46%), #07090d;
 }
 
 .sectionHeader {
@@ -606,8 +631,8 @@ p {
   min-height: 100vh;
   align-items: center;
   background:
-    linear-gradient(120deg, rgba(168, 230, 207, 0.14), transparent 36%),
-    linear-gradient(300deg, rgba(105, 210, 231, 0.16), transparent 42%), #05070a;
+    linear-gradient(120deg, rgba(255, 44, 31, 0.16), transparent 36%),
+    linear-gradient(300deg, rgba(255, 157, 42, 0.12), transparent 42%), #05070a;
 }
 
 .contactInner {
@@ -634,6 +659,24 @@ p {
   background: var(--soft);
   padding: 18px 22px;
   color: #eef4f8;
+}
+
+.contactPanel a {
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.contactPanel a:hover,
+.contactPanel a:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--accent-strong);
+  background: var(--accent-gradient);
+  color: #ffffff;
+  box-shadow: 0 16px 38px rgba(255, 51, 31, 0.24);
 }
 
 @media (max-width: 1100px) {
