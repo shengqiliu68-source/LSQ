@@ -132,11 +132,8 @@ video {
 .brand img {
   width: 54px;
   height: 54px;
-  border: 1px solid rgba(255, 51, 31, 0.46);
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center 35%;
-  box-shadow: 0 0 28px rgba(255, 51, 31, 0.22);
+  object-fit: contain;
+  filter: drop-shadow(0 0 18px rgba(255, 51, 31, 0.2));
 }
 
 .brand small {
@@ -283,7 +280,8 @@ p {
   width: clamp(360px, 32vw, 520px);
   aspect-ratio: 1;
   object-fit: contain;
-  filter: drop-shadow(0 28px 80px rgba(255, 51, 31, 0.22));
+  opacity: 0.42;
+  filter: drop-shadow(0 28px 80px rgba(255, 51, 31, 0.16));
 }
 
 .heroMicrocopy {
@@ -291,12 +289,27 @@ p {
   top: clamp(420px, 42vh, 500px);
   left: clamp(22px, 3vw, 48px);
   z-index: 3;
-  max-width: 360px;
+  display: grid;
+  gap: 10px;
+  max-width: 780px;
   margin: 0;
-  color: rgba(245, 247, 251, 0.68);
-  font-size: 15px;
+  color: rgba(245, 247, 251, 0.78);
+  font-size: 16px;
   font-weight: 760;
   line-height: 1.6;
+}
+
+.heroMicrocopy strong {
+  color: #ffffff;
+  font-size: clamp(30px, 3vw, 54px);
+  font-weight: 1000;
+  letter-spacing: 0.14em;
+}
+
+.heroMicrocopy span {
+  color: rgba(245, 247, 251, 0.76);
+  font-size: 16px;
+  font-weight: 850;
 }
 
 .heroMetric {

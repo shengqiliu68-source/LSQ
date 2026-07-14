@@ -89,7 +89,7 @@ function App() {
 
         <nav className="nav" aria-label="主导航">
           <a className="brand" href="#top" aria-label="大表哥后勤多盘定制首页">
-            <img src="/dabiaoge-logo.png" alt="" aria-hidden="true" />
+            <img src="/dabiaoge-logo-transparent.png" alt="" aria-hidden="true" />
             <span>
               大表哥
               <small>后勤多盘定制</small>
@@ -114,11 +114,16 @@ function App() {
               大表哥
             </div>
 
-            <img className="heroLogoImage" src="/dabiaoge-logo.png" alt="大表哥后勤多盘定制" />
+            <img
+              className="heroLogoImage"
+              src="/dabiaoge-logo-transparent.png"
+              alt="大表哥后勤多盘定制"
+            />
 
-            <p className="heroMicrocopy">
-              多盘项目、周边物料、包装工艺、仓储物流统一规划。
-            </p>
+            <div className="heroMicrocopy">
+              <strong>多盘后勤定制</strong>
+              <span>盘子周边定制 ｜ 工艺匠心品质 ｜ 全球仓储物流 ｜ 后勤一步到位</span>
+            </div>
           </div>
 
           <div className="heroCaption">
