@@ -114,7 +114,10 @@ function App() {
             <div className="heroCopy">
               <div className="heroWordmark" aria-label="搞金融就认准大表哥，万千同行的选择">
                 <span>
-                  搞金融就认准<span className="highlight">大表哥</span>
+                  搞金融就认准
+                  <span className="highlight" data-text="大表哥">
+                    大表哥
+                  </span>
                 </span>
                 <span>万千同行的选择</span>
               </div>
