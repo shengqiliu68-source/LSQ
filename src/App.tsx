@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import BorderGlow from "./components/BorderGlow";
 import Grainient from "./components/Grainient";
 
 const customizationItems = [
@@ -209,11 +210,25 @@ function App() {
         </div>
         <div className="contentShell customGrid">
           {customizationItems.map((item) => (
-            <article className="featureCard" key={item.title}>
-              <span>{item.label}</span>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </article>
+            <BorderGlow
+              className="featureCard"
+              key={item.title}
+              edgeSensitivity={26}
+              glowColor="12 100 62"
+              backgroundColor="#0d0f14"
+              borderRadius={4}
+              glowRadius={30}
+              glowIntensity={0.82}
+              coneSpread={24}
+              fillOpacity={0.34}
+              colors={["#ff2c1f", "#ff5a18", "#ff9d2a"]}
+            >
+              <article className="featureCardContent">
+                <span>{item.label}</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </article>
+            </BorderGlow>
           ))}
         </div>
         </section>

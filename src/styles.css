@@ -587,7 +587,6 @@ p {
   gap: 18px;
 }
 
-.featureCard,
 .numberCard,
 .logisticsCard {
   min-height: 270px;
@@ -595,6 +594,16 @@ p {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.035));
   padding: 34px;
   box-shadow: 0 20px 80px rgba(0, 0, 0, 0.28);
+}
+
+.featureCard {
+  min-height: 270px;
+}
+
+.featureCardContent {
+  height: 100%;
+  padding: 34px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 62%);
 }
 
 .featureCard span,
@@ -907,9 +916,12 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .featureCard,
   .numberCard,
   .logisticsCard {
+    padding: 26px;
+  }
+
+  .featureCardContent {
     padding: 26px;
   }
 }
