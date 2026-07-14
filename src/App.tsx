@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 const customizationItems = [
   {
     label: "外包装",
@@ -69,6 +71,25 @@ const logistics = [
 ];
 
 function App() {
+  const [isNavFloating, setIsNavFloating] = useState(false);
+
+  useEffect(() => {
+    const updateNavPosition = () => {
+      const hero = document.getElementById("top");
+      const heroBottom = hero?.offsetHeight ?? window.innerHeight;
+      setIsNavFloating(window.scrollY >= heroBottom - 1);
+    };
+
+    updateNavPosition();
+    window.addEventListener("scroll", updateNavPosition, { passive: true });
+    window.addEventListener("resize", updateNavPosition);
+
+    return () => {
+      window.removeEventListener("scroll", updateNavPosition);
+      window.removeEventListener("resize", updateNavPosition);
+    };
+  }, []);
+
   return (
     <main>
       <section className="hero" id="top">
@@ -83,7 +104,7 @@ function App() {
         </video>
         <div className="heroShade" />
 
-        <nav className="nav" aria-label="主导航">
+        <nav className={`nav${isNavFloating ? " isFloating" : ""}`} aria-label="主导航">
           <a className="brand" href="#top" aria-label="大表哥后勤多盘定制首页">
             <img src="/dabiaoge-logo-transparent.png" alt="" aria-hidden="true" />
             <span>
