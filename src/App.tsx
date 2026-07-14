@@ -110,9 +110,18 @@ function App() {
 
         <div className="heroFrame contentShell">
           <div className="heroPoster">
-            <div className="heroWordmark" aria-label="金融分析师认准大表哥，万千同行的选择">
-              <span>金融分析师认准大表哥</span>
-              <span>万千同行的选择</span>
+            <div className="heroCopy">
+              <div className="heroWordmark" aria-label="搞金融就认准大表哥，万千同行的选择">
+                <span>
+                  搞金融就认准<span className="highlight">大表哥</span>
+                </span>
+                <span>万千同行的选择</span>
+              </div>
+
+              <div className="heroMicrocopy">
+                <strong>多盘后勤定制</strong>
+                <span>盘子周边定制 ｜ 工艺匠心品质 ｜ 全球仓储物流 ｜ 后勤一步到位</span>
+              </div>
             </div>
 
             <img
@@ -121,11 +130,6 @@ function App() {
               alt=""
               aria-hidden="true"
             />
-
-            <div className="heroMicrocopy">
-              <strong>多盘后勤定制</strong>
-              <span>盘子周边定制 ｜ 工艺匠心品质 ｜ 全球仓储物流 ｜ 后勤一步到位</span>
-            </div>
           </div>
 
           <div className="heroMetric">
