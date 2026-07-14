@@ -370,29 +370,48 @@ p {
   line-height: 1.45;
 }
 
-.heroProjectButton {
+.heroActions {
   position: absolute;
   left: clamp(22px, 3vw, 48px);
   bottom: 28px;
   z-index: 4;
+  display: grid;
+  width: min(980px, 62vw);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.heroProjectButton {
   display: inline-flex;
-  width: min(360px, 32vw);
-  min-height: 78px;
+  min-height: 70px;
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(255, 255, 255, 0.74);
-  background: #f5f7fb;
-  color: #07090d;
-  font-size: 16px;
+  background: rgba(245, 247, 251, 0.04);
+  color: #f5f7fb;
+  padding: 0 14px;
+  text-align: center;
+  font-size: 15px;
   font-weight: 1000;
+  white-space: nowrap;
   transition:
     transform 180ms ease,
-    background 180ms ease;
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.heroProjectButton.isPrimary {
+  border-color: rgba(255, 255, 255, 0.82);
+  background: #f5f7fb;
+  color: #07090d;
 }
 
 .heroProjectButton:hover,
 .heroProjectButton:focus-visible {
   background: var(--accent);
+  border-color: rgba(255, 59, 38, 0.82);
+  color: #07090d;
   transform: translateY(-3px);
 }
 
@@ -628,7 +647,7 @@ p {
   .heroLogoImage,
   .heroMicrocopy,
   .heroMetric,
-  .heroProjectButton {
+  .heroActions {
     position: relative;
     inset: auto;
     left: auto;
@@ -670,9 +689,15 @@ p {
     margin-inline: auto;
   }
 
-  .heroProjectButton {
+  .heroActions {
     width: min(440px, 86vw);
+    grid-template-columns: 1fr;
+    gap: 12px;
     margin: 24px auto 0;
+  }
+
+  .heroProjectButton {
+    min-height: 58px;
   }
 }
 

@@ -99,6 +99,7 @@ function App() {
             <a href="#custom">[ 盘子周边定制 ]</a>
             <a href="#cases">[ 定制案例 ]</a>
             <a href="#logistics">[ 仓储物流 ]</a>
+            <a href="#contact">[ 全平台代购 ]</a>
           </div>
           <div className="navRight">
             <a className="navButton" href="#contact">
@@ -138,9 +139,20 @@ function App() {
             <p>覆盖国家与地区，按项目匹配仓储、清关和末端派送方案</p>
           </div>
 
-          <a className="heroProjectButton" href="#contact">
-            开始咨询项目
-          </a>
+          <div className="heroActions" aria-label="首屏快捷入口">
+            <a className="heroProjectButton isPrimary" href="#contact">
+              定制你的产品
+            </a>
+            <a className="heroProjectButton" href="#cases">
+              过往优秀定制案例
+            </a>
+            <a className="heroProjectButton" href="#contact">
+              查询你的订单状态
+            </a>
+            <a className="heroProjectButton" href="#contact">
+              我需要代购/代拍
+            </a>
+          </div>
         </div>
       </section>
 
