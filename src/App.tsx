@@ -27,8 +27,7 @@ const cases = [
   {
     title: "商务高端礼盒",
     tag: "礼盒定制",
-    image:
-      "https://images.unsplash.com/photo-1607083206968-13611e3d76db?auto=format&fit=crop&w=1200&q=80",
+    image: "/case-business-gift-box.webp",
   },
   {
     title: "企业咖啡杯伴手礼",
@@ -38,9 +37,8 @@ const cases = [
   },
   {
     title: "仿金纪念币",
-    tag: "会议套装",
-    image:
-      "https://images.unsplash.com/photo-1517502166878-35c93a0072f0?auto=format&fit=crop&w=1200&q=80",
+    tag: "纪念币定制",
+    image: "/case-gold-commemorative-coin.webp",
   },
 ];
 
