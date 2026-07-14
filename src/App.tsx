@@ -1,21 +1,21 @@
 const customizationItems = [
   {
-    label: "Outer Packaging",
+    label: "外包装",
     title: "外包装系统",
     description: "磁吸礼盒、抽屉盒、环保纸盒、运输外箱一体设计，兼顾开箱质感和跨境保护。",
   },
   {
-    label: "Inside Products",
+    label: "内置产品",
     title: "内置产品组合",
     description: "保温杯、咖啡杯、笔记本、签字笔、工牌、数码配件等按预算和场景灵活搭配。",
   },
   {
-    label: "Product Story",
+    label: "介绍卡片",
     title: "产品介绍卡片",
     description: "为每套礼盒配置品牌卡、说明卡、感谢卡或多语言介绍卡，让交付更完整。",
   },
   {
-    label: "Logo Finish",
+    label: "标识工艺",
     title: "LOGO 定制工艺",
     description: "支持丝印、激光、烫金、压印、UV、刺绣和包装贴标，保证品牌呈现稳定一致。",
   },
@@ -24,19 +24,19 @@ const customizationItems = [
 const cases = [
   {
     title: "年度客户答谢礼盒",
-    tag: "Gift Box",
+    tag: "礼盒定制",
     image:
       "https://images.unsplash.com/photo-1607083206968-13611e3d76db?auto=format&fit=crop&w=1200&q=80",
   },
   {
     title: "企业咖啡杯伴手礼",
-    tag: "Coffee Kit",
+    tag: "杯具伴手礼",
     image:
       "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=1200&q=80",
   },
   {
     title: "海外会议随行套装",
-    tag: "Event Pack",
+    tag: "会议套装",
     image:
       "https://images.unsplash.com/photo-1517502166878-35c93a0072f0?auto=format&fit=crop&w=1200&q=80",
   },
@@ -88,14 +88,19 @@ function App() {
         <div className="heroShade" />
 
         <nav className="nav" aria-label="主导航">
-          <a className="brand" href="#top" aria-label="LSQ 首页">
-            <span>LSQ</span>
-            <small>Corporate Gifts & Logistics</small>
+          <a className="brand" href="#top" aria-label="AUREVIA 企业定制首页">
+            <span className="brandIcon" aria-hidden="true">
+              A
+            </span>
+            <span className="brandText">
+              <strong>AUREVIA</strong>
+              <small>企业定制</small>
+            </span>
           </a>
           <div className="navLinks">
-            <a href="#custom">[ CUSTOM ]</a>
-            <a href="#cases">[ CASES ]</a>
-            <a href="#logistics">[ LOGISTICS ]</a>
+            <a href="#custom">[ 周边定制 ]</a>
+            <a href="#cases">[ 定制案例 ]</a>
+            <a href="#logistics">[ 全球物流 ]</a>
           </div>
           <div className="navRight">
             <a className="navButton" href="#contact">
@@ -107,43 +112,45 @@ function App() {
 
         <div className="heroFrame contentShell">
           <div className="heroKicker">
-            <span>ENTERPRISE CUSTOM MERCHANDISE</span>
-            <span>GLOBAL WAREHOUSE / EXPRESS DELIVERY</span>
+            <span>企业礼赠与周边定制</span>
+            <span>全球仓储与精准物流</span>
           </div>
 
-          <div className="heroTitleBlock" aria-label="企业周边定制">
-            <span>BRAND</span>
-            <span>GIFTS</span>
+          <div className="heroTitleBlock" aria-label="AUREVIA 企业定制">
+            <div className="heroLogoMark" aria-hidden="true">
+              <span>A</span>
+            </div>
+            <span>AUREVIA</span>
+            <em>企业定制</em>
           </div>
 
           <p className="heroMicrocopy">
-            Corporate gift boxes, branded coffee kits, logo finishing and secure worldwide delivery
-            for teams, clients and events.
+            礼盒、杯具、办公周边、LOGO 工艺、仓储和快递交付，围绕企业项目整体规划。
           </p>
 
           <div className="heroBottomGrid">
             <div className="heroMetric">
               <span className="slashes" aria-hidden="true" />
               <strong>87+</strong>
-              <p>countries can be routed through matched warehouse and express plans</p>
+              <p>覆盖国家与地区，可按项目匹配仓储、清关和末端派送方案</p>
             </div>
 
             <a className="heroProjectButton" href="#contact">
-              START A PROJECT
+              开始咨询项目
             </a>
 
             <div className="heroStatement">
-              <span>LSQ</span>
+              <span>安心</span>
               <p>
-                <strong>DESIGN</strong> IS NOT DECORATION
+                <strong>保密</strong> 专业可靠
               </p>
             </div>
           </div>
 
           <div className="heroCaption">
-            <h1>企业周边定制，从礼盒质感到全球交付一次到位。</h1>
+            <h1>理解你的所有需求，安全专业。</h1>
             <p>
-              整合产品、包装、LOGO 工艺、仓储和精准快递，让复杂交付变得可靠、保密、可控。
+              整合产品、包装与物流，可靠、保密、可追踪，为企业客户把细节做到位。
             </p>
           </div>
         </div>
@@ -151,7 +158,7 @@ function App() {
 
       <section className="section" id="custom">
         <div className="contentShell sectionHeader">
-          <p className="eyebrow">CUSTOM SYSTEM</p>
+          <p className="eyebrow">周边定制</p>
           <h2>周边定制模块化组合</h2>
           <p>
             从外部第一眼到内部每件产品，都围绕品牌、预算、场景和交付国家做整体设计。
@@ -170,7 +177,7 @@ function App() {
 
       <section className="section casesSection" id="cases">
         <div className="contentShell sectionHeader">
-          <p className="eyebrow">SELECTED CASES</p>
+          <p className="eyebrow">精选案例</p>
           <h2>定制案例展示</h2>
           <p>用大画面呈现项目气质，后续可替换为你的真实工厂、产品和交付案例图片。</p>
         </div>
@@ -190,7 +197,7 @@ function App() {
       <section className="section">
         <div className="contentShell splitLayout">
           <div className="sectionHeader compact">
-            <p className="eyebrow">WHY LSQ</p>
+            <p className="eyebrow">为什么选择 AUREVIA</p>
             <h2>业务优势</h2>
             <p>
               面向非标准化企业礼品项目，我们更关注稳定执行、细节保密和最终交付体验。
@@ -209,7 +216,7 @@ function App() {
 
       <section className="section logisticsSection" id="logistics">
         <div className="contentShell sectionHeader">
-          <p className="eyebrow">GLOBAL FULFILLMENT</p>
+          <p className="eyebrow">全球交付</p>
           <h2>全球物流与仓储优势</h2>
           <p>
             不管收件人在哪个国家，都以项目为单位规划仓储、清关、末端派送与状态反馈。
@@ -227,7 +234,7 @@ function App() {
 
       <section className="contact" id="contact">
         <div className="contentShell contactInner">
-          <p className="eyebrow">START A PROJECT</p>
+          <p className="eyebrow">开始项目</p>
           <h2>把你的企业礼盒需求、目标国家和预算发给我们。</h2>
           <p>
             我们可以先给出产品组合建议、包装方向、LOGO 工艺和全球配送路径，再进入打样与报价。
@@ -235,7 +242,7 @@ function App() {
           <div className="contactPanel">
             <a href="mailto:hello@example.com">hello@example.com</a>
             <span>WhatsApp / WeChat: +86 000 0000 0000</span>
-            <span>Global corporate gifting, warehouse and express delivery</span>
+            <span>企业礼赠定制、仓储与全球快递交付</span>
           </div>
         </div>
       </section>
