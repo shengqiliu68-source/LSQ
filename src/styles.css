@@ -260,33 +260,46 @@ p {
 
 .heroWordmark {
   position: absolute;
-  top: clamp(42px, 6vh, 86px);
+  top: clamp(56px, 7vh, 96px);
   left: 0;
   z-index: 2;
+  display: grid;
+  gap: 12px;
   color: var(--accent);
-  font-size: clamp(108px, 14vw, 246px);
+  font-size: clamp(58px, 7.6vw, 134px);
   font-weight: 1000;
-  line-height: 0.82;
+  line-height: 1.02;
   letter-spacing: 0;
   text-shadow: 0 18px 50px rgba(255, 51, 31, 0.2);
+}
+
+.heroWordmark span {
+  display: block;
   white-space: nowrap;
+}
+
+.heroWordmark span:last-child {
+  color: #ffffff;
+  font-size: 0.55em;
+  letter-spacing: 0.04em;
+  text-shadow: 0 14px 42px rgba(0, 0, 0, 0.35);
 }
 
 .heroLogoImage {
   position: absolute;
   right: clamp(0px, 4vw, 92px);
-  top: clamp(170px, 18vh, 240px);
+  top: clamp(190px, 20vh, 260px);
   z-index: 1;
-  width: clamp(360px, 32vw, 520px);
+  width: clamp(420px, 36vw, 620px);
   aspect-ratio: 1;
   object-fit: contain;
-  opacity: 0.42;
+  opacity: 0.28;
   filter: drop-shadow(0 28px 80px rgba(255, 51, 31, 0.16));
 }
 
 .heroMicrocopy {
   position: absolute;
-  top: clamp(420px, 42vh, 500px);
+  top: clamp(350px, 36vh, 450px);
   left: clamp(22px, 3vw, 48px);
   z-index: 3;
   display: grid;
@@ -373,31 +386,6 @@ p {
 .heroProjectButton:focus-visible {
   background: var(--accent);
   transform: translateY(-3px);
-}
-
-.heroCaption {
-  position: absolute;
-  right: clamp(22px, 3vw, 48px);
-  bottom: clamp(118px, 12vh, 178px);
-  z-index: 4;
-  max-width: 610px;
-}
-
-.heroCaption h1 {
-  margin-bottom: 16px;
-  color: #ffffff;
-  font-size: clamp(40px, 3.7vw, 66px);
-  line-height: 1.05;
-  letter-spacing: 0;
-  word-break: keep-all;
-}
-
-.heroCaption p {
-  max-width: 520px;
-  margin: 0;
-  color: rgba(245, 247, 251, 0.78);
-  font-size: 16px;
-  line-height: 1.72;
 }
 
 .section {
@@ -630,7 +618,6 @@ p {
   .heroWordmark,
   .heroLogoImage,
   .heroMicrocopy,
-  .heroCaption,
   .heroMetric,
   .heroProjectButton {
     position: relative;
@@ -657,7 +644,6 @@ p {
   }
 
   .heroMicrocopy,
-  .heroCaption,
   .heroMetric {
     max-width: 720px;
     text-align: center;
@@ -703,10 +689,6 @@ p {
   .brand img {
     width: 44px;
     height: 44px;
-  }
-
-  .heroCaption h1 {
-    font-size: 40px;
   }
 
   .heroLead,

@@ -110,27 +110,22 @@ function App() {
 
         <div className="heroFrame contentShell">
           <div className="heroPoster">
-            <div className="heroWordmark" aria-label="大表哥">
-              大表哥
+            <div className="heroWordmark" aria-label="金融分析师认准大表哥，万千同行的选择">
+              <span>金融分析师认准大表哥</span>
+              <span>万千同行的选择</span>
             </div>
 
             <img
               className="heroLogoImage"
-              src="/dabiaoge-logo-transparent.png"
-              alt="大表哥后勤多盘定制"
+              src="/dabiaoge-mark-transparent.png"
+              alt=""
+              aria-hidden="true"
             />
 
             <div className="heroMicrocopy">
               <strong>多盘后勤定制</strong>
               <span>盘子周边定制 ｜ 工艺匠心品质 ｜ 全球仓储物流 ｜ 后勤一步到位</span>
             </div>
-          </div>
-
-          <div className="heroCaption">
-            <h1>理解你的所有需求，安全专业。</h1>
-            <p>
-              从定制方案到后勤交付，把复杂需求拆清楚、做稳妥、交到位。
-            </p>
           </div>
 
           <div className="heroMetric">
