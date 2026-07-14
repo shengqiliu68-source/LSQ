@@ -109,45 +109,34 @@ function App() {
         </nav>
 
         <div className="heroFrame contentShell">
-          <div className="heroKicker">
-            <span>盘子周边定制</span>
-            <span>工艺匠心品质</span>
-            <span>全球仓储物流</span>
-          </div>
-
-          <div className="heroTitleBlock" aria-label="大表哥后勤多盘定制">
-            <img src="/dabiaoge-logo.png" alt="大表哥后勤多盘定制" />
-          </div>
-
-          <p className="heroMicrocopy">
-            多盘项目、周边物料、包装工艺、仓储物流和后勤交付统一规划。
-          </p>
-
-          <div className="heroBottomGrid">
-            <div className="heroMetric">
-              <span className="slashes" aria-hidden="true" />
-              <strong>87+</strong>
-              <p>覆盖国家与地区，按项目匹配仓储、清关和末端派送方案</p>
+          <div className="heroPoster">
+            <div className="heroWordmark" aria-label="大表哥">
+              大表哥
             </div>
 
-            <a className="heroProjectButton" href="#contact">
-              开始咨询项目
-            </a>
+            <img className="heroLogoImage" src="/dabiaoge-logo.png" alt="大表哥后勤多盘定制" />
 
-            <div className="heroStatement">
-              <span>后勤一步到位</span>
-              <p>
-                <strong>安全</strong> 保密 专业可靠
-              </p>
-            </div>
+            <p className="heroMicrocopy">
+              多盘项目、周边物料、包装工艺、仓储物流统一规划。
+            </p>
           </div>
 
           <div className="heroCaption">
             <h1>理解你的所有需求，安全专业。</h1>
             <p>
-              从多盘定制、包装工艺到全球物流，帮你把复杂需求拆清楚、做稳妥、交到位。
+              从定制方案到后勤交付，把复杂需求拆清楚、做稳妥、交到位。
             </p>
           </div>
+
+          <div className="heroMetric">
+            <span className="slashes" aria-hidden="true" />
+            <strong>87+</strong>
+            <p>覆盖国家与地区，按项目匹配仓储、清关和末端派送方案</p>
+          </div>
+
+          <a className="heroProjectButton" href="#contact">
+            开始咨询项目
+          </a>
         </div>
       </section>
 

@@ -237,24 +237,8 @@ video {
 .heroFrame {
   position: relative;
   z-index: 2;
-  display: grid;
   min-height: calc(100vh - 122px);
-  grid-template-rows: auto auto 1fr auto;
-  padding: 28px clamp(22px, 3vw, 48px) 42px;
-}
-
-.heroKicker {
-  display: flex;
-  justify-content: center;
-  gap: clamp(18px, 4vw, 64px);
-  color: rgba(245, 247, 251, 0.66);
-  font-size: 14px;
-  font-weight: 900;
-}
-
-.heroKicker span {
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  padding: 7px 10px;
+  padding: 14px clamp(22px, 3vw, 48px) 42px;
 }
 
 .eyebrow {
@@ -272,41 +256,55 @@ p {
   margin-top: 0;
 }
 
-.heroTitleBlock {
-  display: grid;
-  justify-items: center;
-  margin-top: 18px;
+.heroPoster {
+  position: absolute;
+  inset: 22px clamp(22px, 3vw, 48px) 42px;
 }
 
-.heroTitleBlock img {
-  width: clamp(360px, 42vw, 640px);
+.heroWordmark {
+  position: absolute;
+  top: clamp(42px, 6vh, 86px);
+  left: 0;
+  z-index: 2;
+  color: var(--accent);
+  font-size: clamp(108px, 14vw, 246px);
+  font-weight: 1000;
+  line-height: 0.82;
+  letter-spacing: 0;
+  text-shadow: 0 18px 50px rgba(255, 51, 31, 0.2);
+  white-space: nowrap;
+}
+
+.heroLogoImage {
+  position: absolute;
+  right: clamp(0px, 4vw, 92px);
+  top: clamp(170px, 18vh, 240px);
+  z-index: 1;
+  width: clamp(360px, 32vw, 520px);
   aspect-ratio: 1;
   object-fit: contain;
-  filter: drop-shadow(0 28px 70px rgba(255, 51, 31, 0.24));
+  filter: drop-shadow(0 28px 80px rgba(255, 51, 31, 0.22));
 }
 
 .heroMicrocopy {
-  justify-self: center;
-  max-width: 640px;
-  margin: 18px 0 0;
+  position: absolute;
+  top: clamp(420px, 42vh, 500px);
+  left: clamp(22px, 3vw, 48px);
+  z-index: 3;
+  max-width: 360px;
+  margin: 0;
   color: rgba(245, 247, 251, 0.68);
-  font-size: 18px;
-  font-weight: 750;
-  line-height: 1.55;
-  text-align: center;
-}
-
-.heroBottomGrid {
-  display: grid;
-  grid-template-columns: minmax(220px, 430px) minmax(260px, 420px) minmax(260px, 430px);
-  align-items: end;
-  justify-content: space-between;
-  gap: 34px;
-  margin-top: auto;
+  font-size: 15px;
+  font-weight: 760;
+  line-height: 1.6;
 }
 
 .heroMetric {
-  padding-left: 54px;
+  position: absolute;
+  left: clamp(22px, 3vw, 48px);
+  bottom: clamp(94px, 11vh, 154px);
+  z-index: 4;
+  max-width: 360px;
 }
 
 .slashes {
@@ -339,8 +337,13 @@ p {
 }
 
 .heroProjectButton {
+  position: absolute;
+  left: clamp(22px, 3vw, 48px);
+  bottom: 28px;
+  z-index: 4;
   display: inline-flex;
-  min-height: 86px;
+  width: min(360px, 32vw);
+  min-height: 78px;
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(255, 255, 255, 0.74);
@@ -359,50 +362,25 @@ p {
   transform: translateY(-3px);
 }
 
-.heroStatement {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  align-items: center;
-}
-
-.heroStatement > span {
-  color: #fff;
-  font-size: clamp(36px, 3.6vw, 62px);
-  font-weight: 1000;
-  line-height: 1.05;
-}
-
-.heroStatement p {
-  margin: 0;
-  color: #fff;
-  font-size: clamp(24px, 2.2vw, 40px);
-  font-weight: 950;
-  line-height: 1.08;
-}
-
-.heroStatement strong {
-  color: var(--accent);
-}
-
 .heroCaption {
   position: absolute;
   right: clamp(22px, 3vw, 48px);
-  bottom: clamp(148px, 15vh, 230px);
-  max-width: 740px;
+  bottom: clamp(118px, 12vh, 178px);
+  z-index: 4;
+  max-width: 610px;
 }
 
 .heroCaption h1 {
   margin-bottom: 16px;
   color: #ffffff;
-  font-size: clamp(44px, 4.4vw, 76px);
+  font-size: clamp(40px, 3.7vw, 66px);
   line-height: 1.05;
   letter-spacing: 0;
   word-break: keep-all;
 }
 
 .heroCaption p {
-  max-width: 470px;
+  max-width: 520px;
   margin: 0;
   color: rgba(245, 247, 251, 0.78);
   font-size: 16px;
@@ -629,6 +607,61 @@ p {
   .compact {
     position: static;
   }
+
+  .heroFrame {
+    min-height: auto;
+    padding-bottom: 72px;
+  }
+
+  .heroPoster,
+  .heroWordmark,
+  .heroLogoImage,
+  .heroMicrocopy,
+  .heroCaption,
+  .heroMetric,
+  .heroProjectButton {
+    position: relative;
+    inset: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    top: auto;
+  }
+
+  .heroPoster {
+    display: grid;
+    justify-items: center;
+    gap: 24px;
+  }
+
+  .heroWordmark {
+    font-size: clamp(76px, 18vw, 150px);
+    white-space: normal;
+  }
+
+  .heroLogoImage {
+    width: min(78vw, 520px);
+  }
+
+  .heroMicrocopy,
+  .heroCaption,
+  .heroMetric {
+    max-width: 720px;
+    text-align: center;
+  }
+
+  .heroMetric {
+    margin: 36px auto 0;
+  }
+
+  .slashes {
+    margin-inline: auto;
+  }
+
+  .heroProjectButton {
+    width: min(440px, 86vw);
+    margin: 24px auto 0;
+  }
 }
 
 @media (max-width: 720px) {
@@ -644,6 +677,23 @@ p {
 
   h1 {
     font-size: 48px;
+  }
+
+  .brand {
+    min-width: 0;
+  }
+
+  .brand span {
+    font-size: 22px;
+  }
+
+  .brand img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .heroCaption h1 {
+    font-size: 40px;
   }
 
   .heroLead,
