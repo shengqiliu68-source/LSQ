@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Grainient from "./components/Grainient";
 
 const customizationItems = [
   {
@@ -174,7 +175,31 @@ function App() {
         </div>
       </section>
 
-      <section className="section" id="custom">
+      <div className="belowHero">
+        <div className="belowHeroBackdrop" aria-hidden="true">
+          <Grainient
+            color1="#4d0615"
+            color2="#000000"
+            color3="#343b46"
+            timeSpeed={0.18}
+            colorBalance={-0.08}
+            warpStrength={0.8}
+            warpFrequency={4.2}
+            warpSpeed={1.2}
+            warpAmplitude={58}
+            blendAngle={-12}
+            blendSoftness={0.08}
+            rotationAmount={360}
+            noiseScale={1.8}
+            grainAmount={0.07}
+            grainScale={2.4}
+            contrast={1.32}
+            saturation={0.82}
+            zoom={0.92}
+          />
+        </div>
+
+        <section className="section" id="custom">
         <div className="contentShell sectionHeader">
           <p className="eyebrow">周边定制</p>
           <h2>周边定制模块化组合</h2>
@@ -191,9 +216,9 @@ function App() {
             </article>
           ))}
         </div>
-      </section>
+        </section>
 
-      <section className="section casesSection" id="cases">
+        <section className="section casesSection" id="cases">
         <div className="contentShell sectionHeader">
           <p className="eyebrow">精选案例</p>
           <h2>以往百万入金产品展示</h2>
@@ -210,9 +235,9 @@ function App() {
             </article>
           ))}
         </div>
-      </section>
+        </section>
 
-      <section className="section">
+        <section className="section">
         <div className="contentShell splitLayout">
           <div className="sectionHeader compact">
             <p className="eyebrow">为什么选择大表哥</p>
@@ -230,9 +255,9 @@ function App() {
             ))}
           </div>
         </div>
-      </section>
+        </section>
 
-      <section className="section logisticsSection" id="logistics">
+        <section className="section logisticsSection" id="logistics">
         <div className="contentShell sectionHeader">
           <p className="eyebrow">全球交付</p>
           <h2>全球物流与仓储优势</h2>
@@ -248,9 +273,9 @@ function App() {
             </article>
           ))}
         </div>
-      </section>
+        </section>
 
-      <section className="contact" id="contact">
+        <section className="contact" id="contact">
         <div className="contentShell contactInner">
           <p className="eyebrow">开始项目</p>
           <h2>把你的企业礼盒需求、目标国家和预算发给我们。</h2>
@@ -263,7 +288,8 @@ function App() {
             <span>多盘后勤定制、仓储与全球快递交付</span>
           </div>
         </div>
-      </section>
+        </section>
+      </div>
     </main>
   );
 }

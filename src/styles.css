@@ -50,6 +50,37 @@ video {
   margin: 0 auto;
 }
 
+.belowHero {
+  position: relative;
+  isolation: isolate;
+  background: #05070a;
+}
+
+.belowHeroBackdrop {
+  position: sticky;
+  top: 0;
+  z-index: 0;
+  height: 100vh;
+  margin-bottom: -100vh;
+  overflow: hidden;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.belowHeroBackdrop::after {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(5, 7, 10, 0.12), rgba(5, 7, 10, 0.34)),
+    radial-gradient(circle at 50% 45%, transparent 0 32%, rgba(5, 7, 10, 0.24) 100%);
+  content: "";
+}
+
+.belowHero > section {
+  position: relative;
+  z-index: 1;
+}
+
 .hero {
   position: relative;
   display: flex;
@@ -517,14 +548,14 @@ p {
 
 .section {
   padding: 130px 0;
-  background: #07090d;
+  background: rgba(7, 9, 13, 0.62);
 }
 
 .casesSection,
 .logisticsSection {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 42%),
-    linear-gradient(90deg, rgba(255, 44, 31, 0.09), transparent 46%), #07090d;
+    linear-gradient(90deg, rgba(255, 44, 31, 0.09), transparent 46%), rgba(7, 9, 13, 0.56);
 }
 
 .sectionHeader {
@@ -679,7 +710,7 @@ p {
   align-items: center;
   background:
     linear-gradient(120deg, rgba(255, 44, 31, 0.16), transparent 36%),
-    linear-gradient(300deg, rgba(255, 157, 42, 0.12), transparent 42%), #05070a;
+    linear-gradient(300deg, rgba(255, 157, 42, 0.12), transparent 42%), rgba(5, 7, 10, 0.62);
 }
 
 .contactInner {
