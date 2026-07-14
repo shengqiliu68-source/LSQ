@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BorderGlow from "./components/BorderGlow";
 import Grainient from "./components/Grainient";
 
@@ -84,6 +86,128 @@ const borderGlowTheme = {
 
 function App() {
   const [isNavFloating, setIsNavFloating] = useState(false);
+  const appRef = useRef<HTMLElement>(null);
+
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      gsap.set(".opening", { display: "none" });
+      return;
+    }
+
+    const context = gsap.context(() => {
+      const opening = gsap.timeline({ defaults: { ease: "power4.inOut" } });
+      opening
+        .fromTo(".openingIndex", { yPercent: 120 }, { yPercent: 0, duration: 0.8 })
+        .fromTo(
+          ".openingTitleLine > span",
+          { yPercent: 115, rotate: 4 },
+          { yPercent: 0, rotate: 0, duration: 1.15, stagger: 0.12 },
+          0.18
+        )
+        .to(".openingBar", { scaleX: 1, duration: 1.15 }, 0.4)
+        .to(".openingTitle", { yPercent: -18, opacity: 0, duration: 0.7 }, "+=0.32")
+        .to(".openingPanel", { yPercent: -100, duration: 1.25, stagger: 0.08 }, "<")
+        .set(".opening", { display: "none" })
+        .fromTo(
+          ".nav",
+          { y: -35, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.9, ease: "power3.out" },
+          "-=0.45"
+        )
+        .fromTo(
+          ".heroWordmark > span",
+          { yPercent: 120, skewY: 5 },
+          { yPercent: 0, skewY: 0, duration: 1.2, stagger: 0.13, ease: "power4.out" },
+          "-=0.72"
+        )
+        .fromTo(
+          ".heroMicrocopy, .heroMetric, .heroActions",
+          { y: 50, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1, stagger: 0.12, ease: "power3.out" },
+          "-=0.78"
+        )
+        .fromTo(
+          ".heroLogoImage",
+          { scale: 0.72, rotate: -8, opacity: 0 },
+          { scale: 1, rotate: 0, opacity: 0.3, duration: 1.6, ease: "power3.out" },
+          "-=1.2"
+        );
+
+      gsap.to(".heroPoster", {
+        yPercent: 16,
+        ease: "none",
+        scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: 1.4 },
+      });
+
+      gsap.utils.toArray<HTMLElement>(".motionSection").forEach((section) => {
+        const heading = section.querySelector(".sectionHeader h2, .contactInner h2");
+        const eyebrow = section.querySelector(".eyebrow");
+        const description = section.querySelector(
+          ".sectionHeader > p:last-child, .contactInner > p:last-of-type"
+        );
+        const cards = section.querySelectorAll<HTMLElement>(".motionCard");
+
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: "top 78%",
+            once: true,
+          },
+        });
+
+        timeline
+          .fromTo(
+            eyebrow,
+            { x: -70, opacity: 0 },
+            { x: 0, opacity: 1, duration: 0.75, ease: "power3.out" }
+          )
+          .fromTo(
+            heading,
+            { yPercent: 105, skewY: 7, rotateX: -28 },
+            { yPercent: 0, skewY: 0, rotateX: 0, duration: 1.15, ease: "power4.out" },
+            "-=0.42"
+          )
+          .fromTo(
+            description,
+            { y: 36, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.85 },
+            "-=0.68"
+          )
+          .fromTo(
+            cards,
+            { y: 120, scaleY: 0.72, clipPath: "inset(100% 0 0 0)", transformOrigin: "50% 100%" },
+            {
+              y: 0,
+              scaleY: 1,
+              clipPath: "inset(0% 0 0 0)",
+              duration: 1.15,
+              stagger: 0.13,
+              ease: "power4.out",
+            },
+            "-=0.44"
+          );
+      });
+
+      gsap.utils.toArray<HTMLElement>(".caseCardContent").forEach((card) => {
+        const image = card.querySelector("img");
+        gsap.fromTo(
+          image,
+          { scale: 1.18, yPercent: -5 },
+          {
+            scale: 1.04,
+            yPercent: 5,
+            ease: "none",
+            scrollTrigger: { trigger: card, start: "top bottom", end: "bottom top", scrub: 1.5 },
+          }
+        );
+      });
+    }, appRef);
+
+    return () => context.revert();
+  }, []);
 
   useEffect(() => {
     const updateNavPosition = () => {
@@ -103,15 +227,23 @@ function App() {
   }, []);
 
   return (
-    <main>
+    <main ref={appRef}>
+      <div className="opening" aria-hidden="true">
+        <div className="openingPanel openingPanelLeft" />
+        <div className="openingPanel openingPanelRight" />
+        <div className="openingTitle">
+          <span className="openingIndex">DABIAOGE® / 2026</span>
+          <div className="openingTitleLine">
+            <span>GLOBAL</span>
+          </div>
+          <div className="openingTitleLine isAccent">
+            <span>CUSTOM STUDIO</span>
+          </div>
+          <span className="openingBar" />
+        </div>
+      </div>
       <section className="hero" id="top">
-        <video
-          className="heroVideo"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
+        <video className="heroVideo" autoPlay muted loop playsInline>
           <source src="/hero-background.mp4" type="video/mp4" />
         </video>
         <div className="heroShade" />
@@ -212,109 +344,101 @@ function App() {
           />
         </div>
 
-        <section className="section" id="custom">
-        <div className="contentShell sectionHeader">
-          <p className="eyebrow">周边定制</p>
-          <h2>周边定制模块化组合</h2>
-          <p>
-            从外部第一眼到内部每件产品，都围绕品牌、预算、场景和交付国家做整体设计。
-          </p>
-        </div>
-        <div className="contentShell customGrid">
-          {customizationItems.map((item) => (
-            <BorderGlow
-              {...borderGlowTheme}
-              className="featureCard"
-              key={item.title}
-            >
-              <article className="featureCardContent">
-                <span>{item.label}</span>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </article>
-            </BorderGlow>
-          ))}
-        </div>
-        </section>
-
-        <section className="section casesSection" id="cases">
-        <div className="contentShell sectionHeader">
-          <p className="eyebrow">精选案例</p>
-          <h2>以往百万入金产品展示</h2>
-          <p>拿真实数据说话！</p>
-        </div>
-        <div className="contentShell caseGrid">
-          {cases.map((item) => (
-            <BorderGlow {...borderGlowTheme} className="caseCard" key={item.title}>
-              <article className="caseCardContent">
-                <img src={item.image} alt={item.title} />
-                <div>
-                  <span>{item.tag}</span>
-                  <h3>{item.title}</h3>
-                </div>
-              </article>
-            </BorderGlow>
-          ))}
-        </div>
-        </section>
-
-        <section className="section">
-        <div className="contentShell splitLayout">
-          <div className="sectionHeader compact">
-            <p className="eyebrow">为什么选择大表哥</p>
-            <h2>业务优势</h2>
-            <p>
-              面向非标准化企业礼品项目，我们更关注稳定执行、细节保密和最终交付体验。
-            </p>
+        <section className="section motionSection" id="custom">
+          <div className="contentShell sectionHeader">
+            <p className="eyebrow">周边定制</p>
+            <h2>周边定制模块化组合</h2>
+            <p>从外部第一眼到内部每件产品，都围绕品牌、预算、场景和交付国家做整体设计。</p>
           </div>
-          <div className="strengthGrid">
-            {strengths.map((item, index) => (
-              <BorderGlow {...borderGlowTheme} className="numberCard" key={item}>
-                <article className="numberCardContent">
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <p>{item}</p>
+          <div className="contentShell customGrid">
+            {customizationItems.map((item) => (
+              <BorderGlow {...borderGlowTheme} className="featureCard motionCard" key={item.title}>
+                <article className="featureCardContent">
+                  <span>{item.label}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
                 </article>
               </BorderGlow>
             ))}
           </div>
-        </div>
         </section>
 
-        <section className="section logisticsSection" id="logistics">
-        <div className="contentShell sectionHeader">
-          <p className="eyebrow">全球交付</p>
-          <h2>全球物流与仓储优势</h2>
-          <p>
-            不管收件人在哪个国家，都以项目为单位规划仓储、清关、末端派送与状态反馈。
-          </p>
-        </div>
-        <div className="contentShell logisticsGrid">
-          {logistics.map((item) => (
-            <BorderGlow {...borderGlowTheme} className="logisticsCard" key={item.title}>
-              <article className="logisticsCardContent">
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
-            </BorderGlow>
-          ))}
-        </div>
+        <section className="section casesSection motionSection" id="cases">
+          <div className="contentShell sectionHeader">
+            <p className="eyebrow">精选案例</p>
+            <h2>以往百万入金产品展示</h2>
+            <p>拿真实数据说话！</p>
+          </div>
+          <div className="contentShell caseGrid">
+            {cases.map((item) => (
+              <BorderGlow {...borderGlowTheme} className="caseCard motionCard" key={item.title}>
+                <article className="caseCardContent">
+                  <img src={item.image} alt={item.title} />
+                  <div>
+                    <span>{item.tag}</span>
+                    <h3>{item.title}</h3>
+                  </div>
+                </article>
+              </BorderGlow>
+            ))}
+          </div>
         </section>
 
-        <section className="contact" id="contact">
-        <div className="contentShell contactInner">
-          <p className="eyebrow">开始项目</p>
-          <h2>把你的企业礼盒需求、目标国家和预算发给我们。</h2>
-          <p>
-            我们可以先给出产品组合建议、包装方向、LOGO 工艺和全球配送路径，再进入打样与报价。
-          </p>
-          <BorderGlow {...borderGlowTheme} className="contactGlow">
-            <div className="contactPanel">
-              <a href="mailto:hello@example.com">hello@example.com</a>
-              <span>WhatsApp / WeChat: +86 000 0000 0000</span>
-              <span>多盘后勤定制、仓储与全球快递交付</span>
+        <section className="section motionSection">
+          <div className="contentShell splitLayout">
+            <div className="sectionHeader compact">
+              <p className="eyebrow">为什么选择大表哥</p>
+              <h2>业务优势</h2>
+              <p>面向非标准化企业礼品项目，我们更关注稳定执行、细节保密和最终交付体验。</p>
             </div>
-          </BorderGlow>
-        </div>
+            <div className="strengthGrid">
+              {strengths.map((item, index) => (
+                <BorderGlow {...borderGlowTheme} className="numberCard motionCard" key={item}>
+                  <article className="numberCardContent">
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                    <p>{item}</p>
+                  </article>
+                </BorderGlow>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section logisticsSection motionSection" id="logistics">
+          <div className="contentShell sectionHeader">
+            <p className="eyebrow">全球交付</p>
+            <h2>全球物流与仓储优势</h2>
+            <p>不管收件人在哪个国家，都以项目为单位规划仓储、清关、末端派送与状态反馈。</p>
+          </div>
+          <div className="contentShell logisticsGrid">
+            {logistics.map((item) => (
+              <BorderGlow
+                {...borderGlowTheme}
+                className="logisticsCard motionCard"
+                key={item.title}
+              >
+                <article className="logisticsCardContent">
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </article>
+              </BorderGlow>
+            ))}
+          </div>
+        </section>
+
+        <section className="contact motionSection" id="contact">
+          <div className="contentShell contactInner">
+            <p className="eyebrow">开始项目</p>
+            <h2>把你的企业礼盒需求、目标国家和预算发给我们。</h2>
+            <p>我们可以先给出产品组合建议、包装方向、LOGO 工艺和全球配送路径，再进入打样与报价。</p>
+            <BorderGlow {...borderGlowTheme} className="contactGlow motionCard">
+              <div className="contactPanel">
+                <a href="mailto:hello@example.com">hello@example.com</a>
+                <span>WhatsApp / WeChat: +86 000 0000 0000</span>
+                <span>多盘后勤定制、仓储与全球快递交付</span>
+              </div>
+            </BorderGlow>
+          </div>
         </section>
       </div>
     </main>
