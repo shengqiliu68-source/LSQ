@@ -28,8 +28,8 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(circle at 18% 18%, rgba(105, 210, 231, 0.16), transparent 30%),
-    radial-gradient(circle at 82% 8%, rgba(168, 230, 207, 0.11), transparent 28%), #07090d;
+    radial-gradient(circle at 18% 18%, rgba(255, 51, 31, 0.16), transparent 30%),
+    radial-gradient(circle at 82% 8%, rgba(255, 51, 31, 0.08), transparent 28%), #07090d;
 }
 
 a {
@@ -114,20 +114,35 @@ video {
 }
 
 .brand {
-  display: grid;
-  gap: 3px;
-  min-width: 190px;
+  display: inline-flex;
+  min-width: 230px;
+  align-items: center;
+  gap: 14px;
 }
 
 .brand span {
-  font-size: 30px;
+  display: grid;
+  gap: 2px;
+  color: #fff;
+  font-size: 28px;
   font-weight: 900;
   letter-spacing: 0;
 }
 
+.brand img {
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(255, 51, 31, 0.46);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 35%;
+  box-shadow: 0 0 28px rgba(255, 51, 31, 0.22);
+}
+
 .brand small {
-  color: var(--muted);
-  font-size: 12px;
+  color: rgba(245, 247, 251, 0.76);
+  font-size: 14px;
+  font-weight: 760;
 }
 
 .navLinks {
@@ -136,7 +151,7 @@ video {
   justify-content: center;
   gap: 54px;
   color: rgba(245, 247, 251, 0.74);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 800;
 }
 
@@ -231,9 +246,9 @@ video {
 .heroKicker {
   display: flex;
   justify-content: center;
-  gap: clamp(26px, 7vw, 120px);
+  gap: clamp(18px, 4vw, 64px);
   color: rgba(245, 247, 251, 0.66);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 900;
 }
 
@@ -248,7 +263,6 @@ video {
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
 }
 
 h1,
@@ -260,29 +274,26 @@ p {
 
 .heroTitleBlock {
   display: grid;
-  margin-top: 14px;
-  color: var(--accent);
-  font-size: clamp(88px, 16.4vw, 292px);
-  font-weight: 1000;
-  line-height: 0.74;
-  letter-spacing: 0;
-  text-transform: uppercase;
+  justify-items: center;
+  margin-top: 18px;
 }
 
-.heroTitleBlock span {
-  display: block;
-  transform: scaleX(1.18);
-  transform-origin: left center;
+.heroTitleBlock img {
+  width: clamp(360px, 42vw, 640px);
+  aspect-ratio: 1;
+  object-fit: contain;
+  filter: drop-shadow(0 28px 70px rgba(255, 51, 31, 0.24));
 }
 
 .heroMicrocopy {
   justify-self: center;
-  max-width: 430px;
-  margin: 22px 14% 0 0;
+  max-width: 640px;
+  margin: 18px 0 0;
   color: rgba(245, 247, 251, 0.68);
-  font-size: 13px;
-  font-weight: 650;
-  line-height: 1.35;
+  font-size: 18px;
+  font-weight: 750;
+  line-height: 1.55;
+  text-align: center;
 }
 
 .heroBottomGrid {
@@ -323,7 +334,7 @@ p {
   max-width: 315px;
   margin: 18px 0 0;
   color: rgba(245, 247, 251, 0.86);
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.45;
 }
 
@@ -335,7 +346,7 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.74);
   background: #f5f7fb;
   color: #07090d;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 1000;
   transition:
     transform 180ms ease,
@@ -350,16 +361,16 @@ p {
 
 .heroStatement {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 18px;
+  grid-template-columns: 1fr;
+  gap: 12px;
   align-items: center;
 }
 
 .heroStatement > span {
   color: #fff;
-  font-size: clamp(52px, 5.6vw, 96px);
+  font-size: clamp(36px, 3.6vw, 62px);
   font-weight: 1000;
-  line-height: 0.82;
+  line-height: 1.05;
 }
 
 .heroStatement p {
@@ -378,15 +389,16 @@ p {
   position: absolute;
   right: clamp(22px, 3vw, 48px);
   bottom: clamp(148px, 15vh, 230px);
-  max-width: 560px;
+  max-width: 740px;
 }
 
 .heroCaption h1 {
   margin-bottom: 16px;
   color: #ffffff;
-  font-size: clamp(28px, 3.2vw, 56px);
+  font-size: clamp(44px, 4.4vw, 76px);
   line-height: 1.05;
   letter-spacing: 0;
+  word-break: keep-all;
 }
 
 .heroCaption p {
