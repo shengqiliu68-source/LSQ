@@ -81,10 +81,14 @@ body {
 
 .openingTitleLine {
   overflow: hidden;
-  font-size: clamp(58px, 11.2vw, 190px);
+  font-size: clamp(58px, 9vw, 160px);
   font-weight: 1000;
-  line-height: 0.78;
-  letter-spacing: -0.075em;
+  line-height: 0.96;
+  letter-spacing: 0.015em;
+}
+
+.openingTitleLine + .openingTitleLine {
+  margin-top: clamp(18px, 2.4vh, 34px);
 }
 
 .openingTitleLine > span {
