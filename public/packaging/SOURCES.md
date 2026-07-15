@@ -6,5 +6,6 @@ These images are used only for the owner's non-commercial classroom exercise. Ea
 - `drawer-*`: [Luxury Pull-Out Rigid Drawer Gift Box](https://www.alibaba.com/product-detail/Luxury-Custom-Printed-Logo-Pull-Out_1601041027937.html)
 - `wood-*`: [Custom Wooden Gift Boxes](https://www.alibaba.com/product-detail/Wood-packing-boxes-custom-logo-box_1600438652360.html)
 - `book-*`: [Book-Shaped Gift Packaging Box](https://www.alibaba.com/product-detail/Book-shaped-gift-packaging-box-decorative_60652890042.html)
+- `catalog-*`: individual product thumbnails from the [Alibaba luxury gift box packaging search results](https://www.alibaba.com/trade/search?SearchText=luxury+gift+box+packaging). Each catalog card uses a different search-result image.
 
 Do not reuse these assets for a production or commercial deployment without permission from the respective suppliers.

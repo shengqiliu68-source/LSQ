@@ -212,7 +212,28 @@ const packaging: Item[] = [
     image: giftImages.festive,
     video: "/hero-background.mp4",
   },
+  {
+    id: "pkg-19",
+    name: "手提抽屉首饰礼盒",
+    category: "51-100元",
+    price: 72,
+    description: "抽屉与手提结构结合，适合首饰、小型纪念品和活动伴手礼。",
+    craft: "抽拉结构、织带提手、烫金 LOGO、EVA 内托",
+  },
+  {
+    id: "pkg-20",
+    name: "翻盖丝带收藏礼盒",
+    category: "100元以上",
+    price: 138,
+    description: "大开合翻盖搭配丝带闭合，兼顾展示效果与收藏属性。",
+    craft: "硬质灰板、磁吸翻盖、缎带闭合、植绒内托",
+    video: "/hero-background.mp4",
+  },
 ];
+
+packaging.forEach((item, index) => {
+  item.image = `/packaging/catalog-${String(index + 1).padStart(2, "0")}.webp`;
+});
 
 const products: Item[] = [
   {
@@ -395,10 +416,10 @@ function ProductCard({
 }
 
 function getPackagingFamily(item: Item): keyof typeof giftGalleries | undefined {
-  if (!item.image) return undefined;
-  return (Object.keys(giftGalleries) as Array<keyof typeof giftGalleries>).find((family) =>
-    item.image?.includes(`/packaging/${family}-`)
-  );
+  if (/抽屉|双层|多层|机关/.test(item.name)) return "drawer";
+  if (/木质|木盒/.test(item.name)) return "wood";
+  if (/书型|皮纹/.test(item.name)) return "book";
+  return "magnetic";
 }
 
 function getAttributes(item: Item, family?: keyof typeof giftGalleries) {
