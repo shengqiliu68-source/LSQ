@@ -361,7 +361,7 @@ function App() {
           </div>
 
           <div className="heroActions" aria-label="首屏快捷入口">
-            <a className="heroProjectButton isPrimary" href="#contact">
+            <a className="heroProjectButton isPrimary" href="/custom-product">
               定制你的产品
             </a>
             <a className="heroProjectButton" href="#cases">

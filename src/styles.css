@@ -1214,3 +1214,440 @@ p {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Product custom page */
+.productPage {
+  min-height: 100vh;
+  overflow: hidden;
+  background: #07090d;
+  color: #f5f7fb;
+}
+.productPage::before {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 120px 120px;
+  content: "";
+  pointer-events: none;
+}
+.productPage > * {
+  position: relative;
+  z-index: 1;
+}
+.innerNav {
+  display: flex;
+  min-height: 112px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  gap: 28px;
+}
+.innerNavLinks {
+  display: flex;
+  gap: 48px;
+  color: #aeb5c0;
+  font-size: 13px;
+  font-weight: 800;
+}
+.innerNavLinks a:hover {
+  color: var(--accent-strong);
+}
+.productHero {
+  display: grid;
+  min-height: calc(100vh - 112px);
+  grid-template-columns: 1.04fr 0.96fr;
+  align-items: center;
+  gap: clamp(40px, 6vw, 110px);
+  padding-block: 70px;
+}
+.productHeroCopy h1 {
+  max-width: 900px;
+  margin: 0 0 32px;
+  font-size: clamp(62px, 7vw, 126px);
+  font-weight: 1000;
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+.productHeroCopy h1 span {
+  background: var(--accent-gradient);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+}
+.productHeroCopy > p:last-of-type {
+  max-width: 670px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.8;
+}
+.productHeroActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 42px;
+}
+.productHeroActions a {
+  min-height: 60px;
+}
+.productHeroVisual {
+  position: relative;
+  height: min(680px, 70vh);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.025);
+}
+.productHeroVisual::before {
+  position: absolute;
+  inset: 9%;
+  z-index: -1;
+  background: rgba(255, 44, 31, 0.24);
+  filter: blur(90px);
+  content: "";
+}
+.productHeroVisual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.75) contrast(1.1);
+}
+.productHeroVisual::after {
+  position: absolute;
+  inset: 18px;
+  background: linear-gradient(180deg, rgba(3, 4, 7, 0.1), transparent 45%, rgba(3, 4, 7, 0.8));
+  content: "";
+}
+.visualIndex {
+  position: absolute;
+  top: -28px;
+  right: 0;
+  color: #767e89;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+}
+.visualBadge {
+  position: absolute;
+  right: -24px;
+  bottom: 42px;
+  z-index: 2;
+  display: grid;
+  min-width: 210px;
+  gap: 5px;
+  border: 1px solid rgba(255, 90, 24, 0.65);
+  padding: 24px;
+  background: rgba(7, 9, 13, 0.88);
+  backdrop-filter: blur(16px);
+}
+.visualBadge strong {
+  color: var(--accent-strong);
+  font-size: 34px;
+}
+.visualBadge span {
+  color: #cbd1da;
+  font-size: 13px;
+}
+.productSection {
+  padding: 130px 0;
+  border-top: 1px solid var(--line);
+}
+.innerSectionHeader {
+  display: grid;
+  grid-template-columns: 1fr minmax(300px, 570px);
+  align-items: end;
+  gap: 60px;
+  margin-bottom: 58px;
+}
+.innerSectionHeader h2,
+.craftCopy h2,
+.briefLayout h2 {
+  margin: 0;
+  font-size: clamp(42px, 4.6vw, 78px);
+  line-height: 1.04;
+}
+.innerSectionHeader > p,
+.craftCopy > p:last-of-type,
+.briefLayout > div > p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.75;
+}
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.categoryCard {
+  position: relative;
+  min-height: 285px;
+  border: 1px solid var(--line);
+  padding: 30px;
+  background: var(--panel-gradient);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    transform 0.2s,
+    background 0.2s;
+}
+.categoryCard:hover,
+.categoryCard.isSelected {
+  border-color: var(--accent-strong);
+  background: linear-gradient(145deg, rgba(255, 44, 31, 0.18), rgba(8, 9, 13, 0.82) 52%);
+  transform: translateY(-4px);
+}
+.categoryCard > span {
+  color: var(--accent-strong);
+  font-size: 12px;
+  font-weight: 900;
+}
+.categoryCard h3 {
+  margin: 54px 0 16px;
+  font-size: 28px;
+}
+.categoryCard p {
+  max-width: 330px;
+  margin: 0;
+  color: #aeb6c2;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.categoryCard i {
+  position: absolute;
+  right: 28px;
+  bottom: 25px;
+  color: #747c87;
+  font-size: 22px;
+  font-style: normal;
+}
+.craftSection {
+  background: linear-gradient(110deg, rgba(255, 44, 31, 0.08), transparent 40%);
+}
+.craftLayout {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  align-items: center;
+  gap: clamp(50px, 8vw, 140px);
+}
+.craftImage {
+  height: 670px;
+  border: 1px solid var(--line);
+  padding: 16px;
+}
+.craftImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.craftCopy h2 {
+  max-width: 800px;
+  margin-bottom: 30px;
+}
+.craftCopy > p:last-of-type {
+  max-width: 700px;
+}
+.craftTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 38px;
+}
+.craftTags span {
+  border: 1px solid var(--line);
+  padding: 14px 17px;
+  background: rgba(255, 255, 255, 0.035);
+  color: #d7dce4;
+  font-size: 13px;
+}
+.processGrid {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: repeat(6, 1fr);
+  list-style: none;
+}
+.processGrid li {
+  position: relative;
+  display: grid;
+  min-height: 190px;
+  align-content: space-between;
+  border-top: 1px solid rgba(255, 90, 24, 0.72);
+  border-right: 1px solid var(--line);
+  padding: 24px 20px;
+}
+.processGrid li::before {
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent-strong);
+  content: "";
+}
+.processGrid span {
+  color: #7e8692;
+  font-size: 12px;
+}
+.processGrid strong {
+  font-size: 19px;
+}
+.briefSection {
+  padding: 130px 0;
+  background: linear-gradient(120deg, rgba(255, 44, 31, 0.17), transparent 42%), #05070a;
+}
+.briefLayout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: start;
+  gap: clamp(60px, 9vw, 150px);
+}
+.briefLayout h2 {
+  max-width: 590px;
+  margin-bottom: 26px;
+}
+.briefForm {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  border: 1px solid var(--line);
+  padding: 28px;
+  background: rgba(7, 9, 13, 0.76);
+}
+.briefForm label {
+  display: grid;
+  gap: 9px;
+}
+.briefForm label span {
+  color: #aeb5c0;
+  font-size: 12px;
+  font-weight: 800;
+}
+.briefForm input,
+.briefForm textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--line);
+  outline: none;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.035);
+  color: #fff;
+  font: inherit;
+  resize: vertical;
+}
+.briefForm input:focus,
+.briefForm textarea:focus {
+  border-color: var(--accent-strong);
+}
+.briefForm .isWide {
+  grid-column: 1/-1;
+}
+.briefForm button {
+  min-height: 60px;
+  cursor: pointer;
+}
+.innerFooter {
+  display: flex;
+  min-height: 160px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  color: #949ca8;
+  font-size: 13px;
+}
+.innerFooter .brand img {
+  width: 42px;
+  height: 42px;
+}
+.innerFooter .brand span {
+  font-size: 20px;
+}
+@media (max-width: 1000px) {
+  .innerNavLinks {
+    display: none;
+  }
+  .productHero,
+  .craftLayout,
+  .briefLayout {
+    grid-template-columns: 1fr;
+  }
+  .productHero {
+    padding-top: 90px;
+  }
+  .productHeroVisual {
+    height: 560px;
+  }
+  .categoryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .innerSectionHeader {
+    grid-template-columns: 1fr;
+  }
+  .processGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 680px) {
+  .innerNav {
+    min-height: 86px;
+  }
+  .innerNav .navButton {
+    display: none;
+  }
+  .productHero {
+    min-height: auto;
+    padding-block: 70px;
+  }
+  .productHeroCopy h1 {
+    font-size: clamp(48px, 14vw, 72px);
+  }
+  .productHeroActions {
+    display: grid;
+  }
+  .productHeroVisual {
+    height: 430px;
+  }
+  .visualBadge {
+    right: 8px;
+  }
+  .productSection,
+  .briefSection {
+    padding: 86px 0;
+  }
+  .innerSectionHeader {
+    gap: 22px;
+    margin-bottom: 38px;
+  }
+  .categoryGrid {
+    grid-template-columns: 1fr;
+  }
+  .categoryCard {
+    min-height: 230px;
+  }
+  .categoryCard h3 {
+    margin-top: 38px;
+  }
+  .craftImage {
+    height: 430px;
+  }
+  .processGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .briefForm {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+  .briefForm label {
+    grid-column: 1/-1;
+  }
+  .innerFooter {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-block: 48px;
+  }
+  .innerFooter p {
+    margin: 0;
+  }
+}
