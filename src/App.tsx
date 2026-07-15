@@ -93,15 +93,31 @@ function App() {
     const video = heroVideoRef.current;
     if (!video) return;
 
+    const cleanLoopEnd = 2.25;
+    let videoFrameId: number | undefined;
+
     const loopBeforeEmbeddedTitle = () => {
-      if (video.currentTime >= 3.45) {
+      if (video.currentTime >= cleanLoopEnd) {
         video.currentTime = 0.05;
         void video.play();
       }
     };
 
-    video.addEventListener("timeupdate", loopBeforeEmbeddedTitle);
-    return () => video.removeEventListener("timeupdate", loopBeforeEmbeddedTitle);
+    const monitorVideoFrame = () => {
+      loopBeforeEmbeddedTitle();
+      videoFrameId = video.requestVideoFrameCallback(monitorVideoFrame);
+    };
+
+    if ("requestVideoFrameCallback" in video) {
+      videoFrameId = video.requestVideoFrameCallback(monitorVideoFrame);
+    } else {
+      video.addEventListener("timeupdate", loopBeforeEmbeddedTitle);
+    }
+
+    return () => {
+      if (videoFrameId !== undefined) video.cancelVideoFrameCallback(videoFrameId);
+      video.removeEventListener("timeupdate", loopBeforeEmbeddedTitle);
+    };
   }, []);
 
   useLayoutEffect(() => {
