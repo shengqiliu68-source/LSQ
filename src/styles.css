@@ -242,7 +242,7 @@ video {
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(22px) saturate(145%);
   transform: translateX(-50%);
-  animation: navFloatIn 240ms ease-out both;
+  animation: navFloatIn 160ms ease-out both;
   -webkit-backdrop-filter: blur(22px) saturate(145%);
 }
 
@@ -316,7 +316,7 @@ video {
 }
 
 .navLinks a {
-  transition: color 180ms ease;
+  transition: color 130ms ease;
 }
 
 .navLinks a:hover,
@@ -370,11 +370,11 @@ video {
   font-size: 12px;
   font-weight: 900;
   transition:
-    transform 180ms ease,
-    border-color 180ms ease,
-    background 180ms ease,
-    color 180ms ease,
-    box-shadow 180ms ease;
+    transform 130ms ease,
+    border-color 130ms ease,
+    background 130ms ease,
+    color 130ms ease,
+    box-shadow 130ms ease;
 }
 
 .navButton,
@@ -597,10 +597,10 @@ p {
   font-weight: 1000;
   white-space: nowrap;
   transition:
-    transform 180ms ease,
-    border-color 180ms ease,
-    background 180ms ease,
-    color 180ms ease;
+    transform 130ms ease,
+    border-color 130ms ease,
+    background 130ms ease,
+    color 130ms ease;
 }
 
 .heroProjectButton.isPrimary {
@@ -744,7 +744,7 @@ p {
   height: 100%;
   object-fit: cover;
   opacity: 0.82;
-  transition: transform 500ms ease;
+  transition: transform 280ms ease;
 }
 
 .caseCardContent::after {
@@ -846,11 +846,11 @@ p {
 
 .contactPanel a {
   transition:
-    transform 180ms ease,
-    border-color 180ms ease,
-    background 180ms ease,
-    color 180ms ease,
-    box-shadow 180ms ease;
+    transform 130ms ease,
+    border-color 130ms ease,
+    background 130ms ease,
+    color 130ms ease,
+    box-shadow 130ms ease;
 }
 
 .contactPanel a:hover,

@@ -163,10 +163,12 @@ function App() {
           "-=0.72"
         );
 
+      opening.timeScale(1.18);
+
       gsap.to(".heroPoster", {
         yPercent: 16,
         ease: "none",
-        scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: 1.4 },
+        scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: 0.6 },
       });
 
       gsap.utils.toArray<HTMLElement>(".motionSection").forEach((section) => {
@@ -180,7 +182,7 @@ function App() {
         const timeline = gsap.timeline({
           scrollTrigger: {
             trigger: section,
-            start: "top 78%",
+            start: "top 88%",
             once: true,
           },
         });
@@ -189,7 +191,7 @@ function App() {
           timeline.fromTo(
             eyebrow,
             { x: -70, opacity: 0 },
-            { x: 0, opacity: 1, duration: 0.75, ease: "power3.out" }
+            { x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }
           );
         }
 
@@ -197,8 +199,8 @@ function App() {
           timeline.fromTo(
             heading,
             { yPercent: 105, skewY: 7, rotateX: -28 },
-            { yPercent: 0, skewY: 0, rotateX: 0, duration: 1.15, ease: "power4.out" },
-            "-=0.42"
+            { yPercent: 0, skewY: 0, rotateX: 0, duration: 0.55, ease: "power4.out" },
+            "-=0.18"
           );
         }
 
@@ -206,8 +208,8 @@ function App() {
           timeline.fromTo(
             description,
             { y: 36, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.85 },
-            "-=0.68"
+            { y: 0, opacity: 1, duration: 0.35 },
+            "-=0.32"
           );
         }
 
@@ -219,11 +221,11 @@ function App() {
               y: 0,
               scaleY: 1,
               clipPath: "inset(0% 0 0 0)",
-              duration: 1.15,
-              stagger: 0.13,
+              duration: 0.55,
+              stagger: 0.05,
               ease: "power4.out",
             },
-            "-=0.44"
+            "-=0.2"
           );
         }
       });
@@ -239,7 +241,7 @@ function App() {
             scale: 1.04,
             yPercent: 5,
             ease: "none",
-            scrollTrigger: { trigger: card, start: "top bottom", end: "bottom top", scrub: 1.5 },
+            scrollTrigger: { trigger: card, start: "top bottom", end: "bottom top", scrub: 0.65 },
           }
         );
       });
@@ -365,11 +367,11 @@ function App() {
             color1="#4d0615"
             color2="#000000"
             color3="#343b46"
-            timeSpeed={0.18}
+            timeSpeed={0.3}
             colorBalance={-0.08}
             warpStrength={0.8}
             warpFrequency={4.2}
-            warpSpeed={1.2}
+            warpSpeed={1.8}
             warpAmplitude={58}
             blendAngle={-12}
             blendSoftness={0.08}
