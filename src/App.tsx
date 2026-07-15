@@ -108,15 +108,10 @@ function App() {
       videoFrameId = video.requestVideoFrameCallback(monitorVideoFrame);
     };
 
-    if ("requestVideoFrameCallback" in video) {
-      videoFrameId = video.requestVideoFrameCallback(monitorVideoFrame);
-    } else {
-      video.addEventListener("timeupdate", loopBeforeEmbeddedTitle);
-    }
+    videoFrameId = video.requestVideoFrameCallback(monitorVideoFrame);
 
     return () => {
       if (videoFrameId !== undefined) video.cancelVideoFrameCallback(videoFrameId);
-      video.removeEventListener("timeupdate", loopBeforeEmbeddedTitle);
     };
   }, []);
 
