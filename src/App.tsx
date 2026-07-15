@@ -87,6 +87,22 @@ const borderGlowTheme = {
 function App() {
   const [isNavFloating, setIsNavFloating] = useState(false);
   const appRef = useRef<HTMLElement>(null);
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = heroVideoRef.current;
+    if (!video) return;
+
+    const loopBeforeEmbeddedTitle = () => {
+      if (video.currentTime >= 3.45) {
+        video.currentTime = 0.05;
+        void video.play();
+      }
+    };
+
+    video.addEventListener("timeupdate", loopBeforeEmbeddedTitle);
+    return () => video.removeEventListener("timeupdate", loopBeforeEmbeddedTitle);
+  }, []);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -255,7 +271,7 @@ function App() {
         </div>
       </div>
       <section className="hero" id="top">
-        <video className="heroVideo" autoPlay muted loop playsInline>
+        <video ref={heroVideoRef} className="heroVideo" autoPlay muted playsInline>
           <source src="/hero-background.mp4" type="video/mp4" />
         </video>
         <div className="heroShade" />
