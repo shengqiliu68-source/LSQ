@@ -403,6 +403,18 @@ export default function CustomizationFlow() {
             </div>
           </section>
           <div className="selectionBar">
+            <a
+              className="previousStep"
+              href={
+                page === "packaging"
+                  ? "/"
+                  : page === "products"
+                    ? "/custom/packaging"
+                    : "/custom/products"
+              }
+            >
+              ← {page === "packaging" ? "返回首页" : "上一步"}
+            </a>
             <div>
               <span>当前组合预估</span>
               <strong>¥{total}</strong>
@@ -477,6 +489,9 @@ function Summary({ selection, total }: { selection: Selection; total: number }) 
             <strong>{productionDate.toLocaleDateString("zh-CN")}</strong>
           </div>
           <small>最终价格与交期将在数量、工艺和收货地区确认后由方案顾问报价。</small>
+          <a className="summaryPrevious" href="/custom/cards">
+            ← 上一步，修改卡片
+          </a>
           <button type="button">提交组合给方案顾问</button>
         </aside>
       </div>

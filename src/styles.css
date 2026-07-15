@@ -1879,6 +1879,16 @@ p {
   background: var(--accent-gradient);
   font-weight: 900;
 }
+.selectionBar .previousStep {
+  min-width: 126px;
+  border-right: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  color: #c5cbd4;
+}
+.selectionBar .previousStep:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
 .detailModal {
   position: fixed;
   inset: 0;
@@ -2057,6 +2067,21 @@ p {
   font-weight: 900;
   cursor: pointer;
 }
+.summaryPrevious {
+  display: flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  border: 1px solid var(--line);
+  color: #c6ccd5;
+  font-size: 13px;
+  font-weight: 850;
+}
+.summaryPrevious:hover {
+  border-color: var(--accent-strong);
+  color: #fff;
+}
 .emptyCart {
   border: 1px solid var(--line);
   padding: 60px;
@@ -2134,6 +2159,10 @@ p {
   }
   .selectionBar a {
     min-width: 120px;
+  }
+  .selectionBar .previousStep {
+    min-width: 98px;
+    font-size: 12px;
   }
   .summaryItems article {
     grid-template-columns: 72px 1fr auto;
