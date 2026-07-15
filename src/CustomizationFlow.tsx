@@ -368,7 +368,15 @@ export default function CustomizationFlow() {
         <>
           <section className="flowIntro contentShell">
             <p className="eyebrow">{config.eyebrow}</p>
-            <h1>{page === "packaging" ? "定制你的外包装！" : config.title}</h1>
+            <h1>
+              {page === "packaging" ? (
+                <>
+                  定制你的<span className="accentTitle">外包装</span>！
+                </>
+              ) : (
+                config.title
+              )}
+            </h1>
             <p>
               {page === "packaging" ? (
                 <>

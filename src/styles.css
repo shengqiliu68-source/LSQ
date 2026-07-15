@@ -1730,6 +1730,15 @@ p {
   font-weight: 900;
   -webkit-background-clip: text;
 }
+.accentTitle {
+  display: inline-block;
+  background: var(--accent-gradient);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 14px 28px rgba(255, 62, 24, 0.26));
+}
 .catalogFilters {
   display: flex;
   flex-wrap: wrap;
