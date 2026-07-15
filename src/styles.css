@@ -694,6 +694,12 @@ p {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 62%);
 }
 
+.featureCardContent {
+  background:
+    radial-gradient(circle at 0% 8%, rgba(77, 6, 21, 0.36), transparent 52%),
+    linear-gradient(135deg, rgba(25, 7, 13, 0.5), rgba(5, 7, 10, 0.3) 52%, rgba(52, 59, 70, 0.18));
+}
+
 .featureCard span,
 .caseCard span,
 .numberCard span {

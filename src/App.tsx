@@ -393,7 +393,12 @@ function App() {
           </div>
           <div className="contentShell customGrid">
             {customizationItems.map((item) => (
-              <BorderGlow {...borderGlowTheme} className="featureCard motionCard" key={item.title}>
+              <BorderGlow
+                {...borderGlowTheme}
+                backgroundColor="rgba(5, 7, 10, 0.48)"
+                className="featureCard motionCard"
+                key={item.title}
+              >
                 <article className="featureCardContent">
                   <span>{item.label}</span>
                   <h3>{item.title}</h3>
