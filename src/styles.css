@@ -29,12 +29,14 @@
 }
 
 html {
+  overflow-x: clip;
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: clip;
   background:
     radial-gradient(circle at 18% 18%, rgba(255, 51, 31, 0.16), transparent 30%),
     radial-gradient(circle at 82% 8%, rgba(255, 51, 31, 0.08), transparent 28%), #07090d;
@@ -918,6 +920,13 @@ p {
     gap: 24px;
   }
 
+  .heroCopy {
+    width: 100%;
+    justify-items: center;
+    gap: 32px;
+    text-align: center;
+  }
+
   .heroWordmark {
     font-size: clamp(76px, 18vw, 150px);
     white-space: normal;
@@ -958,8 +967,47 @@ p {
 }
 
 @media (max-width: 720px) {
+  :root {
+    --shell: calc(100vw - 32px);
+  }
+
+  .openingTitle {
+    width: calc(100vw - 32px);
+  }
+
+  .openingIndex {
+    margin-bottom: 28px;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+  }
+
+  .openingTitleLine {
+    font-size: clamp(38px, 12vw, 54px);
+    line-height: 1;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+
+  .openingTitleLine + .openingTitleLine {
+    margin-top: 18px;
+  }
+
+  .openingBar {
+    margin-top: 36px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 18px 0 40px;
+  }
+
+  .hero::before {
+    inset: 18px calc((100vw - var(--shell)) / 2);
+  }
+
   .nav {
-    padding: 20px 0;
+    padding: 16px 8px 20px;
+    gap: 12px;
   }
 
   .nav.isFloating {
@@ -978,9 +1026,9 @@ p {
   }
 
   .navButton {
-    min-height: 42px;
-    padding: 0 14px;
-    font-size: 12px;
+    min-height: 40px;
+    padding: 0 11px;
+    font-size: 11px;
   }
 
   h1 {
@@ -992,12 +1040,90 @@ p {
   }
 
   .brand span {
-    font-size: 22px;
+    font-size: 19px;
   }
 
   .brand img {
-    width: 44px;
-    height: 44px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand small {
+    display: none;
+  }
+
+  .heroFrame {
+    padding: 10px 20px 44px;
+  }
+
+  .heroPoster {
+    gap: 18px;
+  }
+
+  .heroCopy {
+    gap: 26px;
+  }
+
+  .heroWordmark {
+    width: 100%;
+    gap: 10px;
+    font-size: clamp(42px, 13vw, 58px);
+    line-height: 0.98;
+    text-align: left;
+  }
+
+  .heroWordmark > span:first-child {
+    display: grid;
+    gap: 6px;
+  }
+
+  .heroWordmark .heroLeadText,
+  .heroWordmark .highlight {
+    width: max-content;
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .heroWordmark .highlight {
+    display: block;
+  }
+
+  .heroWordmark > span:last-child {
+    font-size: 0.54em;
+    line-height: 1.2;
+  }
+
+  .heroLogoImage {
+    width: min(62vw, 270px);
+  }
+
+  .heroMicrocopy {
+    gap: 10px;
+  }
+
+  .heroMicrocopy strong {
+    font-size: 26px;
+  }
+
+  .heroMicrocopy span {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .heroMetric {
+    margin-top: 24px;
+  }
+
+  .heroMetric strong {
+    font-size: 70px;
+  }
+
+  .heroMetric p {
+    font-size: 15px;
+  }
+
+  .heroActions {
+    width: 100%;
   }
 
   .heroLead,
@@ -1008,6 +1134,34 @@ p {
 
   .section {
     padding: 88px 0;
+  }
+
+  .sectionHeader {
+    margin-bottom: 34px;
+  }
+
+  .sectionHeader h2,
+  .contact h2 {
+    font-size: clamp(34px, 11vw, 48px);
+    line-height: 1.08;
+  }
+
+  .customGrid,
+  .logisticsGrid,
+  .caseGrid,
+  .strengthGrid {
+    gap: 14px;
+  }
+
+  .featureCard,
+  .numberCard,
+  .logisticsCard {
+    min-height: 0;
+  }
+
+  .caseCard,
+  .caseCardContent {
+    min-height: 360px;
   }
 
   .strengthGrid {
@@ -1021,7 +1175,15 @@ p {
   }
 
   .contactPanel {
+    display: grid;
     padding: 22px;
+  }
+
+  .contactPanel a,
+  .contactPanel span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    padding: 16px;
   }
 }
 

@@ -158,25 +158,34 @@ function App() {
           },
         });
 
-        timeline
-          .fromTo(
+        if (eyebrow) {
+          timeline.fromTo(
             eyebrow,
             { x: -70, opacity: 0 },
             { x: 0, opacity: 1, duration: 0.75, ease: "power3.out" }
-          )
-          .fromTo(
+          );
+        }
+
+        if (heading) {
+          timeline.fromTo(
             heading,
             { yPercent: 105, skewY: 7, rotateX: -28 },
             { yPercent: 0, skewY: 0, rotateX: 0, duration: 1.15, ease: "power4.out" },
             "-=0.42"
-          )
-          .fromTo(
+          );
+        }
+
+        if (description) {
+          timeline.fromTo(
             description,
             { y: 36, opacity: 0 },
             { y: 0, opacity: 1, duration: 0.85 },
             "-=0.68"
-          )
-          .fromTo(
+          );
+        }
+
+        if (cards.length) {
+          timeline.fromTo(
             cards,
             { y: 120, scaleY: 0.72, clipPath: "inset(100% 0 0 0)", transformOrigin: "50% 100%" },
             {
@@ -189,10 +198,13 @@ function App() {
             },
             "-=0.44"
           );
+        }
       });
 
       gsap.utils.toArray<HTMLElement>(".caseCardContent").forEach((card) => {
         const image = card.querySelector("img");
+        if (!image) return;
+
         gsap.fromTo(
           image,
           { scale: 1.18, yPercent: -5 },
