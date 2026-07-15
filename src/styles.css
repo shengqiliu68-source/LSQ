@@ -1766,12 +1766,15 @@ p {
   gap: 16px;
 }
 .shopCard {
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: var(--panel-gradient);
   transition:
     border-color 0.18s,
     transform 0.18s;
+}
+.shopCardContent {
+  height: 100%;
+  background:
+    radial-gradient(circle at 8% 4%, rgba(117, 8, 27, 0.32), transparent 48%),
+    linear-gradient(145deg, rgba(27, 8, 14, 0.66), rgba(6, 8, 12, 0.92) 58%);
 }
 .shopCard:hover,
 .shopCard.isSelected {

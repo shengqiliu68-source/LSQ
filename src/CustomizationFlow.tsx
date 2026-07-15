@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import BorderGlow from "./components/BorderGlow";
 
 type Item = {
   id: string;
@@ -196,34 +197,47 @@ function ProductCard({
   onDetail: () => void;
 }) {
   return (
-    <article className={`shopCard${selected ? " isSelected" : ""}`}>
-      <button
-        className="shopImage"
-        type="button"
-        onClick={onDetail}
-        aria-label={`查看${item.name}详情`}
-      >
-        {item.image ? (
-          <img src={item.image} alt={item.name} />
-        ) : (
-          <span>
-            <b>图片位置</b>
-            <small>后续上传产品主图</small>
-          </span>
-        )}
-        <i>查看详情</i>
-      </button>
-      <div className="shopCardBody">
-        <span>{item.category}</span>
-        <h3>{item.name}</h3>
-        <p>
-          预估单价 <strong>¥{item.price}</strong>
-        </p>
-        <button type="button" onClick={onSelect}>
-          {selected ? "✓ 已选择" : "选择此项"}
+    <BorderGlow
+      className={`shopCard${selected ? " isSelected" : ""}`}
+      edgeSensitivity={26}
+      glowColor="12 100 62"
+      backgroundColor="rgba(5, 7, 10, 0.72)"
+      borderRadius={4}
+      glowRadius={30}
+      glowIntensity={0.82}
+      coneSpread={24}
+      fillOpacity={0.38}
+      colors={["#ff2c1f", "#ff5a18", "#ff9d2a"]}
+    >
+      <article className="shopCardContent">
+        <button
+          className="shopImage"
+          type="button"
+          onClick={onDetail}
+          aria-label={`查看${item.name}详情`}
+        >
+          {item.image ? (
+            <img src={item.image} alt={item.name} />
+          ) : (
+            <span>
+              <b>图片位置</b>
+              <small>后续上传产品主图</small>
+            </span>
+          )}
+          <i>查看详情</i>
         </button>
-      </div>
-    </article>
+        <div className="shopCardBody">
+          <span>{item.category}</span>
+          <h3>{item.name}</h3>
+          <p>
+            预估单价 <strong>¥{item.price}</strong>
+          </p>
+          <button type="button" onClick={onSelect}>
+            {selected ? "✓ 已选择" : "选择此项"}
+          </button>
+        </div>
+      </article>
+    </BorderGlow>
   );
 }
 
