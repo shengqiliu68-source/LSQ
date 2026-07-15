@@ -32,11 +32,11 @@ const giftImages = {
 const packaging: Item[] = [
   {
     id: "pkg-01",
-    name: "基础天地盖纸盒",
+    name: "基础厂家自带礼盒",
     category: "50元以下",
-    price: 38,
-    description: "适合常规礼品组合与批量活动物料。",
-    craft: "四色印刷、覆哑膜、成型内托",
+    price: 0,
+    description: "厂家原配礼盒，不需要 DIY。",
+    craft: "采用产品厂家原装配套包装，不增加定制包装工艺。",
     image: giftImages.black,
   },
   {
@@ -312,7 +312,14 @@ const steps = [
 
 function loadSelection() {
   try {
-    return JSON.parse(localStorage.getItem("custom-selection") || "") as Selection;
+    const saved = JSON.parse(localStorage.getItem("custom-selection") || "") as Selection;
+    return {
+      packaging: packaging.find((item) => item.id === saved.packaging?.id),
+      products: saved.products
+        .map((savedItem) => products.find((item) => item.id === savedItem.id))
+        .filter((item): item is Item => Boolean(item)),
+      card: cards.find((item) => item.id === saved.card?.id),
+    };
   } catch {
     return emptySelection;
   }
