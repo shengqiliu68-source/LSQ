@@ -16,6 +16,19 @@ type Selection = { packaging?: Item; products: Item[]; card?: Item };
 
 const emptySelection: Selection = { products: [] };
 
+const giftImages = {
+  black: "/case-business-gift-box.webp",
+  coin: "/case-gold-commemorative-coin.webp",
+  redRibbon:
+    "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1200&q=86",
+  festive:
+    "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&w=1200&q=86",
+  darkGift:
+    "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1200&q=86",
+  wrapped:
+    "https://images.unsplash.com/photo-1575663620136-5ebbfcc2c597?auto=format&fit=crop&w=1200&q=86",
+};
+
 const packaging: Item[] = [
   {
     id: "pkg-01",
@@ -24,7 +37,7 @@ const packaging: Item[] = [
     price: 38,
     description: "适合常规礼品组合与批量活动物料。",
     craft: "四色印刷、覆哑膜、成型内托",
-    image: "/case-business-gift-box.webp",
+    image: giftImages.black,
   },
   {
     id: "pkg-02",
@@ -33,38 +46,158 @@ const packaging: Item[] = [
     price: 48,
     description: "抽拉式开箱结构，简洁轻便。",
     craft: "专色印刷、抽拉丝带、纸质内托",
+    image: giftImages.redRibbon,
   },
   {
     id: "pkg-03",
+    name: "环保牛皮纸礼盒",
+    category: "50元以下",
+    price: 32,
+    description: "自然质朴，适合环保主题与大批量活动。",
+    craft: "再生牛皮纸、单色丝印、瓦楞内衬",
+    image: giftImages.wrapped,
+  },
+  {
+    id: "pkg-04",
+    name: "折叠便携礼盒",
+    category: "50元以下",
+    price: 42,
+    description: "平板运输后快速组装，有效降低仓储成本。",
+    craft: "折叠结构、双面胶固定、局部 UV",
+    image: giftImages.festive,
+  },
+  {
+    id: "pkg-05",
+    name: "开窗展示礼盒",
+    category: "50元以下",
+    price: 46,
+    description: "透明窗口直接展示核心产品，适合零售与活动场景。",
+    craft: "PET 开窗、覆哑膜、彩色印刷",
+    image: giftImages.darkGift,
+  },
+  {
+    id: "pkg-06",
+    name: "手提伴手礼盒",
+    category: "50元以下",
+    price: 49,
+    description: "包装与手提功能一体，方便会议或活动现场派发。",
+    craft: "棉绳提手、专色印刷、纸托分隔",
+    image: giftImages.redRibbon,
+  },
+  {
+    id: "pkg-07",
     name: "磁吸精品礼盒",
     category: "51-100元",
     price: 78,
     description: "适合商务赠礼与品牌活动。",
     craft: "磁吸翻盖、烫金 LOGO、EVA 内托",
+    image: giftImages.black,
+    video: "/hero-background.mp4",
   },
   {
-    id: "pkg-04",
+    id: "pkg-08",
     name: "双层组合礼盒",
     category: "51-100元",
     price: 96,
     description: "可容纳多件产品并形成分层展示。",
     craft: "双层结构、UV 印刷、植绒内托",
+    image: giftImages.festive,
+    video: "/hero-background.mp4",
   },
   {
-    id: "pkg-05",
+    id: "pkg-09",
+    name: "书型翻盖礼盒",
+    category: "51-100元",
+    price: 82,
+    description: "像书本一样展开，适合讲述品牌与项目故事。",
+    craft: "书型结构、隐藏磁扣、内外四色印刷",
+    image: giftImages.darkGift,
+  },
+  {
+    id: "pkg-10",
+    name: "肩颈式精品盒",
+    category: "51-100元",
+    price: 88,
+    description: "内肩结构形成精致层次，开合稳定且具有仪式感。",
+    craft: "三件式灰板、撞色内肩、烫金或压印",
+    image: giftImages.redRibbon,
+  },
+  {
+    id: "pkg-11",
+    name: "圆筒卷边礼盒",
+    category: "51-100元",
+    price: 68,
+    description: "圆筒造型具有强识别度，适合杯具、香氛与纪念品。",
+    craft: "卷边圆筒、金属盖或纸盖、环绕印刷",
+    image: giftImages.wrapped,
+  },
+  {
+    id: "pkg-12",
+    name: "皮纹商务礼盒",
+    category: "51-100元",
+    price: 98,
+    description: "细腻皮纹触感与稳重配色，适合商务礼赠。",
+    craft: "触感纸裱糊、金属铭牌、植绒内托",
+    image: giftImages.black,
+  },
+  {
+    id: "pkg-13",
     name: "高端木质礼盒",
     category: "100元以上",
     price: 168,
     description: "高质感收藏级包装，可反复使用。",
     craft: "木质结构、金属铭牌、激光雕刻",
+    image: giftImages.wrapped,
+    video: "/hero-background.mp4",
   },
   {
-    id: "pkg-06",
+    id: "pkg-14",
     name: "定制异形礼盒",
     category: "100元以上",
     price: 228,
     description: "根据项目主题定制专属结构。",
     craft: "异形开模、复合材质、灯光或机关结构",
+    image: giftImages.darkGift,
+    video: "/hero-background.mp4",
+  },
+  {
+    id: "pkg-15",
+    name: "灯光展示礼盒",
+    category: "100元以上",
+    price: 258,
+    description: "开盒自动亮灯，突出核心产品并强化开箱记忆点。",
+    craft: "感应灯带、隐藏线路、亚克力展示层",
+    image: giftImages.black,
+    video: "/hero-background.mp4",
+  },
+  {
+    id: "pkg-16",
+    name: "亚克力悬浮礼盒",
+    category: "100元以上",
+    price: 198,
+    description: "透明结构营造产品悬浮感，适合限量收藏与发布会。",
+    craft: "高透亚克力、金属连接件、定制展示底座",
+    image: giftImages.black,
+  },
+  {
+    id: "pkg-17",
+    name: "金属收藏礼盒",
+    category: "100元以上",
+    price: 288,
+    description: "耐用且具有收藏属性，适合纪念币与高价值产品。",
+    craft: "铝合金外壳、阳极氧化、激光雕刻",
+    image: giftImages.darkGift,
+    video: "/hero-background.mp4",
+  },
+  {
+    id: "pkg-18",
+    name: "多层机关礼盒",
+    category: "100元以上",
+    price: 328,
+    description: "通过旋转、抽拉或展开形成多阶段开箱体验。",
+    craft: "多层联动结构、异形内托、磁吸定位",
+    image: giftImages.festive,
+    video: "/hero-background.mp4",
   },
 ];
 
@@ -266,7 +399,21 @@ function DetailModal({ item, onClose }: { item: Item; onClose: () => void }) {
           )}
           <div className="videoSlot">
             {item.video ? (
-              <video src={item.video} controls />
+              <div className="cinematicVideo">
+                <video
+                  src={item.video}
+                  poster={item.image}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                />
+                <span>
+                  <small>CRAFT FILM / 2026</small>
+                  沉浸式工艺展示
+                </span>
+              </div>
             ) : (
               <span>
                 视频位置
