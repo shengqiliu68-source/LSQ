@@ -368,8 +368,16 @@ export default function CustomizationFlow() {
         <>
           <section className="flowIntro contentShell">
             <p className="eyebrow">{config.eyebrow}</p>
-            <h1>{config.title}</h1>
-            <p>{config.desc}</p>
+            <h1>{page === "packaging" ? "定制你的外包装！" : config.title}</h1>
+            <p>
+              {page === "packaging" ? (
+                <>
+                  好的包装可以很好的提升<span className="goldText">入金率</span>！
+                </>
+              ) : (
+                config.desc
+              )}
+            </p>
           </section>
           <section className="catalogSection contentShell">
             <div className="catalogFilters">

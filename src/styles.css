@@ -1722,6 +1722,14 @@ p {
   font-size: 17px;
   line-height: 1.75;
 }
+.goldText {
+  margin: 0 0.12em;
+  background: linear-gradient(90deg, #d9a62e, #ffe08a 52%, #c68b16);
+  background-clip: text;
+  color: transparent;
+  font-weight: 900;
+  -webkit-background-clip: text;
+}
 .catalogFilters {
   display: flex;
   flex-wrap: wrap;
