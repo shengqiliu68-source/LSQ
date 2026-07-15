@@ -162,6 +162,12 @@ video {
   content: "";
 }
 
+.deferred-grainient,
+.deferred-grainient > .grainient-container {
+  width: 100%;
+  height: 100%;
+}
+
 .belowHero > section {
   position: relative;
   z-index: 1;

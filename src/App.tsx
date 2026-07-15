@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BorderGlow from "./components/BorderGlow";
-import Grainient from "./components/Grainient";
+import DeferredGrainient from "./components/DeferredGrainient";
 
 const customizationItems = [
   {
@@ -96,6 +96,14 @@ function App() {
     const cleanLoopEnd = 2.25;
     let videoFrameId: number | undefined;
 
+    const visibilityObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) void video.play();
+        else video.pause();
+      },
+      { threshold: 0.01 }
+    );
+
     const loopBeforeEmbeddedTitle = () => {
       if (video.currentTime >= cleanLoopEnd) {
         video.currentTime = 0.05;
@@ -109,14 +117,17 @@ function App() {
     };
 
     videoFrameId = video.requestVideoFrameCallback(monitorVideoFrame);
+    visibilityObserver.observe(video);
 
     return () => {
       if (videoFrameId !== undefined) video.cancelVideoFrameCallback(videoFrameId);
+      visibilityObserver.disconnect();
     };
   }, []);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.config({ limitCallbacks: true, ignoreMobileResize: true });
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduceMotion) {
@@ -251,20 +262,15 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const updateNavPosition = () => {
-      const hero = document.getElementById("top");
-      const heroBottom = hero?.offsetHeight ?? window.innerHeight;
-      setIsNavFloating(window.scrollY >= heroBottom - 1);
-    };
+    const hero = document.getElementById("top");
+    if (!hero) return;
 
-    updateNavPosition();
-    window.addEventListener("scroll", updateNavPosition, { passive: true });
-    window.addEventListener("resize", updateNavPosition);
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsNavFloating(!entry.isIntersecting && entry.boundingClientRect.bottom <= 0);
+    });
 
-    return () => {
-      window.removeEventListener("scroll", updateNavPosition);
-      window.removeEventListener("resize", updateNavPosition);
-    };
+    observer.observe(hero);
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -284,14 +290,21 @@ function App() {
         </div>
       </div>
       <section className="hero" id="top">
-        <video ref={heroVideoRef} className="heroVideo" autoPlay muted playsInline>
+        <video ref={heroVideoRef} className="heroVideo" autoPlay muted playsInline preload="auto">
           <source src="/hero-background.mp4" type="video/mp4" />
         </video>
         <div className="heroShade" />
 
         <nav className={`nav${isNavFloating ? " isFloating" : ""}`} aria-label="主导航">
           <a className="brand" href="#top" aria-label="大表哥后勤多盘定制首页">
-            <img src="/dabiaoge-logo-transparent.png" alt="" aria-hidden="true" />
+            <img
+              src="/dabiaoge-logo-transparent.webp"
+              width="320"
+              height="320"
+              fetchPriority="high"
+              alt=""
+              aria-hidden="true"
+            />
             <span>
               大表哥
               <small>后勤多盘定制</small>
@@ -332,7 +345,10 @@ function App() {
 
             <img
               className="heroLogoImage"
-              src="/dabiaoge-mark-transparent.png"
+              src="/dabiaoge-mark-transparent.webp"
+              width="1024"
+              height="1024"
+              decoding="async"
               alt=""
               aria-hidden="true"
             />
@@ -363,7 +379,7 @@ function App() {
 
       <div className="belowHero">
         <div className="belowHeroBackdrop" aria-hidden="true">
-          <Grainient
+          <DeferredGrainient
             color1="#4d0615"
             color2="#000000"
             color3="#343b46"
@@ -414,7 +430,7 @@ function App() {
             {cases.map((item) => (
               <BorderGlow {...borderGlowTheme} className="caseCard motionCard" key={item.title}>
                 <article className="caseCardContent">
-                  <img src={item.image} alt={item.title} />
+                  <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
                   <div>
                     <span>{item.tag}</span>
                     <h3>{item.title}</h3>

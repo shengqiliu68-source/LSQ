@@ -167,7 +167,8 @@ function Grainient({
         webgl: 2,
         alpha: true,
         antialias: false,
-        dpr: Math.min(window.devicePixelRatio || 1, 2),
+        dpr: window.innerWidth <= 720 ? 1 : Math.min(window.devicePixelRatio || 1, 1.5),
+        powerPreference: "low-power",
       });
     } catch {
       container.dataset.webglUnavailable = "true";
@@ -229,14 +230,18 @@ function Grainient({
     setSize();
 
     let frame = 0;
+    let lastRenderTime = 0;
     let isVisible = true;
     let isPageVisible = !document.hidden;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const startTime = performance.now();
 
     const loop = (time: number) => {
-      program.uniforms.iTime.value = (time - startTime) * 0.001;
-      renderer.render({ scene: mesh });
+      if (time - lastRenderTime >= 1000 / 30) {
+        program.uniforms.iTime.value = (time - startTime) * 0.001;
+        renderer.render({ scene: mesh });
+        lastRenderTime = time;
+      }
       frame = requestAnimationFrame(loop);
     };
 
@@ -275,6 +280,7 @@ function Grainient({
       document.removeEventListener("visibilitychange", onVisibilityChange);
       contextRef.current = null;
       canvas.remove();
+      gl.getExtension("WEBGL_lose_context")?.loseContext();
     };
   }, []);
 
