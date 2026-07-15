@@ -234,10 +234,10 @@ function App() {
         <div className="openingTitle">
           <span className="openingIndex">DABIAOGE® / 2026</span>
           <div className="openingTitleLine">
-            <span>GLOBAL</span>
+            <span>搞金融</span>
           </div>
           <div className="openingTitleLine isAccent">
-            <span>CUSTOM STUDIO</span>
+            <span>就认准 大表哥</span>
           </div>
           <span className="openingBar" />
         </div>
