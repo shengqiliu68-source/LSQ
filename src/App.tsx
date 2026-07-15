@@ -75,7 +75,7 @@ const logistics = [
 const borderGlowTheme = {
   edgeSensitivity: 26,
   glowColor: "12 100 62",
-  backgroundColor: "#0d0f14",
+  backgroundColor: "rgba(5, 7, 10, 0.48)",
   borderRadius: 4,
   glowRadius: 30,
   glowIntensity: 0.82,
@@ -393,12 +393,7 @@ function App() {
           </div>
           <div className="contentShell customGrid">
             {customizationItems.map((item) => (
-              <BorderGlow
-                {...borderGlowTheme}
-                backgroundColor="rgba(5, 7, 10, 0.48)"
-                className="featureCard motionCard"
-                key={item.title}
-              >
+              <BorderGlow {...borderGlowTheme} className="featureCard motionCard" key={item.title}>
                 <article className="featureCardContent">
                   <span>{item.label}</span>
                   <h3>{item.title}</h3>

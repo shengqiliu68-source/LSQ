@@ -22,6 +22,9 @@
   --accent-strong: #ff5a18;
   --accent-warm: #ff9d2a;
   --accent-gradient: linear-gradient(90deg, #ff2c1f 0%, #ff5a18 52%, #ff9d2a 100%);
+  --panel-gradient:
+    radial-gradient(circle at 0% 8%, rgba(77, 6, 21, 0.36), transparent 52%),
+    linear-gradient(135deg, rgba(25, 7, 13, 0.5), rgba(5, 7, 10, 0.3) 52%, rgba(52, 59, 70, 0.18));
 }
 
 * {
@@ -589,7 +592,7 @@ p {
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(255, 255, 255, 0.74);
-  background: rgba(245, 247, 251, 0.04);
+  background: var(--panel-gradient);
   color: #f5f7fb;
   padding: 0 14px;
   text-align: center;
@@ -691,13 +694,7 @@ p {
 .logisticsCardContent {
   height: 100%;
   padding: 34px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 62%);
-}
-
-.featureCardContent {
-  background:
-    radial-gradient(circle at 0% 8%, rgba(77, 6, 21, 0.36), transparent 52%),
-    linear-gradient(135deg, rgba(25, 7, 13, 0.5), rgba(5, 7, 10, 0.3) 52%, rgba(52, 59, 70, 0.18));
+  background: var(--panel-gradient);
 }
 
 .featureCard span,
@@ -840,12 +837,13 @@ p {
   flex-wrap: wrap;
   gap: 18px;
   padding: 30px;
+  background: var(--panel-gradient);
 }
 
 .contactPanel a,
 .contactPanel span {
   border: 1px solid var(--line);
-  background: var(--soft);
+  background: var(--panel-gradient);
   padding: 18px 22px;
   color: #eef4f8;
 }
