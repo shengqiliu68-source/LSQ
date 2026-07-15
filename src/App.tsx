@@ -127,40 +127,40 @@ function App() {
     const context = gsap.context(() => {
       const opening = gsap.timeline({ defaults: { ease: "power4.inOut" } });
       opening
-        .fromTo(".openingIndex", { yPercent: 120 }, { yPercent: 0, duration: 0.8 })
+        .fromTo(".openingIndex", { yPercent: 120 }, { yPercent: 0, duration: 0.36 })
         .fromTo(
           ".openingTitleLine > span",
           { yPercent: 115, rotate: 4 },
-          { yPercent: 0, rotate: 0, duration: 1.15, stagger: 0.12 },
-          0.18
+          { yPercent: 0, rotate: 0, duration: 0.58, stagger: 0.06 },
+          0.08
         )
-        .to(".openingBar", { scaleX: 1, duration: 1.15 }, 0.4)
-        .to(".openingTitle", { yPercent: -18, opacity: 0, duration: 0.7 }, "+=0.32")
-        .to(".openingPanel", { yPercent: -100, duration: 1.25, stagger: 0.08 }, "<")
+        .to(".openingBar", { scaleX: 1, duration: 0.55 }, 0.18)
+        .to(".openingTitle", { yPercent: -18, opacity: 0, duration: 0.34 }, "+=0.1")
+        .to(".openingPanel", { yPercent: -100, duration: 0.68, stagger: 0.04 }, "<")
         .set(".opening", { display: "none" })
         .fromTo(
           ".nav",
           { y: -35, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.9, ease: "power3.out" },
-          "-=0.45"
+          { y: 0, opacity: 1, duration: 0.46, ease: "power3.out" },
+          "-=0.28"
         )
         .fromTo(
           ".heroWordmark > span",
           { yPercent: 120, skewY: 5 },
-          { yPercent: 0, skewY: 0, duration: 1.2, stagger: 0.13, ease: "power4.out" },
-          "-=0.72"
+          { yPercent: 0, skewY: 0, duration: 0.68, stagger: 0.07, ease: "power4.out" },
+          "-=0.38"
         )
         .fromTo(
           ".heroMicrocopy, .heroMetric, .heroActions",
           { y: 50, opacity: 0 },
-          { y: 0, opacity: 1, duration: 1, stagger: 0.12, ease: "power3.out" },
-          "-=0.78"
+          { y: 0, opacity: 1, duration: 0.55, stagger: 0.06, ease: "power3.out" },
+          "-=0.45"
         )
         .fromTo(
           ".heroLogoImage",
           { scale: 0.72, rotate: -8, opacity: 0 },
-          { scale: 1, rotate: 0, opacity: 0.3, duration: 1.6, ease: "power3.out" },
-          "-=1.2"
+          { scale: 1, rotate: 0, opacity: 0.3, duration: 0.82, ease: "power3.out" },
+          "-=0.72"
         );
 
       gsap.to(".heroPoster", {
