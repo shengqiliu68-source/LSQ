@@ -10,6 +10,7 @@ type Item = {
   craft: string;
   image?: string;
   video?: string;
+  source?: string;
 };
 
 type Selection = { packaging?: Item; products: Item[]; card?: Item };
@@ -17,16 +18,28 @@ type Selection = { packaging?: Item; products: Item[]; card?: Item };
 const emptySelection: Selection = { products: [] };
 
 const giftImages = {
-  black: "/case-business-gift-box.webp",
-  coin: "/case-gold-commemorative-coin.webp",
-  redRibbon:
-    "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1200&q=86",
-  festive:
-    "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&w=1200&q=86",
-  darkGift:
-    "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1200&q=86",
-  wrapped:
-    "https://images.unsplash.com/photo-1575663620136-5ebbfcc2c597?auto=format&fit=crop&w=1200&q=86",
+  black: "/packaging/magnetic-03.webp",
+  coin: "/packaging/wood-01.webp",
+  redRibbon: "/packaging/drawer-01.webp",
+  festive: "/packaging/wood-02.webp",
+  darkGift: "/packaging/book-01.webp",
+  wrapped: "/packaging/magnetic-02.webp",
+};
+
+const giftGalleries = {
+  magnetic: [1, 2, 3, 4, 5, 6].map((index) => `/packaging/magnetic-0${index}.webp`),
+  drawer: [1, 2, 3, 4, 5].map((index) => `/packaging/drawer-0${index}.webp`),
+  wood: [1, 2, 3, 4, 5, 6].map((index) => `/packaging/wood-0${index}.webp`),
+  book: [1, 2, 3, 4].map((index) => `/packaging/book-0${index}.webp`),
+};
+
+const sourceUrls = {
+  magnetic:
+    "https://www.alibaba.com/product-detail/Custom-Luxury-Magnetic-Gift-box-Thick_1601266962215.html",
+  drawer:
+    "https://www.alibaba.com/product-detail/Luxury-Custom-Printed-Logo-Pull-Out_1601041027937.html",
+  wood: "https://www.alibaba.com/product-detail/Wood-packing-boxes-custom-logo-box_1600438652360.html",
+  book: "https://www.alibaba.com/product-detail/Book-shaped-gift-packaging-box-decorative_60652890042.html",
 };
 
 const packaging: Item[] = [
@@ -381,7 +394,67 @@ function ProductCard({
   );
 }
 
+function getPackagingFamily(item: Item): keyof typeof giftGalleries | undefined {
+  if (!item.image) return undefined;
+  return (Object.keys(giftGalleries) as Array<keyof typeof giftGalleries>).find((family) =>
+    item.image?.includes(`/packaging/${family}-`)
+  );
+}
+
+function getAttributes(item: Item, family?: keyof typeof giftGalleries) {
+  const common: Array<[string, string]> = [
+    ["盒型", item.name],
+    ["参考价格", `¥${item.price} / 个`],
+    ["定制范围", "尺寸、颜色、LOGO、内托"],
+  ];
+  if (family === "magnetic")
+    return [
+      ...common,
+      ["主要材质", "艺术纸 / 灰板 / 铜版纸"],
+      ["印刷方式", "胶印、CMYK、Pantone 专色"],
+      ["表面处理", "覆膜、烫金、UV、压凹凸"],
+      ["闭合结构", "隐藏式磁吸翻盖"],
+      ["参考起订量", "200 个"],
+      ["参考生产周期", "15–25 天"],
+    ];
+  if (family === "drawer")
+    return [
+      ...common,
+      ["主要材质", "1200–1500g 灰板裱艺术纸"],
+      ["印刷方式", "四色胶印 / 专色印刷"],
+      ["表面处理", "哑膜、烫金、丝印、局部 UV"],
+      ["开启方式", "抽拉丝带 / 指槽"],
+      ["可选内托", "纸托、EVA、海绵、吸塑"],
+      ["参考起订量", "300 个"],
+    ];
+  if (family === "wood")
+    return [
+      ...common,
+      ["主要材质", "松木 / 竹木 / 胶合板"],
+      ["LOGO 工艺", "激光雕刻、丝印、金属铭牌"],
+      ["表面处理", "清漆、木蜡油、染色"],
+      ["开启方式", "天地盖 / 合页翻盖"],
+      ["可选内衬", "木丝、植绒、EVA、布艺"],
+      ["适用场景", "纪念品、酒具、收藏品"],
+    ];
+  if (family === "book")
+    return [
+      ...common,
+      ["主要材质", "灰板裱艺术纸 / 特种纸"],
+      ["印刷方式", "CMYK、Pantone、丝网印刷"],
+      ["表面处理", "覆膜、烫金银、压纹、UV"],
+      ["结构", "书型翻盖 / 磁吸闭合"],
+      ["参考起订量", "300 个"],
+      ["参考打样周期", "3–5 天"],
+    ];
+  return [...common, ["工艺", item.craft], ["交期", "按结构、数量与工艺确认"]];
+}
+
 function DetailModal({ item, onClose }: { item: Item; onClose: () => void }) {
+  const family = getPackagingFamily(item);
+  const gallery = family ? giftGalleries[family] : item.image ? [item.image] : [];
+  const attributes = getAttributes(item, family);
+  const source = item.source || (family ? sourceUrls[family] : undefined);
   return (
     <div
       className="detailModal"
@@ -395,8 +468,12 @@ function DetailModal({ item, onClose }: { item: Item; onClose: () => void }) {
           关闭 ×
         </button>
         <div className="detailMedia">
-          {item.image ? (
-            <img src={item.image} alt={item.name} />
+          {gallery.length ? (
+            <div className="detailGallery">
+              {gallery.map((image, index) => (
+                <img src={image} alt={`${item.name}详情图 ${index + 1}`} key={image} />
+              ))}
+            </div>
           ) : (
             <span>
               详情图片位置
@@ -438,6 +515,20 @@ function DetailModal({ item, onClose }: { item: Item; onClose: () => void }) {
           <p>{item.description}</p>
           <h3>工艺介绍</h3>
           <p>{item.craft}</p>
+          <h3>产品属性</h3>
+          <dl className="attributeGrid">
+            {attributes.map(([label, value]) => (
+              <div key={label}>
+                <dt>{label}</dt>
+                <dd>{value}</dd>
+              </div>
+            ))}
+          </dl>
+          {source && (
+            <a className="sourceLink" href={source} target="_blank" rel="noreferrer">
+              查看课堂素材来源 ↗
+            </a>
+          )}
         </div>
       </div>
     </div>
