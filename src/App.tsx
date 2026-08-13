@@ -498,6 +498,11 @@ function App() {
                 <a href="mailto:hello@example.com">hello@example.com</a>
                 <span>WhatsApp / WeChat: +86 000 0000 0000</span>
                 <span>多盘后勤定制、仓储与全球快递交付</span>
+                <a className="contactProcurementButton" href="/procurement">
+                  <small>GLOBAL PROCUREMENT</small>
+                  <strong>提交代购 / 代拍需求</strong>
+                  <b>进入代购页面 →</b>
+                </a>
               </div>
             </BorderGlow>
           </div>
