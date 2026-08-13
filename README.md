@@ -9,7 +9,10 @@ npm run dev
 npm run lint
 npm run typecheck
 npm run build
+npm run sync:cases
 ```
+
+`npm run sync:cases` 会读取桌面“产品图片”文件夹中的案例目录，自动压缩图片并更新案例总览与详情页数据。以后新增案例时沿用现有文件夹结构，再运行一次即可。
 
 本地预览默认地址：
 

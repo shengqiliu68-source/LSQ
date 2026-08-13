@@ -29,17 +29,20 @@ const customizationItems = [
 
 const cases = [
   {
+    slug: "bespoke-executive-corporate-gift-set",
     title: "商务高端礼盒",
     tag: "礼盒定制",
     image: "/case-business-gift-box.webp",
   },
   {
+    slug: "suede-texture-coffee-cup-gift-set",
     title: "企业咖啡杯伴手礼",
     tag: "杯具伴手礼",
     image:
       "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=1200&q=80",
   },
   {
+    slug: "custom-corporate-commemorative-coin-gift-box",
     title: "仿金纪念币",
     tag: "纪念币定制",
     image: "/case-gold-commemorative-coin.webp",
@@ -364,7 +367,7 @@ function App() {
             <a className="heroProjectButton isPrimary" href="/custom/packaging">
               定制你的产品
             </a>
-            <a className="heroProjectButton" href="#cases">
+            <a className="heroProjectButton" href="/cases">
               过往优秀定制案例
             </a>
             <a className="heroProjectButton" href="#contact">
@@ -423,19 +426,21 @@ function App() {
         <section className="section casesSection motionSection" id="cases">
           <div className="contentShell sectionHeader">
             <p className="eyebrow">精选案例</p>
-            <h2>以往百万入金产品展示</h2>
+            <h2>
+              <a href="/cases">以往百万入金产品展示</a>
+            </h2>
             <p>拿真实数据说话！</p>
           </div>
           <div className="contentShell caseGrid">
             {cases.map((item) => (
               <BorderGlow {...borderGlowTheme} className="caseCard motionCard" key={item.title}>
-                <article className="caseCardContent">
+                <a className="caseCardContent" href={`/cases/${item.slug}`}>
                   <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
                   <div>
                     <span>{item.tag}</span>
                     <h3>{item.title}</h3>
                   </div>
-                </article>
+                </a>
               </BorderGlow>
             ))}
           </div>
