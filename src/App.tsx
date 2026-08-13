@@ -495,8 +495,21 @@ function App() {
             <p>我们可以先给出产品组合建议、包装方向、LOGO 工艺和全球配送路径，再进入打样与报价。</p>
             <BorderGlow {...borderGlowTheme} className="contactGlow motionCard">
               <div className="contactPanel">
-                <a href="mailto:hello@example.com">hello@example.com</a>
-                <span>WhatsApp / WeChat: +86 000 0000 0000</span>
+                <a className="contactChannel" href="mailto:shengqiliu68@gmail.com">
+                  <small>EMAIL / 邮箱</small>
+                  <strong>shengqiliu68@gmail.com</strong>
+                  <b>发送邮件 →</b>
+                </a>
+                <a
+                  className="contactChannel isTelegram"
+                  href="https://t.me/llllsssqqq"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <small>TELEGRAM / 即时联系</small>
+                  <strong>@llllsssqqq</strong>
+                  <b>打开 Telegram →</b>
+                </a>
                 <span>多盘后勤定制、仓储与全球快递交付</span>
                 <a className="contactProcurementButton" href="/procurement">
                   <small>GLOBAL PROCUREMENT</small>

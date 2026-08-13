@@ -879,6 +879,39 @@ p {
   border-color: rgba(255, 86, 32, 0.65);
   background: linear-gradient(110deg, rgba(93, 18, 12, 0.82), rgba(10, 12, 16, 0.94));
 }
+.contactPanel .contactChannel {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  min-width: min(100%, 390px);
+}
+.contactChannel small {
+  grid-column: 1;
+  color: #ff6a2b;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+.contactChannel strong {
+  grid-column: 1;
+  margin-top: 7px;
+  font-size: 18px;
+}
+.contactChannel b {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin-left: 24px;
+  color: #ff742e;
+  font-size: 13px;
+}
+.contactPanel .contactChannel.isTelegram {
+  border-color: rgba(73, 161, 255, 0.48);
+  background: linear-gradient(110deg, rgba(25, 76, 126, 0.22), rgba(10, 12, 16, 0.94));
+}
+.contactChannel.isTelegram small,
+.contactChannel.isTelegram b {
+  color: #58a9ff;
+}
 .contactProcurementButton small {
   grid-column: 1;
   color: #ff6a2b;
