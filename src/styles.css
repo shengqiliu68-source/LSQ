@@ -2419,21 +2419,87 @@ p {
 }
 .procurementTabs {
   display: flex;
+  gap: 14px;
   position: relative;
+  padding-bottom: 28px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 .procurementTabs button {
-  padding: 20px 28px;
-  border: 0;
-  border-bottom: 2px solid transparent;
-  background: none;
-  color: #858b94;
+  position: relative;
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: 15px;
+  min-width: 330px;
+  padding: 20px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(10, 12, 16, 0.82);
+  color: #9ca1aa;
   font-weight: 700;
+  text-align: left;
   cursor: pointer;
+  transition: 0.25s ease;
+}
+.procurementTabs button > span {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  font-size: 11px;
+}
+.procurementTabs button div {
+  display: grid;
+  gap: 5px;
+}
+.procurementTabs button strong {
+  color: #fff;
+  font-size: 16px;
+}
+.procurementTabs button small {
+  color: #757c86;
+  font-size: 11px;
+}
+.procurementTabs button i {
+  color: #ff6528;
+  font-size: 11px;
+  font-style: normal;
+}
+.procurementTabs button:hover {
+  border-color: rgba(255, 91, 37, 0.7);
+  transform: translateY(-2px);
 }
 .procurementTabs button.isActive {
-  border-bottom-color: #ff5725;
+  border-color: #ff5725;
+  background: linear-gradient(115deg, rgba(86, 19, 12, 0.72), rgba(11, 12, 16, 0.92) 65%);
+  box-shadow: 0 0 38px rgba(255, 68, 29, 0.12);
   color: #fff;
+}
+.procurementTabs button.isActive > span {
+  border-color: #ff5725;
+  background: linear-gradient(135deg, #ff3221, #ff9425);
+}
+.procurementTabs .isTrackingTab:not(.isActive) {
+  border-color: rgba(255, 92, 37, 0.42);
+  background: linear-gradient(115deg, rgba(55, 15, 12, 0.5), rgba(10, 12, 16, 0.88));
+  animation: trackingTabPulse 2.4s ease-in-out infinite;
+}
+.procurementTabs .isTrackingTab:not(.isActive):after {
+  content: "已有单号";
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  padding: 5px 9px;
+  background: #ff5325;
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+@keyframes trackingTabPulse {
+  50% {
+    box-shadow: 0 0 32px rgba(255, 78, 31, 0.19);
+  }
 }
 .procurementContent {
   padding-top: 55px;
@@ -2789,8 +2855,20 @@ p {
   }
   .procurementTabs button {
     flex: 1;
-    padding: 18px 8px;
-    font-size: 12px;
+    min-width: 0;
+    grid-template-columns: 34px 1fr;
+    padding: 15px 12px;
+  }
+  .procurementTabs button > span {
+    width: 32px;
+    height: 32px;
+  }
+  .procurementTabs button strong {
+    font-size: 13px;
+  }
+  .procurementTabs button small,
+  .procurementTabs button i {
+    display: none;
   }
   .procurementFields {
     grid-template-columns: 1fr;
@@ -2852,6 +2930,10 @@ p {
   }
 }
 @media (max-width: 480px) {
+  .procurementTabs {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
   .procurementHeader .brand img {
     width: 40px;
     height: 40px;

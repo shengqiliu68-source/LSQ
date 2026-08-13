@@ -238,10 +238,22 @@ export default function ProcurementPage() {
       </section>
       <nav className="procurementTabs contentShell">
         <button className={tab === "request" ? "isActive" : ""} onClick={() => setTab("request")}>
-          01 / 提交代购需求
+          <span>01</span>
+          <div>
+            <strong>提交代购需求</strong>
+            <small>还没有代购单号，从这里开始</small>
+          </div>
         </button>
-        <button className={tab === "tracking" ? "isActive" : ""} onClick={() => setTab("tracking")}>
-          02 / 查询代购进度
+        <button
+          className={`${tab === "tracking" ? "isActive" : ""} isTrackingTab`}
+          onClick={() => setTab("tracking")}
+        >
+          <span>02</span>
+          <div>
+            <strong>查询代购进度</strong>
+            <small>已有代购单号？点这里查询</small>
+          </div>
+          <i>查询 →</i>
         </button>
       </nav>
       <section className="procurementContent contentShell">
