@@ -510,7 +510,11 @@ function App() {
                   <strong>@llllsssqqq</strong>
                   <b>打开 Telegram →</b>
                 </a>
-                <span>多盘后勤定制、仓储与全球快递交付</span>
+                <a className="contactInquiryButton" href="/inquiry">
+                  <small>MESSAGE & INQUIRY</small>
+                  <strong>留言咨询问题</strong>
+                  <b>提交留言 →</b>
+                </a>
                 <a className="contactProcurementButton" href="/procurement">
                   <small>GLOBAL PROCUREMENT</small>
                   <strong>提交代购 / 代拍需求</strong>
