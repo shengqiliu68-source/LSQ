@@ -70,7 +70,8 @@ function CaseOverview() {
       <section className="casesHero contentShell casesReveal">
         <p className="eyebrow">SELECTED PROJECTS / 精选案例</p>
         <h1>
-          以真实交付，<span>证明定制能力。</span>
+          <span className="casesHeroLine">以真实交付，</span>
+          <span className="casesHeroLine isAccent">证明定制能力。</span>
         </h1>
         <div className="casesHeroFoot">
           <p>

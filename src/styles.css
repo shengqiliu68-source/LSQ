@@ -2405,19 +2405,23 @@ p {
   background: linear-gradient(110deg, #ff2b20, #ff8b1f);
 }
 .casesHero {
-  padding-top: 115px;
-  padding-bottom: 90px;
+  padding-top: 105px;
+  padding-bottom: 72px;
   position: relative;
 }
 .casesHero h1 {
-  max-width: 1050px;
-  margin: 22px 0 60px;
-  font-size: clamp(58px, 8vw, 138px);
-  line-height: 0.9;
-  letter-spacing: -0.065em;
+  max-width: 1120px;
+  margin: 24px 0 48px;
+  font-size: clamp(58px, 6.4vw, 108px);
+  line-height: 0.96;
+  letter-spacing: -0.055em;
 }
-.casesHero h1 span {
+.casesHeroLine {
   display: block;
+  width: fit-content;
+}
+.casesHeroLine.isAccent {
+  margin-top: 8px;
   background: linear-gradient(105deg, #ff3021, #ff9d24);
   background-clip: text;
   color: transparent;
@@ -2427,7 +2431,7 @@ p {
   justify-content: space-between;
   align-items: flex-end;
   border-top: 1px solid rgba(255, 255, 255, 0.16);
-  padding-top: 24px;
+  padding-top: 22px;
 }
 .casesHeroFoot > p {
   max-width: 650px;
@@ -2885,10 +2889,12 @@ p {
     display: none;
   }
   .casesHero {
-    padding-top: 80px;
+    padding-top: 72px;
   }
   .casesHero h1 {
-    margin-bottom: 40px;
+    margin-bottom: 36px;
+    font-size: clamp(52px, 10vw, 76px);
+    line-height: 1;
   }
   .casesHeroFoot {
     align-items: flex-start;
