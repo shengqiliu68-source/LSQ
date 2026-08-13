@@ -1,4 +1,4 @@
-import { useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BorderGlow from "./components/BorderGlow";
@@ -123,10 +123,27 @@ function CaseOverview() {
 }
 
 function CaseDetail({ item }: { item: CaseItem }) {
+  const [activeImage, setActiveImage] = useState<number | null>(null);
   const current = cases.findIndex((entry) => entry.slug === item.slug);
   const previous = cases[(current - 1 + cases.length) % cases.length];
   const next = cases[(current + 1) % cases.length];
   const materials = splitMaterials(item.materials);
+
+  useEffect(() => {
+    if (activeImage === null) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setActiveImage(null);
+      if (event.key === "ArrowLeft")
+        setActiveImage((activeImage - 1 + item.gallery.length) % item.gallery.length);
+      if (event.key === "ArrowRight") setActiveImage((activeImage + 1) % item.gallery.length);
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [activeImage, item.gallery.length]);
 
   return (
     <article className="caseDetail">
@@ -193,11 +210,66 @@ function CaseDetail({ item }: { item: CaseItem }) {
         <div className="caseGalleryGrid">
           {item.gallery.map((image, index) => (
             <figure className="casesReveal" key={image}>
-              <img src={image} alt={`${item.name} 案例图 ${index + 1}`} loading="lazy" />
+              <button
+                className="caseGalleryZoom"
+                type="button"
+                onClick={() => setActiveImage(index)}
+                aria-label={`放大查看${item.name}案例图 ${index + 1}`}
+              >
+                <img src={image} alt={`${item.name} 案例图 ${index + 1}`} loading="lazy" />
+                <span>放大查看 ↗</span>
+              </button>
             </figure>
           ))}
         </div>
       </section>
+
+      {activeImage !== null && (
+        <div className="caseLightbox" role="dialog" aria-modal="true" aria-label="案例大图预览">
+          <button
+            className="caseLightboxBackdrop"
+            type="button"
+            onClick={() => setActiveImage(null)}
+            aria-label="关闭大图"
+          />
+          <div className="caseLightboxStage">
+            <img src={item.gallery[activeImage]} alt={`${item.name} 案例大图 ${activeImage + 1}`} />
+            <div className="caseLightboxMeta">
+              <span>
+                {String(activeImage + 1).padStart(2, "0")} /{" "}
+                {String(item.gallery.length).padStart(2, "0")}
+              </span>
+              <strong>{item.name}</strong>
+            </div>
+          </div>
+          <button
+            className="caseLightboxClose"
+            type="button"
+            onClick={() => setActiveImage(null)}
+            aria-label="关闭"
+          >
+            ×
+          </button>
+          <button
+            className="caseLightboxArrow isPrevious"
+            type="button"
+            onClick={() =>
+              setActiveImage((activeImage - 1 + item.gallery.length) % item.gallery.length)
+            }
+            aria-label="上一张"
+          >
+            ←
+          </button>
+          <button
+            className="caseLightboxArrow isNext"
+            type="button"
+            onClick={() => setActiveImage((activeImage + 1) % item.gallery.length)}
+            aria-label="下一张"
+          >
+            →
+          </button>
+        </div>
+      )}
 
       <section className="caseFilm contentShell casesReveal">
         <video autoPlay muted loop playsInline preload="metadata" poster={item.cover}>
