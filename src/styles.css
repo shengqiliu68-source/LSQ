@@ -2608,28 +2608,36 @@ p {
 }
 .caseSpecCard > div {
   height: 100%;
-  padding: 32px;
+  padding: 38px 40px 42px;
 }
 .caseSpecCard span {
   color: #ff5a1f;
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
 }
 .caseSpecCard h3 {
-  margin: 50px 0 22px;
-  font-size: 25px;
+  margin: 34px 0 24px;
+  font-size: 29px;
+  line-height: 1.25;
 }
 .caseSpecCard h4 {
-  margin: 28px 0 10px;
+  margin: 30px 0 12px;
   color: #ff7130;
+  font-size: 17px;
 }
 .caseSpecCard p,
 .caseSpecCard li {
-  color: #9ba0a8;
-  line-height: 1.8;
-  font-size: 14px;
+  color: #b8bcc3;
+  line-height: 1.9;
+  font-size: 16px;
 }
 .caseSpecCard ul {
-  padding-left: 18px;
+  padding-left: 20px;
+  margin: 0;
+}
+.caseSpecCard li + li {
+  margin-top: 3px;
 }
 .caseGallery,
 .caseLongDetail {
@@ -2913,7 +2921,7 @@ p {
     padding-bottom: 85px;
   }
   .caseSpecCard h3 {
-    margin-top: 28px;
+    margin-top: 25px;
   }
   .caseGalleryGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2935,6 +2943,16 @@ p {
   }
 }
 @media (max-width: 520px) {
+  .caseSpecCard > div {
+    padding: 28px 24px 32px;
+  }
+  .caseSpecCard h3 {
+    font-size: 27px;
+  }
+  .caseSpecCard p,
+  .caseSpecCard li {
+    font-size: 16px;
+  }
   .caseLightbox {
     padding: 70px 14px 80px;
   }
