@@ -370,7 +370,7 @@ function App() {
             <a className="heroProjectButton" href="/cases">
               过往优秀定制案例
             </a>
-            <a className="heroProjectButton" href="#contact">
+            <a className="heroProjectButton" href="/order-tracking">
               查询你的订单状态
             </a>
             <a className="heroProjectButton" href="#contact">
