@@ -2356,7 +2356,7 @@ p {
     80px 80px;
 }
 .procurementHeader {
-  height: 96px;
+  height: 118px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2370,24 +2370,38 @@ p {
   text-decoration: none;
 }
 .procurementHeader .brand img {
-  width: 48px;
-  height: 48px;
+  width: 68px;
+  height: 68px;
   object-fit: contain;
 }
 .procurementHeader .brand span {
   display: grid;
-  font-size: 21px;
+  font-size: 29px;
   font-weight: 900;
+  line-height: 1.05;
 }
 .procurementHeader .brand small {
   color: #a3a8b0;
-  font-size: 10px;
+  margin-top: 8px;
+  font-size: 15px;
   letter-spacing: 0.12em;
 }
 .procurementHeader > a:last-child {
-  color: #aeb2b9;
+  min-width: 150px;
+  padding: 15px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.035);
+  color: #e1e3e7;
   text-decoration: none;
-  font-size: 13px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+.procurementHeader > a:last-child:hover {
+  border-color: #ff5725;
+  background: rgba(255, 74, 31, 0.12);
+  color: #fff;
 }
 .procurementHero {
   padding-top: 100px;
@@ -2397,7 +2411,7 @@ p {
 .procurementHero > p:first-child,
 .procurementSearchIntro > p:first-child {
   color: #ff4e27;
-  font-size: 12px;
+  font-size: 17px;
   font-weight: 900;
   letter-spacing: 0.16em;
 }
@@ -2867,7 +2881,7 @@ p {
 }
 @media (max-width: 720px) {
   .procurementHeader {
-    height: 76px;
+    height: 88px;
   }
   .procurementHero {
     padding-top: 70px;
@@ -2958,11 +2972,20 @@ p {
     grid-template-columns: 1fr;
   }
   .procurementHeader .brand img {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
   }
   .procurementHeader .brand span {
-    font-size: 17px;
+    font-size: 20px;
+  }
+  .procurementHeader .brand small {
+    margin-top: 4px;
+    font-size: 11px;
+  }
+  .procurementHeader > a:last-child {
+    min-width: auto;
+    padding: 11px 13px;
+    font-size: 14px;
   }
   .procurementHero h1 {
     font-size: 48px;
