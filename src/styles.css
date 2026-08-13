@@ -3111,12 +3111,15 @@ p {
   letter-spacing: 0.16em;
 }
 .trackingHero h1 {
-  margin: 22px 0 52px;
-  font-size: clamp(64px, 8.6vw, 138px);
-  line-height: 0.88;
-  letter-spacing: -0.065em;
+  max-width: 980px;
+  margin: 24px 0 46px;
+  font-size: clamp(60px, 6.5vw, 104px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
 }
 .trackingHero h1 span {
+  display: inline-block;
+  margin-top: 7px;
   background: linear-gradient(100deg, #ff2d22, #ff9b26);
   background-clip: text;
   color: transparent;
@@ -3382,8 +3385,8 @@ p {
     padding-top: 70px;
   }
   .trackingHero h1 {
-    font-size: 58px;
-    line-height: 0.94;
+    font-size: clamp(52px, 10vw, 70px);
+    line-height: 1;
     margin-bottom: 38px;
   }
   .trackingSearchWrap {
