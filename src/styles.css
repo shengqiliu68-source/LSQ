@@ -1752,6 +1752,7 @@ p {
   background: rgba(255, 255, 255, 0.03);
   color: #bbc1cb;
   font-weight: 800;
+  font-size: 15px;
   cursor: pointer;
 }
 .catalogFilters button.isActive,
@@ -1847,7 +1848,7 @@ p {
 }
 .shopCardBody > span {
   color: var(--accent-strong);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 850;
 }
 .shopCardBody h3 {
@@ -1860,7 +1861,7 @@ p {
   justify-content: space-between;
   margin: 0 0 18px;
   color: #929aa6;
-  font-size: 12px;
+  font-size: 15px;
 }
 .shopCardBody p strong {
   color: #fff;
@@ -1873,6 +1874,7 @@ p {
   background: rgba(255, 255, 255, 0.04);
   color: #fff;
   font-weight: 850;
+  font-size: 15px;
   cursor: pointer;
 }
 .shopCard.isSelected .shopCardBody button,
@@ -2526,11 +2528,13 @@ p {
 }
 .formSectionHead h2 {
   margin: 0;
-  font-size: 32px;
+  font-size: 38px;
 }
 .formSectionHead p {
   margin: 7px 0 0;
   color: #878e98;
+  font-size: 18px;
+  line-height: 1.6;
 }
 .addressHead {
   margin-top: 65px;
@@ -2542,9 +2546,10 @@ p {
 }
 .procurementFields label {
   display: grid;
-  gap: 10px;
-  color: #adb2ba;
-  font-size: 12px;
+  gap: 13px;
+  color: #c5c9cf;
+  font-size: 16px;
+  font-weight: 600;
 }
 .procurementFields label.isWide {
   grid-column: 1/-1;
@@ -2555,8 +2560,10 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(9, 11, 15, 0.84);
   color: #fff;
-  padding: 17px 18px;
+  padding: 20px 21px;
   font: inherit;
+  font-size: 17px;
+  line-height: 1.65;
   outline: none;
   resize: vertical;
 }
@@ -2570,8 +2577,9 @@ p {
   align-items: center;
   gap: 10px;
   margin: 28px 0;
-  color: #888f98;
-  font-size: 12px;
+  color: #b1b6be;
+  font-size: 15px;
+  line-height: 1.6;
 }
 .procurementConsent input {
   accent-color: #ff5725;
@@ -2625,6 +2633,8 @@ p {
 }
 .procurementSearchIntro > p:last-child {
   color: #999fa8;
+  font-size: 17px;
+  line-height: 1.75;
 }
 .procurementSearch > form {
   max-width: 900px;
@@ -2634,7 +2644,8 @@ p {
   display: block;
   margin-bottom: 10px;
   color: #999fa8;
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: 600;
 }
 .procurementSearch > form > div {
   display: grid;
@@ -2664,6 +2675,7 @@ p {
   color: #828892;
   text-decoration: underline;
   cursor: pointer;
+  font-size: 15px;
 }
 .procurementNotFound {
   max-width: 900px;
@@ -2690,7 +2702,7 @@ p {
 }
 .procurementResultTop > div span {
   color: #858c96;
-  font-size: 11px;
+  font-size: 15px;
 }
 .procurementResultTop > div strong {
   display: block;
@@ -2700,6 +2712,7 @@ p {
 }
 .procurementResultTop > div small {
   color: #858c96;
+  font-size: 14px;
 }
 .procurementResultTop dl {
   display: grid;
@@ -2716,11 +2729,12 @@ p {
 }
 .procurementResultTop dt {
   color: #747b85;
-  font-size: 10px;
+  font-size: 14px;
 }
 .procurementResultTop dd {
   margin: 7px 0 0;
   font-weight: 700;
+  font-size: 16px;
 }
 .procurementSteps {
   display: grid;
@@ -2758,7 +2772,8 @@ p {
   font-style: normal;
 }
 .procurementSteps span {
-  font-size: 12px;
+  font-size: 15px;
+  font-weight: 700;
 }
 .procurementSteps .isDone,
 .procurementSteps .isCurrent {
@@ -2825,12 +2840,14 @@ p {
 }
 .procurementTimeline p {
   margin: 0;
-  color: #8c929b;
+  color: #a9aeb6;
+  font-size: 16px;
+  line-height: 1.7;
 }
 .procurementTimeline time {
   padding-top: 10px;
   color: #aeb2b8;
-  font-size: 12px;
+  font-size: 15px;
 }
 .procurementTimeline .isPending {
   opacity: 0.45;
@@ -2842,7 +2859,7 @@ p {
   padding-bottom: 45px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: #747b84;
-  font-size: 12px;
+  font-size: 15px;
 }
 .procurementFooter a {
   color: #fff;
@@ -3735,7 +3752,7 @@ p {
 .trackingHero > p,
 .trackingSectionTitle p {
   color: #ff4d28;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 900;
   letter-spacing: 0.16em;
 }
@@ -3766,7 +3783,7 @@ p {
   display: block;
   margin-bottom: 12px;
   color: #aeb3bb;
-  font-size: 13px;
+  font-size: 16px;
 }
 .trackingSearchWrap form > div {
   display: grid;
@@ -3803,6 +3820,7 @@ p {
   text-decoration: underline;
   cursor: pointer;
   padding: 0 0 22px;
+  font-size: 15px;
 }
 .trackingEmpty {
   max-width: 950px;
@@ -3832,7 +3850,7 @@ p {
 .trackingSummary > div span {
   display: block;
   color: #8e949e;
-  font-size: 12px;
+  font-size: 15px;
 }
 .trackingSummary > div strong {
   display: block;
@@ -3842,6 +3860,7 @@ p {
 }
 .trackingSummary > div small {
   color: #8e949e;
+  font-size: 14px;
 }
 .trackingSummary dl {
   display: grid;
@@ -3855,11 +3874,11 @@ p {
 }
 .trackingSummary dt {
   color: #777e88;
-  font-size: 11px;
+  font-size: 14px;
 }
 .trackingSummary dd {
   margin: 8px 0 0;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
 }
 .trackingProgress {
@@ -3896,11 +3915,12 @@ p {
   border: 1px solid #363b43;
   border-radius: 50%;
   background: #080a0d;
-  font-size: 10px;
+  font-size: 13px;
   font-style: normal;
 }
 .trackingProgress span {
-  font-size: 12px;
+  font-size: 15px;
+  font-weight: 700;
 }
 .trackingProgress .isDone,
 .trackingProgress .isCurrent {
@@ -3974,7 +3994,7 @@ p {
 }
 .trackingTimeline article > div:nth-child(2) > span {
   color: #ff5a24;
-  font-size: 10px;
+  font-size: 13px;
 }
 .trackingTimeline h3 {
   margin: 6px 0;
@@ -3983,12 +4003,13 @@ p {
 .trackingTimeline p {
   margin: 0;
   color: #9298a1;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 1.7;
 }
 .trackingTimeline time {
   padding-top: 19px;
   color: #b8bcc3;
-  font-size: 13px;
+  font-size: 15px;
 }
 .trackingTimeline .isPending {
   opacity: 0.46;
@@ -4000,7 +4021,7 @@ p {
   padding-bottom: 45px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: #747b84;
-  font-size: 12px;
+  font-size: 15px;
 }
 .trackingFooter a {
   color: #fff;
