@@ -373,7 +373,7 @@ function App() {
             <a className="heroProjectButton" href="/order-tracking">
               查询你的订单状态
             </a>
-            <a className="heroProjectButton" href="#contact">
+            <a className="heroProjectButton" href="/procurement">
               我需要代购/代拍
             </a>
           </div>
