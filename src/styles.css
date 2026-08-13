@@ -2640,21 +2640,18 @@ p {
 }
 .caseGalleryGrid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
 .caseGalleryGrid figure {
-  grid-column: span 4;
-  height: 360px;
+  min-width: 0;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   background: #111;
 }
 .caseGalleryGrid figure:nth-child(1),
 .caseGalleryGrid figure:nth-child(5) {
-  grid-column: span 8;
-}
-.caseGalleryGrid figure:nth-child(1) {
-  height: 540px;
+  grid-column: auto;
 }
 .caseGalleryGrid img {
   width: 100%;
@@ -2807,17 +2804,12 @@ p {
     margin-top: 28px;
   }
   .caseGalleryGrid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .caseGalleryGrid figure,
   .caseGalleryGrid figure:nth-child(1),
   .caseGalleryGrid figure:nth-child(5) {
     grid-column: auto;
-    height: 260px;
-  }
-  .caseGalleryGrid figure:nth-child(1) {
-    grid-column: span 2;
-    height: 380px;
   }
   .caseFilm {
     height: 540px;
@@ -2871,12 +2863,11 @@ p {
     font-size: 49px;
   }
   .caseGalleryGrid {
-    display: block;
+    grid-template-columns: 1fr;
   }
   .caseGalleryGrid figure,
   .caseGalleryGrid figure:nth-child(1) {
-    height: 280px;
-    margin-bottom: 10px;
+    aspect-ratio: 4 / 3;
   }
   .caseFilm {
     height: 500px;
