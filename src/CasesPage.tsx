@@ -9,6 +9,7 @@ import {
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BorderGlow from "./components/BorderGlow";
+import { caseSourceImageCount } from "./caseQuality";
 import casesJson from "./caseData.json";
 import giftboxCasesJson from "./giftboxCaseData.json";
 
@@ -29,7 +30,14 @@ type CaseItem = {
   detail: string;
 };
 
-const cases = [...(casesJson as CaseItem[]), ...(giftboxCasesJson as CaseItem[])];
+const cases = [...(casesJson as CaseItem[]), ...(giftboxCasesJson as CaseItem[])]
+  .map((item, originalOrder) => ({ item, originalOrder }))
+  .sort(
+    (a, b) =>
+      (caseSourceImageCount[b.item.slug] ?? 0) -
+        (caseSourceImageCount[a.item.slug] ?? 0) || a.originalOrder - b.originalOrder,
+  )
+  .map(({ item }) => item);
 const glow = {
   edgeSensitivity: 24,
   glowColor: "12 100 62",
