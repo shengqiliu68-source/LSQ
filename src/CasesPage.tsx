@@ -1,4 +1,12 @@
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import {
+  type AnchorHTMLAttributes,
+  type MouseEvent,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BorderGlow from "./components/BorderGlow";
@@ -39,6 +47,28 @@ function splitMaterials(value: string[] | string) {
   return Array.isArray(value) ? value : value.split(/[、，。]/).filter(Boolean);
 }
 
+function CaseLink({ href = "/cases", onClick, ...props }: AnchorHTMLAttributes<HTMLAnchorElement>) {
+  const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    onClick?.(event);
+    if (
+      event.defaultPrevented ||
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    )
+      return;
+
+    event.preventDefault();
+    window.history.pushState(null, "", href);
+    window.dispatchEvent(new PopStateEvent("popstate"));
+    window.scrollTo({ top: 0, behavior: "auto" });
+  };
+
+  return <a {...props} href={href} onClick={handleClick} />;
+}
+
 function CasesHeader() {
   return (
     <header className="casesNav contentShell">
@@ -49,7 +79,7 @@ function CasesHeader() {
         </span>
       </a>
       <nav aria-label="案例导航">
-        <a href="/cases">案例总览</a>
+        <CaseLink href="/cases">案例总览</CaseLink>
         <a className="casesNavCta" href="/custom/packaging">
           开始定制 →
         </a>
@@ -100,7 +130,7 @@ function CaseOverview() {
         <div className="casesGrid">
           {visible.map((item) => (
             <BorderGlow {...glow} className="projectCard casesReveal" key={item.slug}>
-              <a href={`/cases/${item.slug}`}>
+              <CaseLink href={`/cases/${item.slug}`}>
                 <figure>
                   <img src={item.cover} alt={item.name} loading="lazy" />
                 </figure>
@@ -115,7 +145,7 @@ function CaseOverview() {
                     <b>查看完整案例 ↗</b>
                   </div>
                 </div>
-              </a>
+              </CaseLink>
             </BorderGlow>
           ))}
         </div>
@@ -153,7 +183,7 @@ function CaseDetail({ item }: { item: CaseItem }) {
         <img src={item.cover} alt={item.name} />
         <div className="caseDetailShade" />
         <div className="contentShell caseDetailTitle">
-          <a href="/cases">← 返回案例总览</a>
+          <CaseLink href="/cases">← 返回案例总览</CaseLink>
           <p>
             {item.index} / {item.category}
           </p>
@@ -297,14 +327,14 @@ function CaseDetail({ item }: { item: CaseItem }) {
       )}
 
       <nav className="casePager contentShell" aria-label="浏览其他案例">
-        <a href={`/cases/${previous.slug}`}>
+        <CaseLink href={`/cases/${previous.slug}`}>
           <span>← 上一个案例</span>
           <strong>{previous.name}</strong>
-        </a>
-        <a href={`/cases/${next.slug}`}>
+        </CaseLink>
+        <CaseLink href={`/cases/${next.slug}`}>
           <span>下一个案例 →</span>
           <strong>{next.name}</strong>
-        </a>
+        </CaseLink>
       </nav>
     </article>
   );
@@ -312,8 +342,15 @@ function CaseDetail({ item }: { item: CaseItem }) {
 
 export default function CasesPage() {
   const pageRef = useRef<HTMLElement>(null);
-  const slug = decodeURIComponent(window.location.pathname.replace(/^\/cases\/?/, ""));
+  const [pathname, setPathname] = useState(window.location.pathname);
+  const slug = decodeURIComponent(pathname.replace(/^\/cases\/?/, ""));
   const selected = cases.find((item) => item.slug === slug);
+
+  useEffect(() => {
+    const handleLocationChange = () => setPathname(window.location.pathname);
+    window.addEventListener("popstate", handleLocationChange);
+    return () => window.removeEventListener("popstate", handleLocationChange);
+  }, []);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
