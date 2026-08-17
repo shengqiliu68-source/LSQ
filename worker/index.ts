@@ -13,7 +13,10 @@ export default {
     const isNavigation = request.headers.get("sec-fetch-mode") === "navigate";
     if (!acceptsHtml && !isNavigation) return response;
 
-    const indexUrl = new URL("/index.html", request.url);
+    // Fetching /index.html is canonicalized to / by Sites hosting, which
+    // changes the browser URL and breaks client-side deep links. Fetching the
+    // root document directly preserves the original navigation URL.
+    const indexUrl = new URL("/", request.url);
     return env.ASSETS.fetch(new Request(indexUrl, request));
   },
 };
