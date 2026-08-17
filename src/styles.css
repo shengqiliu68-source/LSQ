@@ -3511,9 +3511,10 @@ p {
   padding-top: 22px;
 }
 .casesHeroFoot > p {
-  max-width: 650px;
+  max-width: 760px;
   color: #a9adb5;
-  line-height: 1.9;
+  font-size: 18px;
+  line-height: 1.85;
 }
 .casesHeroFoot strong {
   font-size: 55px;
@@ -3539,7 +3540,10 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: #0d1014;
   color: #9ca1a9;
-  padding: 12px 18px;
+  padding: 14px 20px;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 600;
   cursor: pointer;
 }
 .caseFilters button:hover,
@@ -3585,7 +3589,7 @@ p {
 }
 .projectCardCopy > span {
   color: #ff5b21;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.09em;
 }
@@ -3594,11 +3598,11 @@ p {
   font-size: 29px;
 }
 .projectCardCopy > p {
-  height: 48px;
+  height: 62px;
   overflow: hidden;
   color: #9298a1;
-  font-size: 14px;
-  line-height: 1.75;
+  font-size: 17px;
+  line-height: 1.8;
 }
 .projectCardCopy > div {
   display: flex;
@@ -3610,10 +3614,11 @@ p {
 }
 .projectCardCopy small {
   color: #696f78;
+  font-size: 14px;
 }
 .projectCardCopy b {
   white-space: nowrap;
-  font-size: 12px;
+  font-size: 14px;
 }
 .caseDetailHero {
   height: calc(100vh - 96px);
@@ -3682,8 +3687,8 @@ p {
 }
 .caseStory > p {
   color: #b0b4bc;
-  line-height: 2;
-  font-size: 16px;
+  line-height: 1.9;
+  font-size: 19px;
 }
 .caseSpecs {
   display: grid;
@@ -3715,8 +3720,8 @@ p {
 .caseSpecCard p,
 .caseSpecCard li {
   color: #b8bcc3;
-  line-height: 1.9;
-  font-size: 16px;
+  line-height: 1.85;
+  font-size: 18px;
 }
 .caseSpecCard ul {
   padding-left: 20px;
@@ -4039,7 +4044,7 @@ p {
   }
   .caseSpecCard p,
   .caseSpecCard li {
-    font-size: 16px;
+    font-size: 17px;
   }
   .caseLightbox {
     padding: 70px 14px 80px;
@@ -4079,8 +4084,9 @@ p {
     font-size: 52px;
   }
   .casesHeroFoot > p {
-    max-width: 72%;
-    font-size: 13px;
+    max-width: 74%;
+    font-size: 16px;
+    line-height: 1.7;
   }
   .casesHeroFoot strong {
     font-size: 32px;
@@ -4090,6 +4096,10 @@ p {
   }
   .projectCardCopy h2 {
     font-size: 23px;
+  }
+  .projectCardCopy > p {
+    font-size: 16px;
+    line-height: 1.75;
   }
   .projectCardCopy > div {
     display: block;
