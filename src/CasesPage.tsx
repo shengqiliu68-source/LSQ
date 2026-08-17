@@ -111,9 +111,15 @@ function CaseOverview() {
         <div className="casesGrid">
           {visible.map((item) => (
             <BorderGlow {...glow} className="projectCard casesReveal" key={item.slug}>
-              <CaseLink href={`/cases/${item.slug}`}>
+              <CaseLink
+                href={`/cases/${item.slug}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`打开${item.name}详情页`}
+              >
                 <figure>
                   <img src={item.cover} alt={item.name} loading="lazy" />
+                  <span className="projectCardImageCta">点击查看详情 ↗</span>
                 </figure>
                 <div className="projectCardCopy">
                   <span>

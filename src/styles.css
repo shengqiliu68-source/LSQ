@@ -3567,6 +3567,7 @@ p {
   cursor: pointer;
 }
 .projectCard figure {
+  position: relative;
   height: 430px;
   overflow: hidden;
   background: #111;
@@ -3579,6 +3580,32 @@ p {
 }
 .projectCard:hover figure img {
   transform: scale(1.055);
+}
+.projectCardImageCta {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2;
+  padding: 11px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  background: rgba(3, 5, 8, 0.82);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+  backdrop-filter: blur(12px);
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+.projectCard:hover .projectCardImageCta,
+.projectCard .border-glow-inner > a:focus-visible .projectCardImageCta {
+  border-color: #ff6b24;
+  background: linear-gradient(115deg, #ff3423, #ff8a1d);
+  transform: translateY(-3px);
 }
 .projectCardCopy {
   padding: 28px;

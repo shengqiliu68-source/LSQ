@@ -434,7 +434,12 @@ function App() {
           <div className="contentShell caseGrid">
             {cases.map((item) => (
               <BorderGlow {...borderGlowTheme} className="caseCard motionCard" key={item.title}>
-                <a className="caseCardContent" href={`/cases/${item.slug}`}>
+                <a
+                  className="caseCardContent"
+                  href={`/cases/${item.slug}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
                   <div>
                     <span>{item.tag}</span>
