@@ -331,7 +331,7 @@ function CaseDetail({ item }: { item: CaseItem }) {
 export default function CasesPage() {
   const pageRef = useRef<HTMLElement>(null);
   const [pathname, setPathname] = useState(window.location.pathname);
-  const slug = decodeURIComponent(pathname.replace(/^\/cases\/?/, ""));
+  const slug = decodeURIComponent(pathname.replace(/^\/cases\/?/, "").replace(/\/+$/, ""));
   const selected = cases.find((item) => item.slug === slug);
 
   useEffect(() => {
