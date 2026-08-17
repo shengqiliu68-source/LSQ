@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "GitHub.vscode-pull-request-github",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "usernamehw.errorlens",
+    "bradlc.vscode-tailwindcss",
+    "eamodio.gitlens",
+    "PKief.material-icon-theme",
+    "github.copilot-chat"
+  ]
+}
