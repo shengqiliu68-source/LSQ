@@ -265,11 +265,11 @@ video {
 }
 
 .nav.isFloating .brand small {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .nav.isFloating .navButton {
-  min-height: 44px;
+  min-height: 50px;
   border-color: rgba(255, 90, 24, 0.46);
 }
 
@@ -310,7 +310,7 @@ video {
 
 .brand small {
   color: rgba(245, 247, 251, 0.76);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 760;
 }
 
@@ -320,7 +320,7 @@ video {
   justify-content: center;
   gap: 54px;
   color: rgba(245, 247, 251, 0.74);
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 800;
 }
 
@@ -373,10 +373,10 @@ video {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
+  min-height: 54px;
   border: 1px solid var(--line);
-  padding: 0 22px;
-  font-size: 12px;
+  padding: 0 26px;
+  font-size: 16px;
   font-weight: 900;
   transition:
     transform 130ms ease,
@@ -428,7 +428,7 @@ video {
 .eyebrow {
   margin: 0 0 22px;
   color: var(--accent);
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: 0.16em;
 }
@@ -680,7 +680,7 @@ p {
 .contact p {
   max-width: 760px;
   color: var(--muted);
-  font-size: 18px;
+  font-size: 21px;
   line-height: 1.75;
 }
 
@@ -707,7 +707,7 @@ p {
 .caseCard span,
 .numberCard span {
   color: var(--accent-strong);
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -717,15 +717,15 @@ p {
 .logisticsCard h3 {
   margin: 28px 0 16px;
   color: #ffffff;
-  font-size: 26px;
+  font-size: 29px;
 }
 
 .featureCard p,
 .logisticsCard p,
 .numberCard p {
   color: #b7bfcc;
-  font-size: 16px;
-  line-height: 1.75;
+  font-size: 19px;
+  line-height: 1.7;
 }
 
 .caseGrid {
@@ -808,7 +808,7 @@ p {
 .numberCard p {
   margin: 46px 0 0;
   color: #edf2f7;
-  font-size: 22px;
+  font-size: 25px;
   line-height: 1.45;
 }
 
@@ -841,8 +841,8 @@ p {
 .contactPanel {
   display: flex;
   flex-wrap: wrap;
-  gap: 18px;
-  padding: 30px;
+  gap: 20px;
+  padding: 36px;
   background: var(--panel-gradient);
 }
 
@@ -850,7 +850,7 @@ p {
 .contactPanel span {
   border: 1px solid var(--line);
   background: var(--panel-gradient);
-  padding: 18px 22px;
+  padding: 24px 26px;
   color: #eef4f8;
 }
 
@@ -875,7 +875,7 @@ p {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  min-width: min(100%, 430px);
+  min-width: min(100%, 500px);
   border-color: rgba(255, 86, 32, 0.65);
   background: linear-gradient(110deg, rgba(93, 18, 12, 0.82), rgba(10, 12, 16, 0.94));
 }
@@ -883,26 +883,26 @@ p {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  min-width: min(100%, 390px);
+  min-width: min(100%, 460px);
 }
 .contactChannel small {
   grid-column: 1;
   color: #ff6a2b;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 900;
   letter-spacing: 0.12em;
 }
 .contactChannel strong {
   grid-column: 1;
   margin-top: 7px;
-  font-size: 18px;
+  font-size: 23px;
 }
 .contactChannel b {
   grid-column: 2;
   grid-row: 1 / span 2;
   margin-left: 24px;
   color: #ff742e;
-  font-size: 13px;
+  font-size: 16px;
 }
 .contactPanel .contactChannel.isTelegram {
   border-color: rgba(73, 161, 255, 0.48);
@@ -916,27 +916,27 @@ p {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  min-width: min(100%, 390px);
+  min-width: min(100%, 460px);
   border-color: rgba(255, 255, 255, 0.25);
 }
 .contactInquiryButton small {
   grid-column: 1;
   color: #ff6a2b;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 900;
   letter-spacing: 0.12em;
 }
 .contactInquiryButton strong {
   grid-column: 1;
   margin-top: 7px;
-  font-size: 20px;
+  font-size: 24px;
 }
 .contactInquiryButton b {
   grid-column: 2;
   grid-row: 1 / span 2;
   margin-left: 24px;
   color: #ff742e;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 /* Inquiry form */
@@ -1263,21 +1263,21 @@ p {
 .contactProcurementButton small {
   grid-column: 1;
   color: #ff6a2b;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 900;
   letter-spacing: 0.12em;
 }
 .contactProcurementButton strong {
   grid-column: 1;
   margin-top: 7px;
-  font-size: 20px;
+  font-size: 24px;
 }
 .contactProcurementButton b {
   grid-column: 2;
   grid-row: 1 / span 2;
   margin-left: 30px;
   color: #ff742e;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 @media (max-width: 1100px) {
