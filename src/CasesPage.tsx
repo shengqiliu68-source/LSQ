@@ -1,6 +1,5 @@
 import {
   type AnchorHTMLAttributes,
-  type MouseEvent,
   useEffect,
   useLayoutEffect,
   useMemo,
@@ -48,25 +47,7 @@ function splitMaterials(value: string[] | string) {
 }
 
 function CaseLink({ href = "/cases", onClick, ...props }: AnchorHTMLAttributes<HTMLAnchorElement>) {
-  const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
-    onClick?.(event);
-    if (
-      event.defaultPrevented ||
-      event.button !== 0 ||
-      event.metaKey ||
-      event.ctrlKey ||
-      event.shiftKey ||
-      event.altKey
-    )
-      return;
-
-    event.preventDefault();
-    window.history.pushState(null, "", href);
-    window.dispatchEvent(new PopStateEvent("popstate"));
-    window.scrollTo({ top: 0, behavior: "auto" });
-  };
-
-  return <a {...props} href={href} onClick={handleClick} />;
+  return <a {...props} href={href} onClick={onClick} />;
 }
 
 function CasesHeader() {
