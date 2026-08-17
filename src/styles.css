@@ -79,7 +79,7 @@ body {
   display: block;
   margin-bottom: clamp(20px, 4vh, 48px);
   color: rgba(255, 255, 255, 0.58);
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 800;
   letter-spacing: 0.28em;
 }
@@ -265,7 +265,7 @@ video {
 }
 
 .nav.isFloating .brand small {
-  font-size: 14px;
+  font-size: 17px;
 }
 
 .nav.isFloating .navButton {
@@ -310,7 +310,7 @@ video {
 
 .brand small {
   color: rgba(245, 247, 251, 0.76);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 760;
 }
 
@@ -376,7 +376,7 @@ video {
   min-height: 54px;
   border: 1px solid var(--line);
   padding: 0 26px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 900;
   transition:
     transform 130ms ease,
@@ -428,7 +428,7 @@ video {
 .eyebrow {
   margin: 0 0 22px;
   color: var(--accent);
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 800;
   letter-spacing: 0.16em;
 }
@@ -530,7 +530,7 @@ p {
   max-width: 780px;
   margin: 0;
   color: rgba(245, 247, 251, 0.78);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 760;
   line-height: 1.6;
 }
@@ -544,7 +544,7 @@ p {
 
 .heroMicrocopy span {
   color: rgba(245, 247, 251, 0.76);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 850;
 }
 
@@ -602,7 +602,7 @@ p {
   color: #f5f7fb;
   padding: 0 14px;
   text-align: center;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 1000;
   white-space: nowrap;
   transition:
@@ -707,7 +707,7 @@ p {
 .caseCard span,
 .numberCard span {
   color: var(--accent-strong);
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -888,7 +888,7 @@ p {
 .contactChannel small {
   grid-column: 1;
   color: #ff6a2b;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 900;
   letter-spacing: 0.12em;
 }
@@ -902,7 +902,7 @@ p {
   grid-row: 1 / span 2;
   margin-left: 24px;
   color: #ff742e;
-  font-size: 16px;
+  font-size: 18px;
 }
 .contactPanel .contactChannel.isTelegram {
   border-color: rgba(73, 161, 255, 0.48);
@@ -922,7 +922,7 @@ p {
 .contactInquiryButton small {
   grid-column: 1;
   color: #ff6a2b;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 900;
   letter-spacing: 0.12em;
 }
@@ -936,7 +936,7 @@ p {
   grid-row: 1 / span 2;
   margin-left: 24px;
   color: #ff742e;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 /* Inquiry form */
@@ -987,7 +987,7 @@ p {
 .inquiryHeader .brand small {
   margin-top: 8px;
   color: #a3a8b0;
-  font-size: 15px;
+  font-size: 18px;
   letter-spacing: 0.12em;
 }
 .inquiryHeader > a:last-child {
@@ -1077,7 +1077,7 @@ p {
   display: grid;
   gap: 12px;
   color: #c5c9cf;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
 }
 .inquiryFields .isWide {
@@ -1107,7 +1107,7 @@ p {
   gap: 10px;
   margin: 27px 0;
   color: #afb4bc;
-  font-size: 15px;
+  font-size: 18px;
 }
 .inquiryConsent input {
   accent-color: #ff5725;
@@ -1119,7 +1119,7 @@ p {
   border: 0;
   background: linear-gradient(110deg, #ff3021, #ff9825);
   color: #fff;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 900;
   cursor: pointer;
 }
@@ -1133,7 +1133,7 @@ p {
 }
 .inquiryAside > p:last-of-type {
   color: #9ba1aa;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.7;
 }
 .inquiryAside > a {
@@ -1151,12 +1151,12 @@ p {
 }
 .inquiryAside > a span {
   color: #ff6428;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 900;
 }
 .inquiryAside > a strong {
   grid-column: 1;
-  font-size: 16px;
+  font-size: 18px;
   overflow-wrap: anywhere;
 }
 .inquiryAside > a b {
@@ -1164,7 +1164,7 @@ p {
   grid-row: 1 / span 2;
   align-self: center;
   color: #ff6d2b;
-  font-size: 13px;
+  font-size: 16px;
 }
 .inquirySuccess > i {
   display: grid;
@@ -1179,7 +1179,7 @@ p {
 .inquirySuccess > p:first-of-type {
   margin-top: 35px;
   color: #ff6428;
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 0.14em;
 }
 .inquirySuccess h2 {
@@ -1215,12 +1215,12 @@ p {
   }
   .inquiryHeader .brand small {
     margin-top: 4px;
-    font-size: 11px;
+    font-size: 16px;
   }
   .inquiryHeader > a:last-child {
     min-width: auto;
     padding: 11px 13px;
-    font-size: 14px;
+    font-size: 17px;
   }
   .inquiryHero {
     padding-top: 70px;
@@ -1263,7 +1263,7 @@ p {
 .contactProcurementButton small {
   grid-column: 1;
   color: #ff6a2b;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 900;
   letter-spacing: 0.12em;
 }
@@ -1277,7 +1277,7 @@ p {
   grid-row: 1 / span 2;
   margin-left: 30px;
   color: #ff742e;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 @media (max-width: 1100px) {
@@ -1395,7 +1395,7 @@ p {
 
   .openingIndex {
     margin-bottom: 28px;
-    font-size: 9px;
+    font-size: 16px;
     letter-spacing: 0.2em;
   }
 
@@ -1446,7 +1446,7 @@ p {
   .navButton {
     min-height: 40px;
     padding: 0 11px;
-    font-size: 11px;
+    font-size: 16px;
   }
 
   h1 {
@@ -1524,7 +1524,7 @@ p {
   }
 
   .heroMicrocopy span {
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.65;
   }
 
@@ -1537,7 +1537,7 @@ p {
   }
 
   .heroMetric p {
-    font-size: 15px;
+    font-size: 18px;
   }
 
   .heroActions {
@@ -1547,7 +1547,7 @@ p {
   .heroLead,
   .sectionHeader p,
   .contact p {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .section {
@@ -1657,7 +1657,7 @@ p {
   display: flex;
   gap: 48px;
   color: #aeb5c0;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 800;
 }
 .innerNavLinks a:hover {
@@ -1731,7 +1731,7 @@ p {
   top: -28px;
   right: 0;
   color: #767e89;
-  font-size: 10px;
+  font-size: 16px;
   letter-spacing: 0.18em;
 }
 .visualBadge {
@@ -1753,7 +1753,7 @@ p {
 }
 .visualBadge span {
   color: #cbd1da;
-  font-size: 13px;
+  font-size: 16px;
 }
 .productSection {
   padding: 130px 0;
@@ -1808,7 +1808,7 @@ p {
 }
 .categoryCard > span {
   color: var(--accent-strong);
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 900;
 }
 .categoryCard h3 {
@@ -1819,7 +1819,7 @@ p {
   max-width: 330px;
   margin: 0;
   color: #aeb6c2;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.7;
 }
 .categoryCard i {
@@ -1867,7 +1867,7 @@ p {
   padding: 14px 17px;
   background: rgba(255, 255, 255, 0.035);
   color: #d7dce4;
-  font-size: 13px;
+  font-size: 16px;
 }
 .processGrid {
   display: grid;
@@ -1897,7 +1897,7 @@ p {
 }
 .processGrid span {
   color: #7e8692;
-  font-size: 12px;
+  font-size: 16px;
 }
 .processGrid strong {
   font-size: 19px;
@@ -1930,7 +1930,7 @@ p {
 }
 .briefForm label span {
   color: #aeb5c0;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 800;
 }
 .briefForm input,
@@ -1963,7 +1963,7 @@ p {
   justify-content: space-between;
   gap: 30px;
   color: #949ca8;
-  font-size: 13px;
+  font-size: 16px;
 }
 .innerFooter .brand img {
   width: 42px;
@@ -2099,12 +2099,12 @@ p {
   align-items: center;
   gap: 8px;
   color: #929aa6;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 850;
 }
 .flowHeader nav a span {
   color: #555d68;
-  font-size: 10px;
+  font-size: 16px;
 }
 .flowHeader nav a.isActive {
   color: #fff;
@@ -2160,7 +2160,7 @@ p {
   background: rgba(255, 255, 255, 0.03);
   color: #bbc1cb;
   font-weight: 800;
-  font-size: 15px;
+  font-size: 18px;
   cursor: pointer;
 }
 .catalogFilters button.isActive,
@@ -2219,7 +2219,7 @@ p {
   font-size: 18px;
 }
 .shopImage > span small {
-  font-size: 12px;
+  font-size: 16px;
 }
 .shopImage i {
   position: absolute;
@@ -2231,7 +2231,7 @@ p {
   background: rgba(7, 9, 13, 0.92);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.38);
   color: #fff;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 900;
   font-style: normal;
   opacity: 0;
@@ -2256,7 +2256,7 @@ p {
 }
 .shopCardBody > span {
   color: var(--accent-strong);
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 850;
 }
 .shopCardBody h3 {
@@ -2269,7 +2269,7 @@ p {
   justify-content: space-between;
   margin: 0 0 18px;
   color: #929aa6;
-  font-size: 15px;
+  font-size: 18px;
 }
 .shopCardBody p strong {
   color: #fff;
@@ -2282,7 +2282,7 @@ p {
   background: rgba(255, 255, 255, 0.04);
   color: #fff;
   font-weight: 850;
-  font-size: 15px;
+  font-size: 18px;
   cursor: pointer;
 }
 .shopCard.isSelected .shopCardBody button,
@@ -2311,7 +2311,7 @@ p {
 }
 .selectionBar span {
   color: #969eaa;
-  font-size: 11px;
+  font-size: 16px;
 }
 .selectionBar strong {
   font-size: 25px;
@@ -2396,7 +2396,7 @@ p {
   grid-column: 1 / -1;
 }
 .detailMedia small {
-  font-size: 11px;
+  font-size: 16px;
 }
 .videoSlot {
   display: grid;
@@ -2449,7 +2449,7 @@ p {
 }
 .cinematicVideo > span small {
   color: var(--accent-strong);
-  font-size: 9px;
+  font-size: 16px;
   letter-spacing: 0.18em;
 }
 .detailCopy {
@@ -2457,7 +2457,7 @@ p {
 }
 .detailCopy > p:first-child {
   color: var(--accent-strong);
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 900;
 }
 .detailCopy h2 {
@@ -2470,7 +2470,7 @@ p {
 }
 .detailCopy h3 {
   margin: 38px 0 10px;
-  font-size: 15px;
+  font-size: 18px;
 }
 .detailCopy p {
   color: #a9b1bc;
@@ -2489,12 +2489,12 @@ p {
 }
 .attributeGrid dt {
   color: #747d89;
-  font-size: 12px;
+  font-size: 16px;
 }
 .attributeGrid dd {
   margin: 0;
   color: #d8dde5;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.5;
 }
 .sourceLink {
@@ -2503,7 +2503,7 @@ p {
   border: 1px solid var(--line);
   padding: 12px 15px;
   color: #aeb6c1;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 800;
 }
 .sourceLink:hover {
@@ -2569,7 +2569,7 @@ p {
 }
 .orderSummary > p {
   color: var(--accent-strong);
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 900;
 }
 .orderSummary div {
@@ -2611,7 +2611,7 @@ p {
   margin-bottom: 10px;
   border: 1px solid var(--line);
   color: #c6ccd5;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 850;
 }
 .summaryPrevious:hover {
@@ -2658,7 +2658,7 @@ p {
     display: grid;
     justify-items: center;
     gap: 2px;
-    font-size: 11px;
+    font-size: 16px;
   }
   .flowIntro {
     padding-top: 64px;
@@ -2704,7 +2704,7 @@ p {
   }
   .selectionBar .previousStep {
     min-width: 98px;
-    font-size: 12px;
+    font-size: 16px;
   }
   .summaryItems article {
     grid-template-columns: 72px 1fr auto;
@@ -2723,7 +2723,7 @@ p {
     height: 34px;
   }
   .flowHeader .brand span {
-    font-size: 16px;
+    font-size: 18px;
   }
   .flowHeader nav a span {
     display: none;
@@ -2791,7 +2791,7 @@ p {
 .procurementHeader .brand small {
   color: #a3a8b0;
   margin-top: 8px;
-  font-size: 15px;
+  font-size: 18px;
   letter-spacing: 0.12em;
 }
 .procurementHeader > a:last-child {
@@ -2873,7 +2873,7 @@ p {
   height: 48px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 50%;
-  font-size: 13px;
+  font-size: 16px;
 }
 .procurementTabs button div {
   display: grid;
@@ -2886,12 +2886,12 @@ p {
 }
 .procurementTabs button small {
   color: #9ca2ab;
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.5;
 }
 .procurementTabs button i {
   color: #ff6528;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 800;
   font-style: normal;
 }
@@ -2922,7 +2922,7 @@ p {
   padding: 7px 12px;
   background: #ff5325;
   color: #fff;
-  font-size: 11px;
+  font-size: 16px;
   letter-spacing: 0.08em;
 }
 @keyframes trackingTabPulse {
@@ -2970,7 +2970,7 @@ p {
   display: grid;
   gap: 13px;
   color: #c5c9cf;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
 }
 .procurementFields label.isWide {
@@ -3000,7 +3000,7 @@ p {
   gap: 10px;
   margin: 28px 0;
   color: #b1b6be;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.6;
 }
 .procurementConsent input {
@@ -3034,7 +3034,7 @@ p {
 .procurementSuccess > p:first-of-type {
   margin-top: 35px;
   color: #ff6428;
-  font-size: 11px;
+  font-size: 16px;
   letter-spacing: 0.15em;
 }
 .procurementSuccess h2 {
@@ -3066,7 +3066,7 @@ p {
   display: block;
   margin-bottom: 10px;
   color: #999fa8;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
 }
 .procurementSearch > form > div {
@@ -3097,7 +3097,7 @@ p {
   color: #828892;
   text-decoration: underline;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 18px;
 }
 .procurementNotFound {
   max-width: 900px;
@@ -3124,7 +3124,7 @@ p {
 }
 .procurementResultTop > div span {
   color: #858c96;
-  font-size: 15px;
+  font-size: 18px;
 }
 .procurementResultTop > div strong {
   display: block;
@@ -3134,7 +3134,7 @@ p {
 }
 .procurementResultTop > div small {
   color: #858c96;
-  font-size: 14px;
+  font-size: 17px;
 }
 .procurementResultTop dl {
   display: grid;
@@ -3151,12 +3151,12 @@ p {
 }
 .procurementResultTop dt {
   color: #747b85;
-  font-size: 14px;
+  font-size: 17px;
 }
 .procurementResultTop dd {
   margin: 7px 0 0;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px;
 }
 .procurementSteps {
   display: grid;
@@ -3194,7 +3194,7 @@ p {
   font-style: normal;
 }
 .procurementSteps span {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
 }
 .procurementSteps .isDone,
@@ -3263,13 +3263,13 @@ p {
 .procurementTimeline p {
   margin: 0;
   color: #a9aeb6;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.7;
 }
 .procurementTimeline time {
   padding-top: 10px;
   color: #aeb2b8;
-  font-size: 15px;
+  font-size: 18px;
 }
 .procurementTimeline .isPending {
   opacity: 0.45;
@@ -3281,7 +3281,7 @@ p {
   padding-bottom: 45px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: #747b84;
-  font-size: 15px;
+  font-size: 18px;
 }
 .procurementFooter a {
   color: #fff;
@@ -3309,7 +3309,7 @@ p {
     height: 32px;
   }
   .procurementTabs button strong {
-    font-size: 13px;
+    font-size: 16px;
   }
   .procurementTabs button small,
   .procurementTabs button i {
@@ -3388,12 +3388,12 @@ p {
   }
   .procurementHeader .brand small {
     margin-top: 4px;
-    font-size: 11px;
+    font-size: 16px;
   }
   .procurementHeader > a:last-child {
     min-width: auto;
     padding: 11px 13px;
-    font-size: 14px;
+    font-size: 17px;
   }
   .procurementHero h1 {
     font-size: 48px;
@@ -3460,7 +3460,7 @@ p {
 .casesNav .brand small {
   margin-top: 5px;
   color: #a9adb5;
-  font-size: 10px;
+  font-size: 16px;
   letter-spacing: 0.12em;
 }
 .casesNav nav {
@@ -3471,7 +3471,7 @@ p {
 .casesNav nav a {
   color: #b6bac2;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 16px;
 }
 .casesNav nav a:hover {
   color: #fff;
@@ -3522,7 +3522,7 @@ p {
 }
 .casesHeroFoot strong small {
   display: block;
-  font-size: 11px;
+  font-size: 16px;
   color: #a9adb5;
   letter-spacing: 0.12em;
 }
@@ -3541,7 +3541,7 @@ p {
   background: #0d1014;
   color: #9ca1a9;
   padding: 14px 20px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.25;
   font-weight: 600;
   cursor: pointer;
@@ -3589,7 +3589,7 @@ p {
 }
 .projectCardCopy > span {
   color: #ff5b21;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 800;
   letter-spacing: 0.09em;
 }
@@ -3614,11 +3614,11 @@ p {
 }
 .projectCardCopy small {
   color: #696f78;
-  font-size: 14px;
+  font-size: 17px;
 }
 .projectCardCopy b {
   white-space: nowrap;
-  font-size: 14px;
+  font-size: 17px;
 }
 .caseDetailHero {
   height: calc(100vh - 96px);
@@ -3650,7 +3650,7 @@ p {
   top: 40px;
   color: #d5d7da;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 16px;
 }
 .caseDetailTitle p {
   color: #ff6121;
@@ -3704,7 +3704,7 @@ p {
 }
 .caseSpecCard span {
   color: #ff5a1f;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 800;
   letter-spacing: 0.06em;
 }
@@ -3780,7 +3780,7 @@ p {
   padding: 9px 12px;
   background: rgba(3, 5, 8, 0.78);
   border: 1px solid rgba(255, 255, 255, 0.22);
-  font-size: 11px;
+  font-size: 16px;
   opacity: 0;
   transform: translateY(8px);
   transition: 0.25s ease;
@@ -3827,7 +3827,7 @@ p {
   gap: 24px;
   padding-top: 15px;
   border-top: 1px solid rgba(255, 255, 255, 0.18);
-  font-size: 12px;
+  font-size: 16px;
 }
 .caseLightboxMeta span {
   color: #ff6424;
@@ -3903,7 +3903,7 @@ p {
 }
 .caseFilm span {
   color: #ff6121;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 900;
   letter-spacing: 0.18em;
 }
@@ -3952,7 +3952,7 @@ p {
 }
 .casePager span {
   color: #ff6121;
-  font-size: 11px;
+  font-size: 16px;
 }
 .casePager strong {
   font-size: 20px;
@@ -3963,7 +3963,7 @@ p {
   padding-top: 55px;
   padding-bottom: 55px;
   color: #747a84;
-  font-size: 12px;
+  font-size: 16px;
 }
 .casesFooter a {
   color: #fff;
@@ -4030,7 +4030,7 @@ p {
     margin-bottom: 90px;
   }
   .casePager strong {
-    font-size: 15px;
+    font-size: 18px;
   }
   .casesFooter {
     gap: 20px;
@@ -4090,7 +4090,7 @@ p {
   }
   .casesHeroFoot > p {
     max-width: 74%;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.7;
   }
   .casesHeroFoot strong {
@@ -4103,7 +4103,7 @@ p {
     font-size: 23px;
   }
   .projectCardCopy > p {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.75;
   }
   .projectCardCopy > div {
@@ -4187,13 +4187,13 @@ p {
 }
 .trackingHeader .brand small {
   color: #a8adb5;
-  font-size: 10px;
+  font-size: 16px;
   letter-spacing: 0.12em;
 }
 .trackingHeader > a:last-child {
   color: #aeb2ba;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 16px;
 }
 .trackingHero {
   position: relative;
@@ -4203,7 +4203,7 @@ p {
 .trackingHero > p,
 .trackingSectionTitle p {
   color: #ff4d28;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 900;
   letter-spacing: 0.16em;
 }
@@ -4234,7 +4234,7 @@ p {
   display: block;
   margin-bottom: 12px;
   color: #aeb3bb;
-  font-size: 16px;
+  font-size: 18px;
 }
 .trackingSearchWrap form > div {
   display: grid;
@@ -4271,7 +4271,7 @@ p {
   text-decoration: underline;
   cursor: pointer;
   padding: 0 0 22px;
-  font-size: 15px;
+  font-size: 18px;
 }
 .trackingEmpty {
   max-width: 950px;
@@ -4301,7 +4301,7 @@ p {
 .trackingSummary > div span {
   display: block;
   color: #8e949e;
-  font-size: 15px;
+  font-size: 18px;
 }
 .trackingSummary > div strong {
   display: block;
@@ -4311,7 +4311,7 @@ p {
 }
 .trackingSummary > div small {
   color: #8e949e;
-  font-size: 14px;
+  font-size: 17px;
 }
 .trackingSummary dl {
   display: grid;
@@ -4325,7 +4325,7 @@ p {
 }
 .trackingSummary dt {
   color: #777e88;
-  font-size: 14px;
+  font-size: 17px;
 }
 .trackingSummary dd {
   margin: 8px 0 0;
@@ -4366,11 +4366,11 @@ p {
   border: 1px solid #363b43;
   border-radius: 50%;
   background: #080a0d;
-  font-size: 13px;
+  font-size: 16px;
   font-style: normal;
 }
 .trackingProgress span {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
 }
 .trackingProgress .isDone,
@@ -4445,7 +4445,7 @@ p {
 }
 .trackingTimeline article > div:nth-child(2) > span {
   color: #ff5a24;
-  font-size: 13px;
+  font-size: 16px;
 }
 .trackingTimeline h3 {
   margin: 6px 0;
@@ -4454,13 +4454,13 @@ p {
 .trackingTimeline p {
   margin: 0;
   color: #9298a1;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.7;
 }
 .trackingTimeline time {
   padding-top: 19px;
   color: #b8bcc3;
-  font-size: 15px;
+  font-size: 18px;
 }
 .trackingTimeline .isPending {
   opacity: 0.46;
@@ -4472,7 +4472,7 @@ p {
   padding-bottom: 45px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: #747b84;
-  font-size: 15px;
+  font-size: 18px;
 }
 .trackingFooter a {
   color: #fff;
@@ -4564,7 +4564,7 @@ p {
     padding: 24px;
   }
   .trackingSearchWrap input {
-    font-size: 14px;
+    font-size: 17px;
     padding: 0 16px;
   }
   .trackingTimeline h3 {
