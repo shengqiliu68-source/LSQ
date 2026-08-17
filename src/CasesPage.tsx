@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BorderGlow from "./components/BorderGlow";
 import casesJson from "./caseData.json";
+import giftboxCasesJson from "./giftboxCaseData.json";
 
 type CaseItem = {
   index: string;
@@ -21,7 +22,7 @@ type CaseItem = {
   detail: string;
 };
 
-const cases = casesJson as CaseItem[];
+const cases = [...(casesJson as CaseItem[]), ...(giftboxCasesJson as CaseItem[])];
 const glow = {
   edgeSensitivity: 24,
   glowColor: "12 100 62",
@@ -285,13 +286,15 @@ function CaseDetail({ item }: { item: CaseItem }) {
         </div>
       </section>
 
-      <section className="caseLongDetail contentShell casesReveal">
-        <div className="caseSectionTitle">
-          <p className="eyebrow">FULL DETAILS / 完整详情</p>
-          <h2>项目详情长图</h2>
-        </div>
-        <img src={item.detail} alt={`${item.name}完整详情`} loading="lazy" />
-      </section>
+      {item.detail && (
+        <section className="caseLongDetail contentShell casesReveal">
+          <div className="caseSectionTitle">
+            <p className="eyebrow">FULL DETAILS / 完整详情</p>
+            <h2>项目详情长图</h2>
+          </div>
+          <img src={item.detail} alt={`${item.name}完整详情`} loading="lazy" />
+        </section>
+      )}
 
       <nav className="casePager contentShell" aria-label="浏览其他案例">
         <a href={`/cases/${previous.slug}`}>

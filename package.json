@@ -8,6 +8,7 @@
     "start": "vite --host 0.0.0.0",
     "preview": "vite preview",
     "sync:cases": "python scripts/sync-cases.py",
+    "sync:giftbox-cases": "python scripts/sync-giftbox-cases.py",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "check": "npm run lint && npm run typecheck && npm run build"
