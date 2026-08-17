@@ -22,6 +22,10 @@
   --accent-strong: #ff5a18;
   --accent-warm: #ff9d2a;
   --accent-gradient: linear-gradient(90deg, #ff2c1f 0%, #ff5a18 52%, #ff9d2a 100%);
+  --home-label-size: 18px;
+  --home-body-size: 21px;
+  --home-card-title-size: 29px;
+  --home-action-size: 18px;
   --panel-gradient:
     radial-gradient(circle at 0% 8%, rgba(77, 6, 21, 0.36), transparent 52%),
     linear-gradient(135deg, rgba(25, 7, 13, 0.5), rgba(5, 7, 10, 0.3) 52%, rgba(52, 59, 70, 0.18));
@@ -320,7 +324,7 @@ video {
   justify-content: center;
   gap: 54px;
   color: rgba(245, 247, 251, 0.74);
-  font-size: 18px;
+  font-size: var(--home-action-size);
   font-weight: 800;
 }
 
@@ -376,7 +380,7 @@ video {
   min-height: 54px;
   border: 1px solid var(--line);
   padding: 0 26px;
-  font-size: 18px;
+  font-size: var(--home-action-size);
   font-weight: 900;
   transition:
     transform 130ms ease,
@@ -428,7 +432,7 @@ video {
 .eyebrow {
   margin: 0 0 22px;
   color: var(--accent);
-  font-size: 18px;
+  font-size: var(--home-label-size);
   font-weight: 800;
   letter-spacing: 0.16em;
 }
@@ -680,7 +684,7 @@ p {
 .contact p {
   max-width: 760px;
   color: var(--muted);
-  font-size: 21px;
+  font-size: var(--home-body-size);
   line-height: 1.75;
 }
 
@@ -707,7 +711,7 @@ p {
 .caseCard span,
 .numberCard span {
   color: var(--accent-strong);
-  font-size: 18px;
+  font-size: var(--home-label-size);
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -717,14 +721,14 @@ p {
 .logisticsCard h3 {
   margin: 28px 0 16px;
   color: #ffffff;
-  font-size: 29px;
+  font-size: var(--home-card-title-size);
 }
 
 .featureCard p,
 .logisticsCard p,
 .numberCard p {
   color: #b7bfcc;
-  font-size: 19px;
+  font-size: var(--home-body-size);
   line-height: 1.7;
 }
 
@@ -888,7 +892,7 @@ p {
 .contactChannel small {
   grid-column: 1;
   color: #ff6a2b;
-  font-size: 18px;
+  font-size: var(--home-label-size);
   font-weight: 900;
   letter-spacing: 0.12em;
 }
@@ -902,7 +906,7 @@ p {
   grid-row: 1 / span 2;
   margin-left: 24px;
   color: #ff742e;
-  font-size: 18px;
+  font-size: var(--home-action-size);
 }
 .contactPanel .contactChannel.isTelegram {
   border-color: rgba(73, 161, 255, 0.48);
@@ -922,7 +926,7 @@ p {
 .contactInquiryButton small {
   grid-column: 1;
   color: #ff6a2b;
-  font-size: 18px;
+  font-size: var(--home-label-size);
   font-weight: 900;
   letter-spacing: 0.12em;
 }
@@ -936,7 +940,7 @@ p {
   grid-row: 1 / span 2;
   margin-left: 24px;
   color: #ff742e;
-  font-size: 18px;
+  font-size: var(--home-action-size);
 }
 
 /* Inquiry form */
@@ -1263,7 +1267,7 @@ p {
 .contactProcurementButton small {
   grid-column: 1;
   color: #ff6a2b;
-  font-size: 18px;
+  font-size: var(--home-label-size);
   font-weight: 900;
   letter-spacing: 0.12em;
 }
@@ -1277,7 +1281,7 @@ p {
   grid-row: 1 / span 2;
   margin-left: 30px;
   color: #ff742e;
-  font-size: 18px;
+  font-size: var(--home-action-size);
 }
 
 @media (max-width: 1100px) {
