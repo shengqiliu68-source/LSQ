@@ -437,8 +437,10 @@ function App() {
                 <a
                   className="caseCardContent"
                   href={`/cases/${item.slug}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    window.location.assign(`/cases/${item.slug}`);
+                  }}
                 >
                   <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
                   <div>
