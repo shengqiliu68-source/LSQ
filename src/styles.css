@@ -3687,8 +3687,8 @@ p {
 }
 .caseStory > p {
   color: #b0b4bc;
-  line-height: 1.9;
-  font-size: 19px;
+  line-height: 1.85;
+  font-size: 24px;
 }
 .caseSpecs {
   display: grid;
@@ -3698,30 +3698,31 @@ p {
   padding-bottom: 125px;
 }
 .caseSpecCard > div {
-  height: 100%;
+  box-sizing: border-box;
+  min-height: 100%;
   padding: 38px 40px 42px;
 }
 .caseSpecCard span {
   color: #ff5a1f;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: 0.06em;
 }
 .caseSpecCard h3 {
   margin: 34px 0 24px;
-  font-size: 29px;
+  font-size: 32px;
   line-height: 1.25;
 }
 .caseSpecCard h4 {
   margin: 30px 0 12px;
   color: #ff7130;
-  font-size: 17px;
+  font-size: 20px;
 }
 .caseSpecCard p,
 .caseSpecCard li {
   color: #b8bcc3;
-  line-height: 1.85;
-  font-size: 18px;
+  line-height: 1.8;
+  font-size: 21px;
 }
 .caseSpecCard ul {
   padding-left: 20px;
@@ -4036,15 +4037,19 @@ p {
   }
 }
 @media (max-width: 520px) {
+  .caseStory > p {
+    font-size: 20px;
+    line-height: 1.8;
+  }
   .caseSpecCard > div {
     padding: 28px 24px 32px;
   }
   .caseSpecCard h3 {
-    font-size: 27px;
+    font-size: 29px;
   }
   .caseSpecCard p,
   .caseSpecCard li {
-    font-size: 17px;
+    font-size: 18px;
   }
   .caseLightbox {
     padding: 70px 14px 80px;
